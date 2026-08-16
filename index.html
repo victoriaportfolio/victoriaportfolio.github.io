@@ -151,7 +151,8 @@
       <span id="skills-title-highlight"></span>
     </p>
 
-    <div id="skills-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-6 bg-card rounded-3xl p-6 md:p-10 text-left"></div>
+    <!-- На мобильных (одна колонка) — по центру, с sm: возвращается влево, как в макете -->
+    <div id="skills-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-6 bg-card rounded-3xl p-6 md:p-10 text-center sm:text-left justify-items-center sm:justify-items-start"></div>
 
     <p id="bio-text" class="mt-12 display-text"></p>
   </section>

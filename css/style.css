@@ -1,0 +1,56 @@
+/* Класс .display-text определён в index.html через @layer components —
+   Tailwind CDN грузится после этого файла и иначе перебивает правила. */
+
+/* Плавный аккордеон без JS-анимации высоты (grid-template-rows трюк) */
+/* Аккордеоны вложенные (индустрия → компания), поэтому селекторы строго
+   по прямым потомкам: иначе открытие индустрии раскрыло бы все компании. */
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.accordion-item.open > .accordion-panel {
+  grid-template-rows: 1fr;
+}
+/* min-height:0 обязателен: у grid-элемента автоматический минимальный размер
+   равен высоте контента, из-за чего закрытая панель (0fr) не схлопывалась
+   и содержимое проглядывало наружу. */
+.accordion-panel > div {
+  overflow: hidden;
+  min-height: 0;
+}
+.accordion-chevron {
+  transition: transform 0.25s ease;
+}
+.accordion-item.open > button .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+/* Плейсхолдер фото: пока нет реального файла — градиентный круг с инициалом */
+.photo-fallback {
+  background: linear-gradient(135deg, #d1d5db, #f3f4f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+
+/* Текстовый плейсхолдер логотипа компании */
+.logo-chip {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+/* Небольшая метка-заглушка [ЗАПОЛНИТЬ] */
+.fill-marker {
+  color: #d97706;
+}
+
+::selection {
+  background: #2563eb;
+  color: #fff;
+}

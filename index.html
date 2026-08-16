@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Виктория — Lead Product Designer</title>
+<meta name="description" content="Виктория — Lead Product Designer. Product Design для B2B, AI, SaaS, Fintech, Medtech, Ed-tech." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&subset=cyrillic,cyrillic-ext,latin,latin-ext" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ["Montserrat", "system-ui", "-apple-system", "Arial", "sans-serif"],
+        },
+        colors: {
+          // Палитра снята с folio-sparkle-fusion.lovable.app
+          ink: "#141414",
+          muted: "#737373",
+          tagink: "#262626",
+          canvas: "#fcfcfc",
+          accent: "#2563eb",
+          card: "#f3f4f6",
+        },
+        fontSize: {
+          // Шкала оригинального сайта.
+          // ВАЖНО: имена не должны совпадать с именами цветов выше —
+          // иначе text-<имя> резолвится в цвет, а не в размер.
+          hero: ["28px", { lineHeight: "1.15", fontWeight: "600" }],
+          sect: ["24px", { lineHeight: "32px" }],
+          cardtitle: ["20px", { lineHeight: "25px" }],
+          body: ["14px", { lineHeight: "20px" }],
+          tag: ["12px", { lineHeight: "16px" }],
+        },
+      },
+    },
+  };
+</script>
+<link rel="stylesheet" href="css/style.css" />
+
+<!-- Основной кегль сайта: Montserrat SemiBold 48px (как на главном экране).
+     Применяется к hero, всем заголовкам секций и блоку «обо мне».
+     Ниже 1024px плавно уменьшается, чтобы не ломать мобильные. -->
+<style type="text/tailwindcss">
+  @layer components {
+    .display-text {
+      @apply text-[26px] sm:text-[34px] lg:text-[48px] font-semibold leading-[1.2] tracking-normal;
+    }
+  }
+</style>
+</head>
+<body class="bg-canvas text-ink font-sans antialiased">
+
+<!-- Header -->
+<header class="border-b border-gray-100">
+  <div class="max-w-5xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
+    <nav class="flex items-center">
+      <a
+        href="#"
+        id="behance-link"
+        target="_blank"
+        rel="noopener"
+        aria-label="Behance"
+        class="text-accent hover:opacity-70 transition-opacity"
+      >
+        <!-- Behance -->
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M9.1 5.5c.55 0 1.05.05 1.5.15.45.1.83.26 1.15.48.32.22.56.52.73.89.17.37.25.83.25 1.37 0 .59-.13 1.08-.4 1.47-.27.39-.67.71-1.2.96.72.21 1.26.57 1.61 1.09.36.51.53 1.14.53 1.86 0 .59-.11 1.1-.34 1.53-.23.43-.54.78-.92 1.05-.39.27-.83.47-1.32.6-.5.13-1 .19-1.53.19H3V5.5h6.1Zm-.36 4.68c.45 0 .82-.11 1.11-.32.29-.21.43-.56.43-1.04 0-.27-.05-.49-.15-.66a1.1 1.1 0 0 0-.4-.4 1.7 1.7 0 0 0-.57-.2 3.9 3.9 0 0 0-.68-.06H5.8v2.68h2.94Zm.16 4.92c.25 0 .49-.02.72-.07.23-.05.43-.13.6-.25.17-.12.31-.28.41-.48.1-.2.15-.46.15-.77 0-.61-.17-1.04-.51-1.3-.34-.26-.79-.39-1.35-.39H5.8v3.26h3.1ZM17.2 15.4c.37.36.91.54 1.61.54.5 0 .94-.13 1.3-.38.36-.25.58-.52.66-.8h2.03c-.33 1.01-.82 1.73-1.5 2.17-.67.44-1.48.66-2.44.66-.66 0-1.26-.11-1.8-.32a3.8 3.8 0 0 1-1.36-.9 4.06 4.06 0 0 1-.86-1.4 5.2 5.2 0 0 1-.3-1.8c0-.63.1-1.22.31-1.76a4.1 4.1 0 0 1 2.24-2.34c.53-.23 1.11-.34 1.77-.34.72 0 1.36.14 1.9.42.54.28.98.66 1.33 1.13.34.48.59 1.02.74 1.63.15.61.2 1.25.16 1.92h-6.13c0 .7.2 1.22.57 1.57h-.23Zm2.82-4.28c-.3-.32-.79-.5-1.4-.5-.4 0-.74.07-1 .21-.27.14-.48.31-.64.51a1.9 1.9 0 0 0-.34.65c-.6.22-.1.42-.12.6h3.8c-.11-.6-.3-1.05-.6-1.37l.3-.1ZM15.6 6.4h4.76v1.16H15.6V6.4Z"/>
+        </svg>
+      </a>
+    </nav>
+    <nav class="flex items-center gap-4">
+      <a
+        href="#"
+        id="tg-link"
+        target="_blank"
+        rel="noopener"
+        aria-label="Telegram"
+        class="text-accent hover:opacity-70 transition-opacity"
+      >
+        <!-- Telegram -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2Zm4.64 6.8-1.55 7.31c-.11.52-.42.65-.86.4l-2.38-1.75-1.15 1.1c-.13.13-.24.24-.48.24l.17-2.43 4.42-4c.2-.17-.04-.26-.29-.1L8.54 13.1 6.2 12.37c-.51-.16-.52-.51.11-.76l9.1-3.51c.42-.16.79.1.65.7h.57Z"/>
+        </svg>
+      </a>
+      <button
+        id="lang-toggle"
+        type="button"
+        class="rounded-full border border-gray-200 px-3 py-1 text-tag font-medium text-muted hover:border-gray-300 hover:text-ink transition-colors"
+      >
+        <span id="lang-label">EN</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <!-- Первый экран целиком помещается в высоту окна: отступы и фото
+       заданы через vh, чтобы кнопка «Все кейсы» не уезжала за край. -->
+  <section class="max-w-6xl mx-auto px-5 md:px-8 pt-[4vh] pb-[3vh] text-center">
+    <img
+      id="hero-photo"
+      src="assets/images/photo.jpg"
+      alt="Виктория"
+      class="mx-auto h-20 w-20 sm:h-24 sm:w-24 lg:h-[104px] lg:w-[104px] rounded-full object-cover ring-1 ring-black/5 shadow-sm"
+    />
+
+    <!-- Montserrat SemiBold 48px, line-height auto, letter-spacing 0% —
+         один кегль и одна жирность на весь блок, различается только цвет. -->
+    <div class="mt-[3vh] display-text">
+      <h1 class="text-ink">Виктория</h1>
+      <p class="text-ink/40">Lead Product Designer</p>
+      <p id="hero-headline" class="text-ink"></p>
+      <p id="hero-subheadline" class="text-ink/40"></p>
+    </div>
+
+    <div id="hero-lines" class="mt-[3vh] space-y-0.5 text-body font-normal text-muted"></div>
+
+    <!-- Логотипы в одну строку, растянуты по ширине текстового блока -->
+    <div
+      id="client-logos"
+      class="mt-[3.5vh] flex flex-nowrap items-center justify-between gap-2 sm:gap-3 overflow-x-auto sm:overflow-visible"
+    ></div>
+
+    <div class="mt-[3.5vh]">
+      <a
+        id="cta-button"
+        href="#projects"
+        class="inline-flex items-center gap-2 rounded-full bg-accent text-white text-body font-semibold px-6 py-3 hover:bg-blue-700 transition-colors"
+      >
+        <span id="cta-label">Все кейсы</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Что я умею -->
+  <section id="skills" class="max-w-5xl mx-auto px-5 md:px-8 pt-16 md:pt-24 text-center">
+    <h2 id="skills-heading" class="display-text text-ink">Что я умею:</h2>
+    <p id="skills-eyebrow" class="mt-3 text-body font-normal text-muted max-w-lg mx-auto"></p>
+
+    <p class="mt-10 display-text text-ink">
+      <span id="skills-title"></span><br class="hidden md:block" />
+      <span id="skills-title-highlight"></span>
+    </p>
+
+    <div id="skills-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-6 bg-card rounded-3xl p-6 md:p-10 text-left"></div>
+
+    <p id="bio-text" class="mt-12 display-text"></p>
+  </section>
+
+  <!-- Опыт -->
+  <section id="experience" class="max-w-5xl mx-auto px-5 md:px-8 pt-16 md:pt-24">
+    <h2 id="experience-heading" class="display-text text-ink text-center mb-10">Опыт</h2>
+    <div id="experience-accordion" class="divide-y divide-gray-200 border-t border-b border-gray-200"></div>
+  </section>
+
+  <!-- Проекты -->
+  <section id="projects" class="max-w-5xl mx-auto px-5 md:px-8 pt-16 md:pt-24">
+    <h2 id="projects-heading" class="display-text text-ink text-center mb-3">Последние проекты</h2>
+    <p id="projects-subtitle" class="text-center text-body font-normal text-muted mb-10">Полное портфолио — на Behance</p>
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
+
+    <div class="mt-12 text-center">
+      <a
+        id="all-projects-button"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full bg-accent text-white text-body font-semibold px-7 py-3.5 hover:bg-blue-700 transition-colors"
+      >
+        Посмотреть все проекты
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <section id="contact" class="max-w-5xl mx-auto px-5 md:px-8 pt-20 md:pt-28 pb-20 text-center">
+    <h2 id="contact-heading" class="display-text text-ink">Обсудим проект?</h2>
+    <p id="contact-subtitle" class="mt-3 text-body font-normal text-muted">Пишите в Telegram или на почту — отвечаю быстро.</p>
+    <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+      <a id="contact-email" href="#" class="inline-flex items-center gap-2 rounded-full bg-ink text-white text-body font-semibold px-6 py-3 hover:bg-black transition-colors">
+        Написать на почту
+      </a>
+      <a id="contact-telegram" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-gray-200 text-body font-semibold px-6 py-3 hover:border-gray-300 transition-colors">
+        Написать в Telegram
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="border-t border-gray-100 py-8">
+  <div class="max-w-4xl mx-auto px-5 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-tag text-muted">
+    <p>© <span id="year"></span> <span id="footer-note">Виктория. Product Design.</span></p>
+    <div class="flex items-center gap-4">
+      <a href="#" id="footer-linkedin" target="_blank" rel="noopener" class="hover:text-ink transition-colors">LinkedIn</a>
+      <a href="#" id="footer-behance" target="_blank" rel="noopener" class="hover:text-ink transition-colors">Behance</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/data-en.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

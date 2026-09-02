@@ -281,7 +281,10 @@
       trigger.type = "button";
       trigger.setAttribute("aria-expanded", "false");
 
-      const left = el("span", "display-text text-ink", group.industry);
+      // scroll-focus: цвет и масштаб анимируются через IntersectionObserver
+      // в initScrollFocus(), сам класс text-ink здесь больше не нужен —
+      // цвет теперь полностью определяет .scroll-focus в CSS.
+      const left = el("span", "display-text scroll-focus", group.industry);
       const right = el("span", "flex items-center gap-4 shrink-0");
       right.appendChild(
         el(
@@ -442,6 +445,31 @@
     renderProjects();
     renderContacts();
     renderUIStrings();
+    initScrollFocus();
+  }
+
+  // ---------- Проявление строк «Опыт» по скроллу ----------
+  let scrollFocusObserver = null;
+  function initScrollFocus() {
+    // При смене языка render() вызывается заново — старый наблюдатель
+    // нужно снять, иначе он будет следить за уже удалёнными узлами.
+    if (scrollFocusObserver) scrollFocusObserver.disconnect();
+
+    const targets = document.querySelectorAll(".scroll-focus");
+    if (!targets.length) return;
+
+    // Тонкая полоса в центре экрана: строка «загорается», когда попадает
+    // в неё, и гаснет, когда уходит выше или ниже.
+    scrollFocusObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("in-focus", entry.isIntersecting);
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+
+    targets.forEach((t) => scrollFocusObserver.observe(t));
   }
 
   function init() {

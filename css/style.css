@@ -54,3 +54,41 @@
   background: #2563eb;
   color: #fff;
 }
+
+/* Проявление строк «Опыт» при скролле (как на pxpush.com): пока строка
+   не в центре экрана — она тусклая, при попадании в фокус — чёрная
+   и чуть крупнее. Раскрытие по клику эта анимация не трогает. */
+.scroll-focus {
+  color: #c7c7c7;
+  transform: scale(0.97);
+  transform-origin: left center;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+.scroll-focus.in-focus {
+  color: #141414;
+  transform: scale(1);
+}
+/* Открытая карточка держим в фокусе постоянно — так текст не тускнеет,
+   пока пользователь читает раскрытое содержимое */
+.accordion-item.open > button .scroll-focus {
+  color: #141414;
+  transform: scale(1);
+}
+
+/* Наведение на строку индустрии (десктоп) сразу разворачивает её целиком —
+   саму строку И все вложенные карточки компаний внутри (селектор без «>»
+   специально захватывает все уровни вложенности, в отличие от клика,
+   который на уровне компании раскрывает по одной). Только для устройств
+   с настоящим hover — на тач-экранах это будет мешать, там остаётся клик. */
+@media (hover: hover) and (pointer: fine) {
+  .accordion-item:hover > .accordion-panel,
+  .accordion-item:hover .accordion-panel {
+    grid-template-rows: 1fr;
+  }
+  /* Заголовок строки тоже сразу чёрный при наведении, а не только
+     когда попал в scroll-фокус */
+  .accordion-item:hover > button .scroll-focus {
+    color: #141414;
+    transform: scale(1);
+  }
+}

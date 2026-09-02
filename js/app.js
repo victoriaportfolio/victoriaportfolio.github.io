@@ -120,7 +120,7 @@
     // Кегль и жирность наследуются от .display-text — здесь только цвет.
     $("#bio-text").innerHTML =
       `<span class="text-ink">${b.strong1}</span> ` +
-      `<span class="text-ink/40">${b.muted}</span> ` +
+      `<span class="text-ink">${b.muted}</span> ` +
       `<span class="text-ink">${b.strong2}</span>`;
   }
 

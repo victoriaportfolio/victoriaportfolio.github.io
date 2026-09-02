@@ -26,7 +26,7 @@ const PRODUCT_ACHIEVEMENTS_EN = [
 const SITE_DATA_EN = {
   profile: {
     name: "Victoria",
-    role: "Lead Product Designer",
+    role: "Product Designer",
     photo: "assets/images/photo.jpg",
     // Массив = явные переносы: "for" уходит на строку к millions,
     // "exchange" — на отдельную строку.

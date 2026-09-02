@@ -178,6 +178,51 @@
     return [];
   }
 
+  const HOVER_CAPABLE = window.matchMedia && matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  /**
+   * Состояние одной строки аккордеона: открыта, если её «приколол» клик
+   * (pinned) ИЛИ сейчас над ней курсор (hovering) — но клик всегда может
+   * форсированно закрыть строку прямо во время наведения: suppressHover
+   * не даёт наведению тут же открыть её обратно, пока курсор не уйдёт
+   * и не вернётся заново.
+   */
+  function makeAccordionController(item, trigger) {
+    const state = { pinned: false, hovering: false, suppressHover: false };
+    function apply() {
+      const shouldOpen = state.pinned || (state.hovering && !state.suppressHover);
+      item.classList.toggle("open", shouldOpen);
+      trigger.setAttribute("aria-expanded", String(shouldOpen));
+    }
+    trigger.addEventListener("click", () => {
+      if (item.classList.contains("open")) {
+        state.pinned = false;
+        state.suppressHover = true; // клик во время наведения — форсированное закрытие
+      } else {
+        state.pinned = true;
+        state.suppressHover = false;
+      }
+      apply();
+    });
+    return { state, apply };
+  }
+
+  // Наведение на industry-строку раскрывает её саму И все вложенные
+  // компании разом (только на устройствах с настоящим hover — на тач-
+  // экранах управление остаётся только по клику).
+  function bindHoverCascade(parentCtrl, childControllers, hoverTarget) {
+    if (!HOVER_CAPABLE) return;
+    const setAll = (hovering) => {
+      [parentCtrl, ...childControllers].forEach((ctrl) => {
+        ctrl.state.hovering = hovering;
+        if (hovering) ctrl.state.suppressHover = false; // новый заход мышью — сброс блокировки
+        ctrl.apply();
+      });
+    };
+    hoverTarget.addEventListener("mouseenter", () => setAll(true));
+    hoverTarget.addEventListener("mouseleave", () => setAll(false));
+  }
+
   // Компания — вложенный аккордеон внутри индустрии (как на макете):
   // шапка с логотипом и шевроном, раскрывающаяся в «Что сделала» +
   // «Ключевые достижения».
@@ -261,14 +306,13 @@
 
     panel.appendChild(clip);
 
-    trigger.addEventListener("click", () => {
-      const isOpen = item.classList.toggle("open");
-      trigger.setAttribute("aria-expanded", String(isOpen));
-    });
+    const controller = makeAccordionController(item, trigger);
 
     item.appendChild(trigger);
     item.appendChild(panel);
-    return item;
+    // Отдаём наружу и элемент, и его контроллер — renderExperience
+    // подключает вложенные компании к hover-каскаду индустрии.
+    return { item, controller };
   }
 
   function renderExperience() {
@@ -307,14 +351,18 @@
       const panel = el("div", "accordion-panel");
       const panelClip = el("div");
       const panelInner = el("div", "pb-4");
-      group.companies.forEach((company) => panelInner.appendChild(renderCompanyCard(company)));
+      const companyControllers = group.companies.map((company) => {
+        const { item: companyItem, controller } = renderCompanyCard(company);
+        panelInner.appendChild(companyItem);
+        return controller;
+      });
       panelClip.appendChild(panelInner);
       panel.appendChild(panelClip);
 
-      trigger.addEventListener("click", () => {
-        const isOpen = item.classList.toggle("open");
-        trigger.setAttribute("aria-expanded", String(isOpen));
-      });
+      const controller = makeAccordionController(item, trigger);
+      // Наведение на всю строку (заголовок индустрии) раскрывает её
+      // и все компании внутри разом — клик по-прежнему может закрыть.
+      bindHoverCascade(controller, companyControllers, item);
 
       item.appendChild(trigger);
       item.appendChild(panel);

@@ -280,10 +280,39 @@ const SITE_DATA_EN = {
                   value: "5 designers",
                   desc: "Full cycle: screening, test tasks, interviews, offer, onboarding",
                 },
-                { tag: "GRADES", value: "3 grades", desc: "Interviews, CJM, usability, A/B tests" },
+                {
+                  tag: "GRADES",
+                  value: "3 grades",
+                  desc: "Competency map with 12 evaluation criteria and development plans",
+                },
+                {
+                  tag: "BUDGET",
+                  value: "₽500K/year",
+                  desc: "Research and tooling: Maze, Miro, Figma",
+                },
               ],
             },
-            { label: "PRODUCT", items: PRODUCT_ACHIEVEMENTS_EN },
+            {
+              label: "PRODUCT",
+              items: [
+                {
+                  tag: "REDESIGN",
+                  value: "Full redesign",
+                  desc: "In-depth interviews, CJM, usability testing → new IA and visual style",
+                },
+                {
+                  tag: "CONVERSION",
+                  tagRight: "DAU",
+                  value: "Metric growth",
+                  desc: "Subscription conversion, lower bounce rate, DAU growth",
+                },
+                {
+                  tag: "PROCESS",
+                  value: "RACI + Jira",
+                  desc: "Design reviews, prioritisation, checklists, 1:1s, KPI tracking",
+                },
+              ],
+            },
           ],
         },
       ],

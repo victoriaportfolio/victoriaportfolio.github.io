@@ -372,6 +372,52 @@ const SITE_DATA_EN = {
         },
       ],
     },
+    {
+      industry: "Software experience",
+      badge: "SOFTWARE",
+      companies: [
+        {
+          logoText: "GOTECHSOFTWARE",
+          logoType: "generic",
+          name: "Gotechsoftware",
+          whatIDid: [
+            {
+              title: "Full-time alongside a master's degree",
+              text: "Full-time, alongside a master's degree. The company delivered projects for US clients — running the full design cycle: branding, packaging, B2B SaaS platforms.",
+            },
+            {
+              title: "Client projects",
+              text: "Worked on websites and web platforms for client projects: Hampton, Berkshire, Evator, Formula 360 (paired with a fellow designer).",
+            },
+            {
+              title: "Full design cycle",
+              text: "Worked across the full design cycle — from branding and product packaging to B2B SaaS platform interfaces.",
+            },
+          ],
+          achievementGroups: [
+            {
+              label: "CLIENT PROJECTS",
+              items: [
+                { tag: "PROJECT", value: "Hampton", desc: "Website and web platform" },
+                { tag: "PROJECT", value: "Berkshire", desc: "Website and web platform" },
+                { tag: "PROJECT", value: "Evator", desc: "Website and web platform" },
+                { tag: "PROJECT", value: "Formula 360", desc: "Website and web platform" },
+              ],
+            },
+            {
+              label: "APPROACH",
+              items: [
+                {
+                  tag: "FULL CYCLE",
+                  value: "Branding → B2B SaaS",
+                  desc: "From branding and product packaging to B2B SaaS platform interfaces",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ],
 
   projects: [

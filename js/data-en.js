@@ -315,6 +315,61 @@ const SITE_DATA_EN = {
             },
           ],
         },
+        {
+          logoText: "MINISTRY OF EDUCATION",
+          name: "Ministry of Education of Russia → Sberbank Technologies",
+          logoSrc: "assets/logos/minprosv.png",
+          whatIDid: [
+            {
+              title: "Sole designer on the product team",
+              text: "Started as the sole designer on the product team at the Ministry of Education of Russia, then moved with the same team to Sberbank Technologies to scale the product.",
+            },
+            {
+              title: "«Rastim Detey» education portal",
+              text: "Designed the «Rastim Detey» (Raising Children) education portal for children and parents (Ministry of Education).",
+            },
+            {
+              title: "Internal B2B products",
+              text: "Designed internal B2B products for ministry staff.",
+            },
+            {
+              title: "School digital platform",
+              text: "Designed the website for a school digital platform as part of a design team (Sberbank Technologies) — a state education product reaching 10M+ users.",
+            },
+          ],
+          achievementGroups: [
+            {
+              label: "PROJECTS",
+              items: [
+                {
+                  tag: "MINISTRY OF EDUCATION",
+                  value: "«Rastim Detey»",
+                  desc: "Education portal for children and parents",
+                },
+                {
+                  tag: "MINISTRY OF EDUCATION",
+                  value: "B2B platforms",
+                  desc: "Internal products for ministry staff",
+                },
+                {
+                  tag: "SBERBANK TECHNOLOGIES",
+                  value: "10M+ users",
+                  desc: "School digital platform — a state education product",
+                },
+              ],
+            },
+            {
+              label: "TOOLS",
+              items: [
+                {
+                  tag: "STACK",
+                  value: "Adobe XD, Figma",
+                  desc: "Jira, Miro — collaboration with the team and engineering",
+                },
+              ],
+            },
+          ],
+        },
       ],
     },
   ],

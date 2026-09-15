@@ -70,6 +70,19 @@ const SITE_DATA_EN = {
       "I embed design processes into business strategy, connecting user needs, company goals and effective delivery in engineering.",
   },
 
+  education: [
+    {
+      degree: "RSSU — Master's in Design",
+      institution: "Russian State Social University",
+      years: "2016–2019",
+    },
+    {
+      degree: "Product Design Team Lead",
+      institution: "British Higher School of Art & Design",
+      years: "2024",
+    },
+  ],
+
   experience: [
     {
       industry: "Fintech experience",
@@ -496,6 +509,7 @@ const UI_STRINGS = {
     langLabel: "EN",
     skillsHeading: "Что я умею:",
     experienceHeading: "Опыт",
+    educationHeading: "Образование",
     whatIDid: "Что сделала",
     keyAchievements: "Ключевые достижения",
     projectsHeading: "Последние проекты",
@@ -512,6 +526,7 @@ const UI_STRINGS = {
     langLabel: "RU",
     skillsHeading: "What I do:",
     experienceHeading: "Experience",
+    educationHeading: "Education",
     whatIDid: "What I did",
     keyAchievements: "Key achievements",
     projectsHeading: "Latest projects",

@@ -370,6 +370,29 @@
     });
   }
 
+  // ---------- Образование (вертикальный таймлайн) ----------
+  function renderEducation() {
+    const wrap = $("#education-timeline");
+    // Вертикальная линия — левая граница обёртки, кружки-маркеры
+    // абсолютно позиционированы поверх неё через -translate-x-1/2.
+    wrap.className = "max-w-2xl mx-auto border-l-2 border-gray-200 ml-1.5";
+
+    DATA.education.forEach((edu) => {
+      const row = el("div", "relative pl-8 pb-10 last:pb-0");
+      row.appendChild(
+        el("span", "absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-canvas border-2 border-ink")
+      );
+
+      const head = el("div", "flex flex-wrap items-baseline gap-x-3");
+      head.appendChild(el("h3", "font-bold underline text-[20px] md:text-[24px] text-ink leading-snug", edu.degree));
+      head.appendChild(el("span", "text-body font-normal text-muted", edu.years));
+      row.appendChild(head);
+
+      row.appendChild(el("p", "mt-1 text-body font-normal text-ink", edu.institution));
+      wrap.appendChild(row);
+    });
+  }
+
   // ---------- Projects ----------
   function renderProjects() {
     const grid = $("#projects-grid");
@@ -456,6 +479,7 @@
     set("#lang-label", T.langLabel);
     set("#skills-heading", T.skillsHeading);
     set("#experience-heading", T.experienceHeading);
+    set("#education-heading", T.educationHeading);
     set("#projects-heading", T.projectsHeading);
     set("#projects-subtitle", T.projectsSubtitle);
     set("#contact-heading", T.contactHeading);
@@ -480,16 +504,19 @@
   // ---------- Рендер всей страницы ----------
   function render() {
     // Контейнеры очищаем — иначе при смене языка контент задвоится
-    ["#hero-lines", "#client-logos", "#skills-grid", "#experience-accordion", "#projects-grid"].forEach((sel) => {
-      const node = $(sel);
-      if (node) node.innerHTML = "";
-    });
+    ["#hero-lines", "#client-logos", "#skills-grid", "#experience-accordion", "#education-timeline", "#projects-grid"].forEach(
+      (sel) => {
+        const node = $(sel);
+        if (node) node.innerHTML = "";
+      }
+    );
 
     renderHero();
     renderClientLogos();
     renderSkills();
     renderBio();
     renderExperience();
+    renderEducation();
     renderProjects();
     renderContacts();
     renderUIStrings();

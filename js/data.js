@@ -29,7 +29,7 @@ const PRODUCT_ACHIEVEMENTS = [
 const SITE_DATA = {
   profile: {
     name: "Виктория",
-    role: "Product Designer",
+    role: "Product Design Lead",
     photo: "assets/images/photo.jpg",
     // Массив = явные переносы строк, ровно как в макете
     headline: [

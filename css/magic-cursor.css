@@ -1,0 +1,14 @@
+@media (hover: hover) and (pointer: fine) {
+  html, body, a, button, summary, [role="tab"], [role="button"], .screen-button, .plain-image, .phone, .module-art button {
+    cursor: url('../assets/ui/magic-wand.svg') 29 9, auto;
+  }
+  input, textarea, [contenteditable="true"] { cursor: text; }
+  :disabled, [aria-disabled="true"] { cursor: not-allowed; }
+}
+.magic-cursor-trail { position: fixed; inset: 0; z-index: 9999; overflow: hidden; pointer-events: none; contain: strict; }
+.magic-cursor-spark { position: absolute; left: 0; top: 0; width: var(--spark-size); height: var(--spark-size); background: var(--spark-color); clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); animation: wand-spark 550ms ease-out forwards; }
+@keyframes wand-spark {
+  from { transform: translate(var(--spark-x), var(--spark-y)) translate(-50%, -50%) scale(1) rotate(0); opacity: .85; }
+  to { transform: translate(calc(var(--spark-x) + var(--spark-dx)), calc(var(--spark-y) + var(--spark-dy))) translate(-50%, -50%) scale(0) rotate(80deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .magic-cursor-trail { display: none; } }

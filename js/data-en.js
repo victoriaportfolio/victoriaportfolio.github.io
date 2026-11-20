@@ -52,7 +52,7 @@ const SITE_DATA_EN = {
       },
       {
         title: "Design and systems",
-        items: ["UX / UI Design", "Design systems", "CX Design", "Brand Design", "Prototyping"],
+        items: ["UX / UI Design", "Design systems", "CX Design", "Key Visual", "Marketing presentations", "Prototyping"],
       },
       {
         title: "Leadership and process",
@@ -95,7 +95,7 @@ const SITE_DATA_EN = {
           whatIDid: [
             {
               title: "Product strategy and UX optimisation",
-              text: "Designed three high-load B2B platforms (EPR foreign trade, DFA with 50+ bn RUB issuance, clearing platform), cut key operations from 3–5 days to 24 hours and increased product ROI 2.2×.",
+              text: "Designed three high-load B2B platforms (Special project, DFA with 50+ bn RUB issuance, clearing platform), cut key operations from 3–5 days to 24 hours and increased product ROI 2.2×.",
             },
             {
               title: "Design system and scaling solutions",
@@ -125,7 +125,7 @@ const SITE_DATA_EN = {
               desc: "Designed interfaces for issuing and trading DFAs. A metric-driven approach to every interface",
             },
             {
-              tag: "EPR FOREIGN TRADE",
+              tag: "Special project",
               tagRight: "FROM SCRATCH",
               value: "Cross-border payments",
               desc: "Full cycle from request to execution. Onboarding via UNEP — growth in entry conversion. Usability tests with foreign trade specialists",
@@ -437,7 +437,7 @@ const SITE_DATA_EN = {
     {
       title: "B2B platform for cross-border payments",
       description: "Launch of a product solution for connecting banks and processing international payments",
-      cover: "assets/images/proj-b2b-payments.png",
+      cover: "assets/images/proj-b2b-crypto-cover-20261119.png",
       tags: ["Research", "Product Hypotheses", "UX", "UI", "Delivery", "Metrics"],
       links: [
         {
@@ -448,8 +448,8 @@ const SITE_DATA_EN = {
     },
     {
       title: "CREATE — Corporate Assistant for HR",
-      description: "Software platform for managing employees and corporate processes",
-      cover: "assets/images/proj-create.png",
+      description: "A mobile app for bank employees that brings HR services, work tasks, internal communications and documents together in one digital workspace. It helps employees handle day-to-day work requests faster and access corporate services directly from their smartphones.",
+      cover: "assets/images/proj-create-cover-20261119.png",
       tags: ["Brand Identity", "UX Design", "UI Design", "Mobile App"],
       links: [
         {
@@ -460,42 +460,42 @@ const SITE_DATA_EN = {
     },
     {
       title: "HAQQEX",
-      description: "Crypto Ecosystem — product design for a crypto exchange and mobile app",
-      cover: "assets/images/proj-haqqex.png",
+      description: "A crypto ecosystem spanning a trading web platform, website and mobile app. The design covers registration and verification, market discovery, trading and portfolio management. User flows and a consistent visual language connect the different parts of the product.",
+      cover: "assets/images/proj-haqqex-cover-20261119.png",
       tags: ["Product Design", "Crypto", "Mobile App", "Landing Page"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/171243765/HAQQEX" }],
     },
     {
       title: "Ispolin Capital",
-      description: "Design for an investment company — branding and web platform",
+      description: "Brand identity and a web platform for the investment company Ispolin Capital. The project combines identity design, page layouts and the organisation of company information. The structure and visual hierarchy present its approach and investment focus clearly.",
       cover: "assets/images/proj-ispolin.jpg",
       tags: ["Brand Identity", "Web Design", "UI/UX"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/172260851/Ispolin-capital" }],
     },
     {
       title: "Bellator Bike Lab",
-      description: "Branding and design for a bicycle lab",
+      description: "Brand identity and web design for the bicycle lab Bellator Bike Lab. The project brings together the brand identity, visual system and website design. The design expresses the brand’s character and creates a consistent digital presence.",
       cover: "assets/images/proj-bellator.jpg",
       tags: ["Brand Identity", "Web Design", "UI/UX"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/232372549/Bellator-Bike-Lab" }],
     },
     {
       title: "CURIO",
-      description: "Platform design and branding for a creative product",
+      description: "A telemedicine product combining platform design, a mobile interface and branding. The work covers user flows, navigation and the visual system. The focus is on making interactions with the healthcare service clear and creating a consistent product experience.",
       cover: "assets/images/proj-curio.jpg",
       tags: ["Product Design", "Branding", "UI/UX"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/145473747/CURIO" }],
     },
     {
       title: "Dream Car Investment",
-      description: "Investment platform for the automotive market",
+      description: "A web platform for an investment project in the automotive market. The case study presents product design, page structure and the visual presentation of project information. The design helps users understand the proposition and move from an introduction to a more detailed exploration.",
       cover: "assets/images/proj-dreamcar.jpg",
       tags: ["Product Design", "Web Design", "UI/UX"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/159016397/Dream-Car-Investment" }],
     },
     {
       title: "Anywear",
-      description: "Fashion platform with UGC and monetisation mechanics",
+      description: "A mobile fashion platform with user-generated content and monetisation features. The case study covers product design, interaction flows and the app’s visual system. Its content and commercial functions are connected into a coherent experience that helps users navigate the product.",
       cover: "assets/images/proj-anywear.jpg",
       tags: ["Product Design", "Mobile App", "UI/UX"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/143016217/Anywear" }],

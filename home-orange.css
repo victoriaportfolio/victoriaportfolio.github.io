@@ -1,0 +1,184 @@
+/* Homepage accent and two-stage expertise hover. */
+.home-orange {
+  --blue: #fb5e1a;
+  --orange-gradient: linear-gradient(180deg, #ff9e68 0%, #ff7d2b 25%, #ff650e 76%, #f74d0a 100%);
+}
+.home-orange .hero > .eyebrow { text-transform: uppercase; letter-spacing: 0; }
+.home-orange .hero h1 span {
+  background-image: linear-gradient(90deg, #f75b2d 0%, #f98346 23.04%, #f99966 35.45%, #fb944f 47.08%, #ff8b28 57.76%, #f52005 100%);
+}
+.home-orange :is(.small-cta, .button.primary) {
+  color: #080808;
+  background: var(--orange-gradient);
+  font-weight: 500;
+}
+.home-orange :is(.small-cta, .button.primary):hover {
+  color: #080808;
+  background: linear-gradient(180deg, #ffb17f, #ff862f 30%, #ff6a15 80%, #ff5810);
+}
+.home-orange :is(.hero-actions, .contact-actions) > .text-link { color: var(--blue); }
+.home-orange :is(a, button, summary):focus-visible { outline-color: var(--blue); }
+.home-orange .expertise-card:not([open]),
+.home-orange .expertise-card:not([open]):focus-within {
+  background: rgba(255,255,255,.05);
+  color: var(--ink);
+}
+.home-orange .expertise-card:not([open]) :is(.expertise-index, .expertise-subtitle, .expertise-more small) { color: var(--muted); }
+.home-orange .expertise-card h3 { transition: color 120ms ease; }
+.home-orange .expertise-card:not([open]):focus-within h3 { color: var(--blue); }
+@media (hover: hover) and (pointer: fine) {
+  .home-orange .expertise-card:not([open]):hover { background: rgba(255,255,255,.05); }
+  .home-orange .expertise-card:not([open]):hover h3 { color: var(--blue); }
+}
+.home-orange .expertise-card[open] {
+  background: rgba(255,255,255,.05);
+  color: var(--ink);
+}
+.home-orange .expertise-card[open] h3 { color: var(--blue); }
+.home-orange .expertise-card[open] :is(.expertise-index, .expertise-subtitle, .expertise-more small) { color: var(--muted); }
+.home-orange .expertise-card[open] .expertise-more p { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) {
+  .home-orange .expertise-card, .home-orange .expertise-card h3 { transition: none; }
+}
+
+.home-orange .hero h1 { font-weight: 590; letter-spacing: 0; }
+.home-orange .hero h1 span { letter-spacing: -4.2px; }
+.home-orange :is(.small-cta, .button.primary) { font-weight: 510; }
+.home-orange .hero-actions > .text-link { font-weight: 500; }
+.home-orange .expertise-card h3 { font-family: var(--font-display); letter-spacing: 0; }
+.home-orange .expertise-index { font-size: 13px; line-height: 16px; }
+.home-orange .expertise-card[open] .expertise-index { font-size: 13px; }
+.home-orange .expertise-more p { line-height: 1.25; letter-spacing: 0; }
+.home-orange .expertise-more small { line-height: 1.25; letter-spacing: 0; }
+.home-orange .section-heading h2 { font-weight: 590; letter-spacing: -2px; }
+@media (max-width: 700px) {
+  .home-orange .hero h1 { letter-spacing: -.8px; }
+  .home-orange .hero h1 span { letter-spacing: -1.9px; }
+}
+
+/* Figma expanded cards use an 18px gap between every text block. */
+.home-orange .expertise-card[open] > summary { min-height: 0; padding-bottom: 0; }
+.home-orange .expertise-inner { gap: 18px; }
+.home-orange .expertise-card[open] .expertise-index { line-height: 16px; }
+.home-orange .expertise-card[open] .expertise-more { padding-top: 18px; }
+.home-orange .expertise-more p { line-height: 1.2; }
+
+/* Project cards follow the horizontal Figma arrangement, with a next-card preview. */
+.home-orange .work { overflow: hidden; }
+.home-orange .project-slider { --slider-gutter: max(40px, calc((100vw - 1120px) / 2)); }
+.home-orange .project-track {
+  display: flex;
+  grid-template-columns: none;
+  gap: 24px;
+  width: calc(100% + var(--slider-gutter));
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px var(--slider-gutter) 24px 0;
+  margin-top: -8px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.home-orange .project-track::-webkit-scrollbar { display: none; }
+.home-orange .project-track > .project { flex: 0 0 calc(50% - 12px); min-width: 0; scroll-snap-align: start; }
+.home-orange .project-track .project-copy { display: flex; flex: 1; flex-direction: column; }
+.home-orange .project-track .project-actions { display: grid; gap: 12px; margin-top: auto; padding-top: 8px; }
+.home-orange .project-track .project-link { margin-top: 0; padding-top: 0; }
+.home-orange .project-original { justify-self: start; color: var(--muted); font-size: 13px; line-height: 20px; }
+.home-orange .project-original:hover { color: var(--blue); }
+.home-orange .project-track:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; }
+.home-orange .project-slider-controls { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; margin-top: 14px; }
+
+.home-orange .project-slider-arrow { width: 48px; min-height: 44px; padding: 0; border: 0; background: transparent; color: var(--blue); font-size: 28px; line-height: 1; }
+.home-orange .project-slider-arrow:last-child { justify-self: end; }
+.home-orange .project-slider-arrow:disabled { opacity: .25; cursor: default; }
+.home-orange .work .section-end { margin-top: 5px; }
+@media (max-width: 1000px) {
+  .home-orange .project-slider { --slider-gutter: 24px; }
+}
+@media (max-width: 700px) {
+  .home-orange .project-slider { --slider-gutter: 20px; }
+  .home-orange .project-track { gap: 16px; }
+  .home-orange .project-track > .project { flex-basis: calc(100% - 16px); }
+  .home-orange .project-slider-controls { gap: 12px; }
+  
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-orange .project-track { scroll-behavior: auto; }
+}
+
+/* Figma hero: 50px top inset and two deliberate introduction lines on desktop. */
+.home-orange .hero-description { font-family: var(--font-display); }
+.home-orange .hero-description-line { display: block; }
+@media (min-width: 701px) {
+  .home-orange .hero.wrap { padding-top: 50px; }
+  .home-orange .hero-description { font-size: clamp(17px, 2.5vw, 21px); }
+  .home-orange .hero-description-line, .home-orange .hero h1 span { white-space: nowrap; }
+}
+
+/* Reserve expansion space only on desktop; mobile rows follow their content. */
+.home-orange .highlights {
+  align-content: start;
+}
+@media (min-width: 701px) {
+  .home-orange .highlights { grid-auto-rows: var(--expertise-open-height, 340px); }
+}
+@media (max-width: 700px) {
+  .home-orange .highlights { grid-auto-rows: auto; row-gap: 10px; align-items: start; }
+  .home-orange .expertise-card[open] { min-height: 0; }
+}
+
+/* One shared gap prevents adjoining section padding from adding up. */
+.home-orange #main { display: flex; flex-direction: column; gap: 100px; padding-bottom: 100px; }
+.home-orange .hero.wrap { padding-bottom: 0; }
+.home-orange #main > .section { padding-top: 0; padding-bottom: 0; }
+.home-orange .about { grid-template-columns: minmax(0, 473.708fr) minmax(0, 556.367fr); gap: 89.925px; align-items: start; }
+.home-orange .about-photo { align-self: start; border-radius: 20px; }
+.home-orange .about-photo img { aspect-ratio: 474 / 510; object-position: center; filter: none; }
+.home-orange .about-copy h2 { font-size: clamp(36px, 4.4vw, 56px); font-weight: 590; line-height: 1.09; letter-spacing: -1.9992px; }
+.home-orange .about-copy > :last-child { margin-bottom: 0; }
+@media (max-width: 1000px) { .home-orange .about { gap: 55px; } }
+@media (max-width: 700px) {
+  .home-orange .about { grid-template-columns: 1fr; gap: 34px; }
+  .home-orange .about-photo { max-width: 474px; }
+}
+
+/* Current Figma approach and biography: typography, copy width and orange process markers. */
+.home-orange .strengths .section-heading { margin-bottom: 0; }
+.home-orange .skills { margin-top: 65px; gap: 48px; }
+.home-orange .skill-index { line-height: 16px; }
+.home-orange .skill h3 { font-weight: 590; letter-spacing: -.7011px; line-height: 1.2; }
+.home-orange .skill ul { letter-spacing: -.2344px; }
+.home-orange .process { border-color: rgba(255,255,255,.48); letter-spacing: -.9453px; }
+.home-orange .process span:nth-child(even) { color: var(--blue); }
+.home-orange .about-copy .eyebrow { font-size: 13px; line-height: 16px; letter-spacing: -.2762px; margin-bottom: 21px; }
+.home-orange .about-copy p:not(.eyebrow) { font-family: var(--font-display); max-width: none; font-size: 18px; line-height: 1.55; letter-spacing: -.4395px; margin: 26px 0 24px; }
+@media (max-width: 1000px) { .home-orange .skills { gap: 25px; } }
+@media (max-width: 700px) {
+  .home-orange .skills { margin-top: 39px; gap: 35px; }
+  .home-orange .about-copy p:not(.eyebrow) { font-size: 17px; }
+  .home-orange .contact-actions { flex-wrap: wrap; }
+}
+
+/* Centered Behance action shares the header CTA dimensions and content alignment. */
+.home-orange .project-slider-controls { margin-top: 14px; }
+.home-orange .project-slider-portfolio { display: inline-flex; justify-self: center; gap: 8px; }
+.home-orange .project-slider-portfolio span { display: block; margin: 0; line-height: inherit; }
+.home-orange .project-slider-arrow { display: inline-flex; align-items: center; justify-content: center; width: min(184px, 100%); min-height: 44px; }
+.home-orange .project-slider-arrow svg { display: block; width: 100%; height: 16px; }
+.home-orange [data-project-prev] svg { transform: rotate(180deg); }
+.home-orange [data-project-prev]:disabled { visibility: hidden; }
+@media (max-width: 700px) {
+  .home-orange .project-slider-controls { grid-template-columns: 1fr 1fr; row-gap: 12px; }
+  .home-orange .project-slider-portfolio { grid-column: 1 / -1; grid-row: 1; }
+  .home-orange .project-slider-arrow { grid-row: 2; width: min(120px, 100%); }
+}
+
+/* Keep the case section 50px below the expertise grid at every breakpoint. */
+.home-orange .hero.wrap { padding-bottom: 0; }
+.home-orange .work { padding-top: 50px; }
+
+/* Additional portfolio projects are revealed explicitly. */
+.home-orange .project-more-action { display: flex; justify-content: center; margin: 4px 0 18px; }
+.home-orange .project-more-toggle { color: var(--blue); font-weight: 500; }

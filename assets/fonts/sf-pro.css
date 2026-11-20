@@ -1,0 +1,15 @@
+@font-face { font-family: 'SF Pro Display'; font-style: normal; font-weight: 400; font-display: swap; src: url('sf-pro-display-regular.otf') format('opentype'); }
+@font-face { font-family: 'SF Pro Display'; font-style: normal; font-weight: 500 510; font-display: swap; src: url('sf-pro-display-medium.otf') format('opentype'); }
+@font-face { font-family: 'SF Pro Display'; font-style: normal; font-weight: 590 600; font-display: swap; src: url('sf-pro-display-semibold.otf') format('opentype'); }
+@font-face { font-family: 'SF Pro Display'; font-style: normal; font-weight: 700; font-display: swap; src: url('sf-pro-display-bold.otf') format('opentype'); }
+@font-face { font-family: 'SF Pro Text'; font-style: normal; font-weight: 400; font-display: swap; src: url('sfprotext-regular.ttf') format('truetype'); }
+@font-face { font-family: 'SF Pro Text'; font-style: normal; font-weight: 500 510; font-display: swap; src: url('sfprotext-medium.ttf') format('truetype'); }
+@font-face { font-family: 'SF Pro Text'; font-style: normal; font-weight: 590 600; font-display: swap; src: url('sfprotext-semibold.ttf') format('truetype'); }
+@font-face { font-family: 'SF Pro Text'; font-style: normal; font-weight: 700; font-display: swap; src: url('sfprotext-bold.ttf') format('truetype'); }
+:root {
+  --font-text: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+body { font-family: var(--font-text); }
+h1, h2, h3 { font-family: var(--font-display); }
+button, input, textarea, select { font-family: inherit; }

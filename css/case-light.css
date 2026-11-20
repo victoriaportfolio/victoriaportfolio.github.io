@@ -1,0 +1,36 @@
+/* EPR VED: white canvas with blue accents and soft glass surfaces. */
+.case-light { background:#fff; --blue:#007aff; --surface:#f5f7fa; --line:#e0e4eb; }
+.case-light .site-header { background:rgba(255,255,255,.88); backdrop-filter:blur(20px); border-color:var(--line); }
+.case-light .case-hero { padding-top:32px; padding-bottom:64px; }
+.case-light .case-label { margin-top:64px; }
+.case-light .case-hero h1 { font-weight:590; line-height:1.07; }
+.case-light .case-hero h1 span { background-image:linear-gradient(110deg,#007aff 0%,#0058aa 100%); }
+.case-light :is(.case-metric,.summary-panel,.ttv,.hypothesis-panel,.design-principles,.product-screen-copy,.trust-outcome,.result-hero,.takeaway,.case-next) {
+  border:1px solid rgba(120,145,175,.16);
+  background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(239,244,250,.84));
+  box-shadow:inset 0 2px 8px rgba(255,255,255,.9),0 8px 28px rgba(28,56,90,.045);
+}
+.case-light .case-metrics { gap:16px; }
+.case-light .case-metric:first-child { background:linear-gradient(145deg,#f2f8ff,#e6f1ff); }
+.case-light .case-metric strong { color:var(--blue); font-weight:590; }
+.case-light .insight-panel { background:linear-gradient(125deg,#0071e3,#0053ae); box-shadow:inset 0 2px 8px #ffffff5c,0 12px 32px #007aff1c; }
+.case-light .insight-panel .eyebrow,.case-light .insight-panel p:last-child { color:#d5e8ff; }
+.case-light .insight-panel h2 span { color:#fff; }
+.case-light :is(.button.primary,.small-cta) { background:#0071e3; color:white; border:1px solid #0065cb; border-radius:32px; box-shadow:inset 0 2px 7px #ffffff61,0 6px 18px #007aff1a; }
+.case-light :is(.button.primary,.small-cta):hover { background:#007aff; }
+.case-light .language { display:inline-flex; align-items:center; justify-content:center; min-width:58px; height:34px; padding:7px 14px; color:var(--ink); background:#f5f7fa; border:1px solid var(--line); border-radius:24px; }
+.case-light :is(.hypothesis-tab,.product-screen-tab) { border:1px solid var(--line); background:#f7f9fc; }
+.case-light :is(.hypothesis-tab,.product-screen-tab)[aria-selected=true] { background:#0071e3; color:#fff; border-color:#006bd7; box-shadow:inset 0 2px 7px #ffffff55; }
+.case-light .hypothesis-tab[aria-selected=true] span { color:#d2e8ff; }
+.case-light .screen-button { padding:8px; border:1px solid var(--line); background:#f1f4f8; box-shadow:0 10px 36px #1c385a0b; }
+.case-light .screen-button img { border-radius:18px; }
+.case-light .image-expand { background:rgba(255,255,255,.94); border:1px solid var(--line); backdrop-filter:blur(12px); }
+.case-light .case-bottom { background:#f5f7fa; border-top:1px solid var(--line); }
+.case-light :is(a,button):focus-visible { outline:2px solid #007aff; outline-offset:4px; }
+@media(max-width:760px) {
+  .case-light .case-hero { padding-top:24px; padding-bottom:40px; }
+  .case-light .case-label { margin-top:40px; }
+  .case-light .case-metrics { gap:9px; }
+  .case-light .screen-button { padding:4px; }
+  .case-light .screen-button img { border-radius:14px; }
+}

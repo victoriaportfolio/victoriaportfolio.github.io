@@ -1,0 +1,136 @@
+/* The product case shares the homepage's glass surfaces and blue accents. */
+.case-glass { color-scheme: dark; background: #000; }
+.case-glass .case-hero { padding-top: 32px; padding-bottom: 64px; }
+.case-glass .case-label { margin-top: 64px; }
+.case-glass .case-hero h1 { font-weight: 590; line-height: 1.07; }
+.case-glass .case-hero h1 span { background-image: linear-gradient(90deg, #0473e3, #023f7d); }
+.case-glass .case-facts { gap: 24px; }
+.case-glass .case-facts dt { font-size: 12px; }
+.case-glass .case-facts dd { font-size: 14px; }
+.case-glass :is(.case-metric, .summary-panel, .role-pair article, .ttv, .insight-panel,
+  .hypothesis-panel, .solution, .design-principles, .product-screen-copy,
+  .trust-outcome, .result-hero, .takeaway, .case-next) {
+  background: rgba(255,255,255,.05);
+  border: .75px solid rgba(255,255,255,.15);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.case-glass .case-metrics { gap: 16px; }
+.case-glass .case-metric { padding: 24px; }
+.case-glass .case-metric strong { color: #70b7ff; font-weight: 590; }
+.case-glass .case-metric span { font-size: 14px; }
+.case-glass .case-toc a { border-color: var(--line); font-size: 13px; }
+.case-glass .case-toc a[aria-current="location"] { color: #70b7ff; border-color: var(--blue); }
+.case-glass .summary-panel { padding: 24px; }
+.case-glass .summary-row { border-color: var(--line); }
+.case-glass .summary-row h3 { font-size: 14px; }
+.case-glass .summary-row p { font-size: 16px; }
+.case-glass .role-pair { border: 0; padding-top: 0; gap: 16px; }
+.case-glass .role-pair article { padding: 24px; border-radius: 20px; }
+.case-glass .role-pair p { font-size: 16px; }
+.case-glass :is(.role-pair span, .ttv > span, .panel-index, .product-screen-copy > span,
+  .trust-outcome > span) { color: #70b7ff; }
+.case-glass .ttv { padding: 24px; }
+.case-glass .insight-panel { padding: 32px; }
+.case-glass .insight-panel h2 span { color: #70b7ff; }
+.case-glass .insight-panel p:last-child { color: var(--muted); }
+.case-glass :is(.hypothesis-tab, .product-screen-tab, .principles span) {
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.15);
+  color: var(--muted);
+}
+.case-glass :is(.hypothesis-tab, .product-screen-tab):hover { background: rgba(255,255,255,.13); }
+.case-glass :is(.hypothesis-tab, .product-screen-tab)[aria-selected="true"] {
+  background: var(--blue); color: var(--ink); border-color: transparent;
+}
+.case-glass .hypothesis-tab[aria-selected="true"] span { color: var(--ink); }
+.case-glass .hypothesis-tab { font-size: 14px; padding: 18px 16px; }
+.case-glass .hypothesis-panel { padding: 24px; }
+.case-glass .hypothesis-panel .hypothesis-desc { font-size: 16px; }
+.case-glass .solutions { gap: 16px; grid-auto-rows: 1fr; }
+.case-glass .solution { padding: 24px; border-radius: 20px; }
+.case-glass .solution p { font-size: 16px; }
+/* Reset the old numbered marker spacing on the shared glass rim. */
+.case-glass .solution::before { margin: 0; }
+.case-glass .design-principles { padding: 24px; }
+.case-glass .design-principles .system-description { font-size: 16px; }
+.case-glass .product-screen-tab { font-size: 14px; }
+.case-glass .product-screen-copy { padding: 24px; }
+.case-glass .product-screen-copy p { font-size: 16px; }
+.case-glass .screen-button {
+  background: rgba(255,255,255,.05); border: .75px solid rgba(255,255,255,.18);
+  padding: 8px; box-shadow: var(--glass-shadow);
+}
+.case-glass .screen-button img { border-radius: 20px; }
+.case-glass .image-expand {
+  background: rgba(24,24,26,.92); color: var(--ink); backdrop-filter: blur(16px);
+}
+.case-glass .benefits-table { font-size: 14px; }
+.case-glass .trust-outcome { padding: 24px; }
+.case-glass .trust-outcome p { font-size: 16px; }
+.case-glass .result-hero { padding: 24px; }
+.case-glass .result-hero strong, .case-glass .system-time strong { color: #70b7ff; }
+.case-glass .takeaway { padding: 24px; }
+.case-glass .case-bottom { background: #000; border-top: .75px solid var(--line); }
+.case-glass .case-next { padding: 24px; }
+.case-glass .screen-dialog { background: #111113; color: var(--ink); border: .75px solid var(--line); }
+.case-glass .product-dialog-controls { background: rgba(20,20,22,.94); color: var(--ink); }
+.case-glass .product-dialog-controls button { color: var(--ink); background: rgba(255,255,255,.1); }
+.case-glass .dialog-close { color: var(--ink); background: rgba(20,20,22,.92); border-color: var(--line); }
+.case-glass :is(a, button):focus-visible { outline: 2px solid #70b7ff; outline-offset: 5px; }
+@media (max-width: 1000px) {
+  .case-glass .case-bottom-inner { align-items: flex-start; }
+  .case-glass .case-next { width: 290px; padding: 20px; }
+}
+@media (max-width: 760px) {
+  .case-glass .case-hero { padding-top: 24px; padding-bottom: 40px; }
+  .case-glass .case-label { margin-top: 40px; }
+  .case-glass .case-toc { background: rgba(10,10,11,.94); border-color: var(--line); }
+  .case-glass .case-toc a { font-size: 12px; }
+  .case-glass .case-metrics { gap: 12px; }
+  .case-glass .case-metric strong { font-size: 36px; }
+  .case-glass .screen-button { padding: 4px; }
+  .case-glass .screen-button img { border-radius: 16px; }
+  .case-glass .insight-panel { padding: 24px; }
+  .case-glass .case-next { width: 100%; padding: 24px; }
+  .case-glass .role-pair { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .case-glass .case-metrics { grid-template-columns: 1fr; }
+  .case-glass .case-metric strong { font-size: 42px; }
+  .case-glass .result-hero { grid-template-columns: 1fr; }
+}
+
+/* Shared geometry for the principle pills and product-screen tabs. */
+.case-glass :is(.principles span, .product-screen-tab) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 16px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: normal;
+}
+@media (pointer: coarse) {
+  .case-glass :is(.principles span, .product-screen-tab) { min-height: 44px; }
+}
+
+.case-glass .case-demo-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 321 / 181;
+  object-fit: contain;
+  background: #000;
+}
+
+/* Match the two gaps around the Bank Time to Value card. */
+.case-glass #problem { padding-bottom: 32px; }
+
+.case-glass :is(h2, h3, h4) .heading-accent { color: #70b7ff; }
+
+.case-glass .case-metric-qualitative strong, .case-glass .result-hero-qualitative strong { font-size: 26px; line-height: 1.25; letter-spacing: -.6px; }

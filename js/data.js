@@ -78,7 +78,7 @@ const SITE_DATA = {
       },
       {
         title: "Дизайн и системы",
-        items: ["UX / UI Design", "Дизайн-системы", "CX Design", "Brand Design", "Прототипирование"],
+        items: ["UX / UI Design", "Дизайн-системы", "CX Design", "Key Visual", "Маркетинговые презентации", "Прототипирование"],
       },
       {
         title: "Лидерство и процессы",
@@ -124,7 +124,7 @@ const SITE_DATA = {
           whatIDid: [
             {
               title: "Продуктовая стратегия и UX-оптимизация",
-              text: "Реализовала дизайн трёх высоконагруженных B2B-платформ (ЭПР ВЭД, ЦФА 50+ млрд руб. эмиссии, клиринговая платформа), сократила время ключевых операций с 3–5 дней до 24 часов и увеличила ROI продукта в 2,2 раза.",
+              text: "Реализовала дизайн трёх высоконагруженных B2B-платформ (Спецпроект, ЦФА 50+ млрд руб. эмиссии, клиринговая платформа), сократила время ключевых операций с 3–5 дней до 24 часов и увеличила ROI продукта в 2,2 раза.",
             },
             {
               title: "Дизайн-система и масштабирование решений",
@@ -154,7 +154,7 @@ const SITE_DATA = {
               desc: "Спроектировала интерфейсы для выпуска и обращения ЦФА. Метрико-ориентированный подход к каждому интерфейсу",
             },
             {
-              tag: "ЭПР ВЭД",
+              tag: "Спецпроект",
               tagRight: "С НУЛЯ",
               value: "Международные переводы",
               desc: "Полный цикл от заявки до исполнения. Онбординг через УНЭП — рост конверсии входа. Юзабилити-тесты со специалистами ВЭД",
@@ -478,7 +478,7 @@ const SITE_DATA = {
       title: "B2B-платформа для внешнеэкономических переводов",
       description:
         "Launch продуктового решения для подключения банков и проведения международных переводов",
-      cover: "assets/images/proj-b2b-payments.png",
+      cover: "assets/images/proj-b2b-crypto-cover-20261119.png",
       tags: ["Research", "Product Hypotheses", "UX", "UI", "Delivery", "Metrics"],
       links: [
         {
@@ -489,8 +489,8 @@ const SITE_DATA = {
     },
     {
       title: "CREATE — Corporate Assistant для HR",
-      description: "Софтверная платформа для управления сотрудниками и корпоративными процессами",
-      cover: "assets/images/proj-create.png",
+      description: "Мобильное приложение для сотрудников банка, объединяющее HR-сервисы, рабочие задачи, внутренние коммуникации и документы в едином цифровом пространстве. Помогает быстрее решать повседневные рабочие вопросы и взаимодействовать с корпоративными сервисами прямо со смартфона.",
+      cover: "assets/images/proj-create-cover-20261119.png",
       tags: ["Brand Identity", "UX Design", "UI Design", "Mobile App"],
       links: [
         {
@@ -501,42 +501,42 @@ const SITE_DATA = {
     },
     {
       title: "HAQQEX",
-      description: "Crypto Ecosystem — дизайн продукта для крипто-биржи и мобильного приложения",
-      cover: "assets/images/proj-haqqex.png",
+      description: "Криптоэкосистема, объединяющая торговую веб-платформу, сайт и мобильное приложение. Дизайн охватывает регистрацию и верификацию, обзор рынка, торговлю и управление портфелем. Пользовательские сценарии и визуальная система связывают разные части продукта в последовательный опыт.",
+      cover: "assets/images/proj-haqqex-cover-20261119.png",
       tags: ["Product Design", "Crypto", "Mobile App", "Landing Page"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/171243765/HAQQEX" }],
     },
     {
       title: "Ispolin Capital",
-      description: "Дизайн для инвестиционной компании — брендинг и веб-платформа",
+      description: "Фирменный стиль и веб-платформа инвестиционной компании Ispolin Capital. В проекте объединены айдентика, дизайн страниц и организация информации о компании. Структура и визуальная иерархия помогают последовательно раскрыть её подход и инвестиционное направление.",
       cover: "assets/images/proj-ispolin.jpg",
       tags: ["Brand Identity", "Web Design", "UI/UX"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/172260851/Ispolin-capital" }],
     },
     {
       title: "Bellator Bike Lab",
-      description: "Брендинг и дизайн для велосипедной лаборатории",
+      description: "Брендинг и веб-дизайн для велосипедной лаборатории Bellator Bike Lab. Проект включает фирменную айдентику, визуальную систему и оформление сайта. Задача дизайна — передать характер бренда и последовательно представить его в цифровой среде.",
       cover: "assets/images/proj-bellator.jpg",
       tags: ["Brand Identity", "Web Design", "UI/UX"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/232372549/Bellator-Bike-Lab" }],
     },
     {
       title: "CURIO",
-      description: "Дизайн платформы и брендинг для креативного продукта",
+      description: "Medtech-продукт для телемедицины, в котором объединены дизайн платформы, мобильного интерфейса и брендинг. Работа охватывает пользовательские сценарии, навигацию и визуальную систему. Основной фокус — понятное взаимодействие с медицинским сервисом и последовательный опыт внутри продукта.",
       cover: "assets/images/proj-curio.jpg",
       tags: ["Product Design", "Branding", "UI/UX"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/145473747/CURIO" }],
     },
     {
       title: "Dream Car Investment",
-      description: "Инвестиционная платформа для автомобильного рынка",
+      description: "Веб-платформа инвестиционного проекта на автомобильном рынке. В кейсе представлены продуктовый дизайн, структура страниц и визуальная подача информации о проекте. Задача — помочь пользователю разобраться в предложении и пройти путь от первого знакомства к более подробному изучению.",
       cover: "assets/images/proj-dreamcar.jpg",
       tags: ["Product Design", "Web Design", "UI/UX"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/159016397/Dream-Car-Investment" }],
     },
     {
       title: "Anywear",
-      description: "Fashion-платформа с UGC и механиками монетизации",
+      description: "Мобильная fashion-платформа с пользовательским контентом и механиками монетизации. В кейсе показаны продуктовый дизайн, сценарии взаимодействия и визуальная система приложения. Контентная и коммерческая части связаны в единый опыт, который помогает пользователю ориентироваться в продукте.",
       cover: "assets/images/proj-anywear.jpg",
       tags: ["Product Design", "Mobile App", "UI/UX"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/143016217/Anywear" }],

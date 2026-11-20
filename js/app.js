@@ -1,565 +1,292 @@
-/**
- * Рендер всего сайта + интерактивность.
- * Русский контент — js/data.js, английский — js/data-en.js.
- * Правьте контент там, сюда лезть не обязательно.
- */
-
-(function () {
-  "use strict";
-
-  const $ = (sel, root = document) => root.querySelector(sel);
-  const el = (tag, className, html) => {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (html !== undefined) node.innerHTML = html;
-    return node;
-  };
-
-  // ---------- Язык ----------
-  const LANG_KEY = "site-lang";
-
-  function currentLang() {
-    const saved = localStorage.getItem(LANG_KEY);
-    return saved === "en" || saved === "ru" ? saved : "ru";
+const COPY = {
+  ru: {
+    name: 'Виктория', work: 'Проекты', about: 'Обо мне', experience: 'Опыт', sayHello: '<span>Написать</span><span aria-hidden="true">↗</span>',
+    hero: 'От продуктового видения<br><span>До бизнес-результата</span>',
+    intro: '<span class="hero-description-line">Участвую в формировании продуктовой стратегии, создаю UX-архитектуру и Key Visual.</span><span class="hero-description-line">Веду полный цикл дизайна — от концепции до запуска, тестирования и развития</span>',
+    viewWork: 'Смотреть проекты <span aria-hidden="true">↓</span>', meet: 'Познакомиться <span aria-hidden="true">↗</span>',
+    behind: 'За каждым интерфейсом — человек.', aboutTitle: 'Дизайн с вниманием<br>к людям<br><span>И результату</span>',
+    aboutText: 'От исследования проблемы до запуска и развития продукта. Помогаю командам превращать сложную логику в понятный опыт, проверяю решения через исследования и тестирование, связывая каждое улучшение с целями бизнеса.',
+    exploreExperience: 'Мой опыт <span aria-hidden="true">↓</span>', selected: 'Избранное', workTitle: 'Продуктовые кейсы',
+    workSubtitle: 'Разные задачи. Один фокус —<br>опыт, который работает.', more: 'Ещё 4 проекта', behance: 'Всё портфолио на Behance <span aria-hidden="true">↗</span>',
+    approach: 'Подход к работе', strengthsTitle: 'От первого «почему»<br>до последнего пикселя.', experienceLabel: 'Команды и продукты',
+    experienceTitle: 'Опыт, который<br>помогает видеть шире.', experienceSubtitle: 'Финансы, образование, технологии.<br>Продукты для международных рынков.',
+    next: 'Следующий шаг', contactTitle: 'Хороший продукт<br>начинается с разговора.', contactText: 'Расскажите, над чем работаете.<br>Вместе найдём точку, где дизайн принесёт больше пользы.',
+    telegram: 'Написать в Telegram <span aria-hidden="true">↗</span>', email: 'На почту <span aria-hidden="true">↗</span>', copy: 'Копировать', top: 'Наверх ↑', education: 'Образование', case: 'Смотреть кейс', copied: 'Адрес скопирован', copyFailed: 'Не удалось скопировать. Можно написать по ссылке «На почту».',
+    highlights: [['Опыт','10 лет','в продуктовом дизайне'],['Специализация','3 года','в Fintech'],['Полный цикл','End to end','от Discovery до Delivery'],['Лидерство','Design Lead','команды, системы, процессы']],
+    meta: ['Fintech / B2B','HR Tech / SaaS','Crypto / Web3','Fintech / Investment','Brand / Web','Medtech / Mobile','Investment / Web','Fashion / Mobile'],
+    caseTitles: {0:'Международные переводы.<br>Весь путь в одной платформе.',1:'CREATE.<br>Корпоративные процессы проще.',2:'HAQQEX.<br>Единая криптоэкосистема.',5:'CURIO.<br>Цифровой опыт в Medtech.'}
+  },
+  en: {
+    name: 'Victoria', work: 'Work', about: 'About', experience: 'Experience', sayHello: '<span>Say hello</span><span aria-hidden="true">↗</span>',
+    hero: 'From product vision<br><span>To business impact</span>', intro: '<span class="hero-description-line">I help shape product strategy, UX architecture and Key Visual.</span><span class="hero-description-line">I lead the full design cycle — from concept to launch, testing and growth.</span>',
+    viewWork: 'Explore my work <span aria-hidden="true">↓</span>', meet: 'Get to know me <span aria-hidden="true">↗</span>',
+    behind: 'A person behind every interface.', aboutTitle: 'Designed for people.<br><span>Built for impact.</span>',
+    aboutText: 'From understanding the problem to launching and growing the product. I help teams turn complex logic into clear experiences, validate solutions through research and testing, and connect every improvement to business goals.',
+    exploreExperience: 'My experience <span aria-hidden="true">↓</span>', selected: 'Selected work', workTitle: 'Product case studies', workSubtitle: 'Different challenges. One focus.<br>An experience that works.',
+    more: '4 more projects', behance: 'All work on Behance <span aria-hidden="true">↗</span>', approach: 'How I work', strengthsTitle: 'From the first “why”<br>to the final pixel.',
+    experienceLabel: 'Teams and products', experienceTitle: 'Experience that brings<br>a wider perspective.', experienceSubtitle: 'Finance, education, technology.<br>Products for international markets.',
+    next: 'The next step', contactTitle: 'Great products<br>start with a conversation.', contactText: 'Tell me what you’re working on.<br>Let’s find where design can make a difference.',
+    telegram: 'Message on Telegram <span aria-hidden="true">↗</span>', email: 'Send an email <span aria-hidden="true">↗</span>', copy: 'Copy', top: 'Back to top ↑', education: 'Education', case: 'View case study', copied: 'Email address copied', copyFailed: 'Couldn’t copy the address. Use the email link above.',
+    highlights: [['Experience','10 years','in product design'],['Specialization','3 years','in Fintech'],['Full cycle','End to end','from Discovery to Delivery'],['Leadership','Design Lead','teams, systems, processes']],
+    meta: ['Fintech / B2B','HR Tech / SaaS','Crypto / Web3','Fintech / Investment','Brand / Web','Medtech / Mobile','Investment / Web','Fashion / Mobile'],
+    caseTitles: {0:'Cross-border payments.<br>One connected platform.',1:'CREATE.<br>Workplace processes, simplified.',2:'HAQQEX.<br>A connected crypto ecosystem.',5:'CURIO.<br>A digital Medtech experience.'}
   }
+};
+COPY.ru.projectDescription = 'Платформа международных переводов с использованием криптовалют в рамках экспериментального режима. Подключение банков, согласование сделок и прозрачные статусы транзакций.';
+COPY.en.projectDescription = 'A cross-border payments platform using cryptocurrencies within an experimental regime. Bank onboarding, deal coordination and transparent transaction statuses.';
+COPY.ru.meta[0] = 'Fintech / B2B / Crypto';
+COPY.en.meta[0] = 'Fintech / B2B / Crypto';
+COPY.ru.more = 'Ещё проекты';
+COPY.en.more = 'More projects';
+COPY.ru.less = 'Скрыть проекты';
+COPY.en.less = 'Show fewer projects';
+Object.assign(COPY.ru, { projectSlider: 'Продуктовые кейсы', previousProjects: 'Предыдущие проекты', nextProjects: 'Следующие проекты', firstProjects: 'В начало' });
+Object.assign(COPY.en, { projectSlider: 'Product case studies', previousProjects: 'Previous projects', nextProjects: 'Next projects', firstProjects: 'Back to start' });
+const EXPERTISE = {
+  ru: [
+    ['Strategy', 'Что и зачем создаю', 'Определяю стратегию развития и ценность продукта на основе бизнес-целей, потребностей пользователей и исследований.', 'Product Discovery · Product Vision · Value Proposition · Product Strategy'],
+    ['Experience', 'Как продукт работает', 'Проектирую UX-архитектуру, продуктовую логику и сценарии взаимодействия, превращая концепцию в целостный пользовательский опыт.', 'UX Architecture · User Flows · Interaction Design · Prototyping'],
+    ['Identity', 'Как продукт воспринимается', 'Создаю визуальное направление и интерфейсную систему, формируя узнаваемый и последовательный образ продукта.', 'Art Direction · Visual Identity · UI Design · Design Systems'],
+    ['Evolution', 'Как продукт развивается', 'Проверяю гипотезы и дизайн-решения, используя результаты тестирования для улучшения опыта и дальнейшего развития продукта.', 'Usability Testing · Hypothesis Validation · Product Iteration · UX Optimization']
+  ],
+  en: [
+    ['Strategy', 'What we build and why', 'I define product strategy and value through business goals, user needs and research.', 'Product Discovery · Product Vision · Value Proposition · Product Strategy'],
+    ['Experience', 'How the product works', 'I design UX architecture, product logic and interaction flows, turning a concept into a cohesive user experience.', 'UX Architecture · User Flows · Interaction Design · Prototyping'],
+    ['Identity', 'How the product is perceived', 'I create visual direction and interface systems to build a recognizable and consistent product identity.', 'Art Direction · Visual Identity · UI Design · Design Systems'],
+    ['Evolution', 'How the product evolves', 'I test hypotheses and design decisions, using the findings to improve the experience and guide product development.', 'Usability Testing · Hypothesis Validation · Product Iteration · UX Optimization']
+  ]
+};
+let language = new URLSearchParams(location.search).get('lang');
+if (!['ru', 'en'].includes(language)) {
+  try { language = localStorage.getItem('victoria-language') === 'en' ? 'en' : 'ru'; } catch { language = 'ru'; }
+}
+const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const external = 'target="_blank" rel="noopener"';
+let moreProjectsExpanded = false;
+function projectCard(project, index, copy, position = index) {
+  const title = copy.caseTitles[index] || escapeHTML(project.title);
+  const localPath = {0: 'cross-border-payments', 1: 'create', 2: 'haqqex'}[index];
+  const isLocalCase = Boolean(localPath);
+  const href = isLocalCase ? `/case/${localPath}/?lang=${language}` : project.links[0].href;
+  const attributes = isLocalCase ? '' : external;
+  const originalLabel = language === 'ru' ? 'Оригинал на Behance' : 'Original on Behance';
+  return `<article class="project"${position >= 3 ? ` data-extra-project${moreProjectsExpanded ? '' : ' hidden'}` : ''}><a class="project-visual" href="${escapeHTML(href)}" ${attributes} aria-label="${escapeHTML(project.title)}"><img src="${escapeHTML(project.cover)}" alt="${escapeHTML(project.title)}" loading="lazy" width="800" height="500"></a><div class="project-copy"><div class="project-meta"><span>${copy.meta[index]}</span><span>${String(position + 1).padStart(2,'0')}</span></div><h3>${title}</h3><p>${escapeHTML(index === 0 ? copy.projectDescription : project.description)}</p><div class="project-actions"><a class="project-link" href="${escapeHTML(href)}" ${attributes}><span>${copy.case}${isLocalCase ? '' : ' · Behance'}</span><span aria-hidden="true">${isLocalCase ? '→' : '↗'}</span></a>${isLocalCase ? `<a class="project-original" href="${escapeHTML(project.links[0].href)}" ${external}>${originalLabel} <span aria-hidden="true">↗</span></a>` : ''}</div></div></article>`;
+}
+function achievement(item) {
+  return `<div class="result"><small>${escapeHTML(item.tag)}</small><strong>${escapeHTML(item.value)}</strong><p>${escapeHTML(item.desc)}</p></div>`;
+}
+function render() {
+  clearExpertiseHoverTimers();
+  scheduleExpertiseSizing();
+  const copy = COPY[language];
+  const data = language === 'en' ? SITE_DATA_EN : SITE_DATA;
+  const openExpertise = [...document.querySelectorAll('.expertise-card[open]')].map(el => el.dataset.expertise);
+  const openIndustries = [...document.querySelectorAll('.industry[open]')].map(el => el.dataset.industry);
+  document.documentElement.lang = language;
+  document.title = `${copy.name} — Product Design Lead`;
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.innerHTML = copy[el.dataset.i18n]; });
+  const toggle = document.getElementById('language');
+  document.getElementById('language-label').textContent = language === 'ru' ? 'EN' : 'RU';
+  document.querySelectorAll('[data-language]').forEach(option => option.setAttribute('aria-checked', String(option.dataset.language === language))); 
+  toggle.setAttribute('aria-label', language === 'ru' ? 'Выбрать язык' : 'Choose language');
+  document.querySelector('.wordmark').setAttribute('aria-label', `${copy.name} — ${language === 'ru' ? 'главная' : 'home'}`);
+  document.querySelector('.nav').setAttribute('aria-label', language === 'ru' ? 'Основная навигация' : 'Main navigation');
+  document.querySelector('.avatar img').alt = copy.name;
+  document.getElementById('highlights').innerHTML = EXPERTISE[language].map((card, index) => `<details class="expertise-card glass" data-expertise="${index}" ${openExpertise.includes(String(index)) ? 'open' : ''}><summary><span class="expertise-inner"><span class="expertise-index">0${index + 1}<img class="expertise-chevron" src="assets/ui/expertise-chevron.svg" width="10" height="10.0799" alt="" aria-hidden="true"></span><h3>${escapeHTML(card[0])}</h3><span class="expertise-subtitle">${escapeHTML(card[1])}</span></span></summary><div class="expertise-more"><p>${escapeHTML(card[2])}</p><small>${escapeHTML(card[3])}</small></div></details>`).join('');
+  document.getElementById('projects').innerHTML = [0,1,2,4,3,5,6,7].map((index, position) => projectCard(data.projects[index], index, copy, position)).join('');
+  setupProjectSlider(copy);
+  bindExpertiseInteraction();
+  document.getElementById('skills').innerHTML = data.skills.columns.map((skill,index) => `<article class="skill"><span class="skill-index">0${index + 1}</span><h3>${escapeHTML(skill.title)}</h3><ul>${skill.items.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul></article>`).join('');
+  document.getElementById('experience-list').innerHTML = data.experience.map((industry,index) => `<details class="industry" data-industry="${index}" ${openIndustries.includes(String(index)) ? 'open' : ''}><summary><span class="industry-title">${escapeHTML(industry.industry)}</span><span class="industry-label">${escapeHTML(industry.badge)}</span><span class="plus" aria-hidden="true">+</span></summary>${industry.companies.map(company => `<article class="company"><h3>${escapeHTML(company.name)}</h3><div class="company-activities">${company.whatIDid.map(activity => `<div class="activity"><h4>${escapeHTML(activity.title)}</h4><p>${escapeHTML(activity.text)}</p></div>`).join('')}</div>${company.achievements ? `<div class="results">${company.achievements.map(achievement).join('')}</div>` : ''}${(company.achievementGroups || []).map(group => `<div class="results">${group.items.map(achievement).join('')}</div>`).join('')}</article>`).join('')}</details>`).join('');
+  document.getElementById('education').innerHTML = `<p class="education-label">${copy.education}</p>${data.education.map(item => `<article class="education-item"><span>${escapeHTML(item.years)}</span><div><h3>${escapeHTML(item.degree)}</h3><p>${escapeHTML(item.institution)}</p></div></article>`).join('')}`;
+  document.querySelectorAll('h1, h2, h3, h4').forEach(heading => {
+    const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) walker.currentNode.textContent = walker.currentNode.textContent.replace(/\./g, '');
+  });
+}
 
-  // Данные текущего языка. Контакты и логотипы общие — берём из RU-версии.
-  let DATA = SITE_DATA;
-  let T = UI_STRINGS.ru;
-
-  function selectLang(lang) {
-    const base = lang === "en" ? SITE_DATA_EN : SITE_DATA;
-    DATA = Object.assign({}, base, {
-      contacts: SITE_DATA.contacts,
-      clientLogos: SITE_DATA.clientLogos,
-    });
-    T = UI_STRINGS[lang];
-  }
-
-  // ---------- Hero ----------
-  function renderHero() {
-    const p = DATA.profile;
-    // Строку можно задать массивом — тогда перенос ставится ровно там,
-    // где нужно по макету, а не там, где решит браузер.
-    const setLines = (sel, value) => {
-      const node = $(sel);
-      node.textContent = "";
-      const parts = Array.isArray(value) ? value : [value];
-      parts.forEach((part, i) => {
-        if (i > 0) node.appendChild(document.createElement("br"));
-        node.appendChild(document.createTextNode(part));
+let expertiseSizingFrame;
+function scheduleExpertiseSizing() {
+  cancelAnimationFrame(expertiseSizingFrame);
+  expertiseSizingFrame = requestAnimationFrame(() => {
+    const grid = document.getElementById('highlights');
+    const cards = [...grid.querySelectorAll('.expertise-card')];
+    if (!cards.length) return;
+    if (matchMedia('(max-width: 700px)').matches) {
+      grid.style.removeProperty('--expertise-summary-height');
+      grid.style.removeProperty('--expertise-open-height');
+      return;
+    }
+    const base = 141;
+    // Measure each state independently: an open card must not reserve closed-header space.
+    const sizes = cards.map(card => {
+      const measure = card.cloneNode(true);
+      measure.dataset.expertiseMeasure = 'true';
+      Object.assign(measure.style, {
+        position: 'fixed', left: '-100000px', top: '0',
+        width: `${card.getBoundingClientRect().width}px`,
+        minHeight: '0', height: 'auto', visibility: 'hidden', pointerEvents: 'none'
       });
-    };
-    setLines("#hero-headline", p.headline);
-    setLines("#hero-subheadline", p.subheadline);
-
-    const lines = $("#hero-lines");
-    p.lines.forEach((line) => lines.appendChild(el("p", "", line)));
-
-    $("#cta-label").textContent = p.ctaLabel;
-    $("#cta-button").href = p.ctaHref;
-
-    const photo = $("#hero-photo");
-    const showFallback = () => {
-      const fallback = el("div", "mx-auto h-28 w-28 md:h-32 md:w-32 rounded-full photo-fallback ring-1 ring-black/5 shadow-sm", p.name.charAt(0));
-      photo.replaceWith(fallback);
-    };
-    // Картинка могла уже упасть с ошибкой до того, как этот код выполнился
-    // (script стоит в конце body, но <img> начинает грузиться сразу при парсинге HTML).
-    if (photo.complete && photo.naturalWidth === 0) {
-      showFallback();
-    } else {
-      photo.addEventListener("error", showFallback);
-    }
-  }
-
-  // ---------- Client logos ----------
-  function renderClientLogos() {
-    const wrap = $("#client-logos");
-    DATA.clientLogos.forEach((logo) => {
-      if (logo.type === "image" && logo.src) {
-        const img = el("img");
-        img.src = logo.src;
-        img.alt = logo.name;
-        img.loading = "lazy";
-        // Логотипы имеют разные пропорции — object-contain в боксе фиксированной
-        // высоты выравнивает их по оптическому размеру.
-        // shrink-0 держит логотипы в одну строку; ширина распределяется justify-between
-        img.className =
-          "h-11 sm:h-14 lg:h-[68px] w-auto shrink-0 object-contain opacity-75 hover:opacity-100 transition-opacity";
-        wrap.appendChild(img);
-      } else {
-        const chip = el("span", "logo-chip text-sm md:text-base opacity-70 hover:opacity-100 transition-opacity", logo.short || logo.name);
-        chip.title = logo.name;
-        wrap.appendChild(chip);
-      }
+      measure.setAttribute('aria-hidden', 'true');
+      measure.inert = true;
+      measure.open = false;
+      measure.querySelector('summary').style.minHeight = '0';
+      grid.append(measure);
+      const closed = measure.querySelector('summary').getBoundingClientRect().height;
+      measure.open = true;
+      const open = measure.getBoundingClientRect().height;
+      measure.remove();
+      return { closed, open };
     });
-  }
-
-  // ---------- Skills ----------
-  function renderSkills() {
-    const s = DATA.skills;
-    $("#skills-eyebrow").textContent = s.eyebrow;
-    $("#skills-title").textContent = s.title;
-    $("#skills-title-highlight").textContent = s.titleHighlight;
-
-    const grid = $("#skills-grid");
-    s.columns.forEach((col) => {
-      const colEl = el("div");
-      colEl.appendChild(el("h3", "font-bold text-accent text-base md:text-lg", col.title));
-      const list = el("ul", "mt-3 space-y-2 text-sm md:text-base text-gray-700");
-      col.items.forEach((item) => list.appendChild(el("li", "", item)));
-      colEl.appendChild(list);
-      grid.appendChild(colEl);
+    grid.style.setProperty('--expertise-summary-height', `${Math.ceil(Math.max(base, ...sizes.map(size => size.closed)))}px`);
+    grid.style.setProperty('--expertise-open-height', `${Math.ceil(Math.max(...sizes.map(size => size.open)))}px`);
+  });
+}
+const expertiseGrid = document.getElementById('highlights');
+const expertiseHoverMode = matchMedia('(min-width: 701px) and (hover: hover) and (pointer: fine)');
+const expertiseHoverTimers = new Map();
+const EXPERTISE_HOVER_DELAY = 280;
+function clearExpertiseHoverTimers() {
+  for (const timer of expertiseHoverTimers.values()) clearTimeout(timer);
+  expertiseHoverTimers.clear();
+}
+function cancelExpertiseHover(card) {
+  clearTimeout(expertiseHoverTimers.get(card));
+  expertiseHoverTimers.delete(card);
+}
+function bindExpertiseInteraction() {
+  expertiseGrid.querySelectorAll('.expertise-card').forEach(card => {
+    card.addEventListener('pointerenter', event => {
+      if (!expertiseHoverMode.matches || event.pointerType === 'touch') return;
+      cancelExpertiseHover(card);
+      expertiseHoverTimers.set(card, setTimeout(() => {
+        expertiseHoverTimers.delete(card);
+        if (card.isConnected && expertiseHoverMode.matches && card.matches(':hover')) card.open = true;
+      }, EXPERTISE_HOVER_DELAY));
     });
-  }
-
-  // ---------- Bio ----------
-  function renderBio() {
-    const b = DATA.bio;
-    // Кегль и жирность наследуются от .display-text — здесь только цвет.
-    $("#bio-text").innerHTML =
-      `<span class="text-ink">${b.strong1}</span> ` +
-      `<span class="text-ink">${b.muted}</span> ` +
-      `<span class="text-ink">${b.strong2}</span>`;
-  }
-
-  // ---------- Experience accordion ----------
-  const LOGO_STYLES = {
-    moex: "bg-red-600 text-white",
-    sber: "bg-emerald-600 text-white",
-    bre: "bg-gray-800 text-white",
-    generic: "bg-gray-200 text-gray-700",
-  };
-
-  // Цвет пилюль-тегов: по умолчанию синий, у Сбера — фирменный зелёный
-  const ACCENT_BG = {
-    green: "bg-emerald-600",
-    blue: "bg-accent",
-  };
-
-  function pill(text, isFill, accent) {
-    const bg = isFill ? "bg-amber-500" : ACCENT_BG[accent] || ACCENT_BG.blue;
-    return el(
-      "span",
-      `inline-flex items-center rounded-full text-white text-[10px] md:text-[11px] font-bold uppercase tracking-wide px-3 py-1 whitespace-nowrap ${bg}`,
-      text
-    );
-  }
-
-  function renderAchievement(item, accent) {
-    const isFill = item.tag.startsWith("[ЗАПОЛНИТЬ]");
-    const wrap = el("div", "rounded-2xl bg-card p-5 flex flex-col");
-
-    // Верхняя строка: тег слева, опциональный тег справа
-    const top = el("div", "flex items-start justify-between gap-3");
-    top.appendChild(pill(item.tag, isFill, accent));
-    if (item.tagRight) top.appendChild(pill(item.tagRight, isFill, accent));
-    wrap.appendChild(top);
-
-    wrap.appendChild(
-      el("p", `mt-4 font-bold text-[17px] md:text-[19px] leading-snug ${isFill ? "fill-marker" : "text-ink"}`, item.value)
-    );
-
-    if (item.desc) {
-      wrap.appendChild(
-        el("p", `mt-2 text-body font-normal leading-relaxed ${isFill ? "fill-marker" : "text-muted"}`, item.desc)
-      );
-    }
-
-    return wrap;
-  }
-
-  // Достижения могут быть плоским списком (MOEX) или сгруппированными
-  // по подзаголовкам (Сбер, Feymanlabs, БРЭ) — приводим к одному виду.
-  function achievementGroupsOf(company) {
-    if (company.achievementGroups) return company.achievementGroups;
-    if (company.achievements) return [{ items: company.achievements }];
-    return [];
-  }
-
-  const HOVER_CAPABLE = window.matchMedia && matchMedia("(hover: hover) and (pointer: fine)").matches;
-
-  /**
-   * Состояние одной строки аккордеона: открыта, если её «приколол» клик
-   * (pinned) ИЛИ сейчас над ней курсор (hovering) — но клик всегда может
-   * форсированно закрыть строку прямо во время наведения: suppressHover
-   * не даёт наведению тут же открыть её обратно, пока курсор не уйдёт
-   * и не вернётся заново.
-   */
-  function makeAccordionController(item, trigger) {
-    const state = { pinned: false, hovering: false, suppressHover: false };
-    function apply() {
-      const shouldOpen = state.pinned || (state.hovering && !state.suppressHover);
-      item.classList.toggle("open", shouldOpen);
-      trigger.setAttribute("aria-expanded", String(shouldOpen));
-    }
-    trigger.addEventListener("click", () => {
-      if (item.classList.contains("open")) {
-        state.pinned = false;
-        state.suppressHover = true; // клик во время наведения — форсированное закрытие
-      } else {
-        state.pinned = true;
-        state.suppressHover = false;
-      }
-      apply();
+    card.addEventListener('pointerleave', event => {
+      cancelExpertiseHover(card);
+      if (expertiseHoverMode.matches && event.pointerType !== 'touch') card.open = false;
     });
-    return { state, apply };
-  }
-
-  // Наведение на industry-строку раскрывает её саму И все вложенные
-  // компании разом (только на устройствах с настоящим hover — на тач-
-  // экранах управление остаётся только по клику).
-  function bindHoverCascade(parentCtrl, childControllers, hoverTarget) {
-    if (!HOVER_CAPABLE) return;
-    const setAll = (hovering) => {
-      [parentCtrl, ...childControllers].forEach((ctrl) => {
-        ctrl.state.hovering = hovering;
-        if (hovering) ctrl.state.suppressHover = false; // новый заход мышью — сброс блокировки
-        ctrl.apply();
-      });
-    };
-    hoverTarget.addEventListener("mouseenter", () => setAll(true));
-    hoverTarget.addEventListener("mouseleave", () => setAll(false));
-  }
-
-  // Компания — вложенный аккордеон внутри индустрии (как на макете):
-  // шапка с логотипом и шевроном, раскрывающаяся в «Что сделала» +
-  // «Ключевые достижения».
-  function renderCompanyCard(company) {
-    const item = el("div", "accordion-item border-b border-gray-200 last:border-b-0");
-
-    const trigger = el("button", "w-full flex items-center justify-between gap-4 text-left py-5");
-    trigger.type = "button";
-    trigger.setAttribute("aria-expanded", "false");
-
-    const left = el("span", "flex items-center gap-4 min-w-0");
-    const textLogo = () =>
-      el(
-        "span",
-        `flex h-9 px-3 items-center justify-center rounded-lg text-xs font-bold shrink-0 ${
-          LOGO_STYLES[company.logoType] || LOGO_STYLES.generic
-        }`,
-        company.logoText
-      );
-
-    if (company.logoSrc) {
-      const img = el("img");
-      img.src = company.logoSrc;
-      img.alt = company.name;
-      // Высота под кегль названия компании (28px), чтобы лого и текст
-      // читались как одна строка.
-      img.className = "h-[28px] md:h-[36px] w-auto max-w-[150px] object-contain shrink-0";
-      // Файла лого нет — подставляем текстовую плашку вместо битой картинки.
-      img.addEventListener("error", () => img.replaceWith(textLogo()));
-      left.appendChild(img);
-    } else {
-      left.appendChild(textLogo());
-    }
-    // Тот же кегль, что у заголовков «Что сделала» / «Ключевые достижения»
-    left.appendChild(el("span", "text-[22px] md:text-[28px] font-semibold text-ink leading-tight", company.name));
-
-    trigger.appendChild(left);
-    trigger.appendChild(
-      el(
-        "span",
-        "accordion-chevron text-ink shrink-0",
-        '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>'
-      )
-    );
-
-    const panel = el("div", "accordion-panel");
-    // Внешняя обёртка без отступов: padding на прямом потомке панели не
-    // схлопывается при закрытии и оставляет полоску контента видимой.
-    const clip = el("div");
-    const body = el("div", "pb-6");
-    clip.appendChild(body);
-
-    body.appendChild(el("h4", "text-[22px] md:text-[28px] font-semibold text-accent mb-4", T.whatIDid));
-    const whatGrid = el("div", "grid grid-cols-1 md:grid-cols-2 gap-4");
-    company.whatIDid.forEach((block) => {
-      const cardEl = el("div", "rounded-2xl bg-card p-5");
-      const isFill = block.title.startsWith("[ЗАПОЛНИТЬ]");
-      cardEl.appendChild(el("p", `font-bold text-body ${isFill ? "fill-marker" : "text-ink"}`, block.title));
-      cardEl.appendChild(
-        el("p", `mt-2 text-body font-normal leading-relaxed ${isFill ? "fill-marker" : "text-muted"}`, block.text)
-      );
-      whatGrid.appendChild(cardEl);
+    card.querySelector('summary').addEventListener('click', event => {
+      // Fine-pointer users reveal on hover; touch and keyboard keep native disclosure.
+      if (expertiseHoverMode.matches && event.detail > 0 && event.pointerType !== 'touch') event.preventDefault();
     });
-    body.appendChild(whatGrid);
-
-    body.appendChild(el("h4", "mt-10 text-[22px] md:text-[28px] font-semibold text-ink", T.keyAchievements));
-    if (company.achievementsSubtitle) {
-      body.appendChild(el("p", "mt-1 text-body font-normal text-muted", company.achievementsSubtitle));
-    }
-
-    achievementGroupsOf(company).forEach((group) => {
-      if (group.label) {
-        body.appendChild(
-          el("p", "mt-8 mb-3 text-[15px] md:text-[17px] font-medium uppercase tracking-wide text-muted", group.label)
-        );
-      }
-      const achGrid = el("div", `${group.label ? "" : "mt-4 "}grid grid-cols-1 md:grid-cols-2 gap-4`);
-      group.items.forEach((a) => achGrid.appendChild(renderAchievement(a, company.accent)));
-      body.appendChild(achGrid);
-    });
-
-    panel.appendChild(clip);
-
-    const controller = makeAccordionController(item, trigger);
-
-    item.appendChild(trigger);
-    item.appendChild(panel);
-    // Отдаём наружу и элемент, и его контроллер — renderExperience
-    // подключает вложенные компании к hover-каскаду индустрии.
-    return { item, controller };
+  });
+}
+expertiseHoverMode.addEventListener('change', () => {
+  clearExpertiseHoverTimers();
+  expertiseGrid.querySelectorAll('.expertise-card').forEach(card => { card.open = false; });
+  scheduleExpertiseSizing();
+});
+expertiseGrid.addEventListener('toggle', event => {
+  if (event.target.dataset.expertiseMeasure !== 'true') scheduleExpertiseSizing();
+}, true);
+let expertiseGridWidth = 0;
+new ResizeObserver(entries => {
+  const width = entries[0].contentRect.width;
+  if (Math.abs(width - expertiseGridWidth) > .1) {
+    expertiseGridWidth = width;
+    scheduleExpertiseSizing();
   }
+}).observe(expertiseGrid);
+document.fonts.ready.then(scheduleExpertiseSizing);
 
-  function renderExperience() {
-    const wrap = $("#experience-accordion");
-
-    DATA.experience.forEach((group) => {
-      const item = el("div", "accordion-item");
-
-      const trigger = el("button", "w-full flex items-center justify-between gap-4 text-left py-6");
-      trigger.type = "button";
-      trigger.setAttribute("aria-expanded", "false");
-
-      // scroll-focus: цвет и масштаб анимируются через IntersectionObserver
-      // в initScrollFocus(), сам класс text-ink здесь больше не нужен —
-      // цвет теперь полностью определяет .scroll-focus в CSS.
-      const left = el("span", "display-text scroll-focus", group.industry);
-      const right = el("span", "flex items-center gap-4 shrink-0");
-      right.appendChild(
-        el(
-          "span",
-          "inline-flex items-center rounded-full bg-accent text-white text-[10px] md:text-[11px] font-bold uppercase tracking-wide px-4 py-1.5",
-          group.badge
-        )
-      );
-      right.appendChild(
-        el(
-          "span",
-          "accordion-chevron text-ink",
-          '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>'
-        )
-      );
-
-      trigger.appendChild(left);
-      trigger.appendChild(right);
-
-      const panel = el("div", "accordion-panel");
-      const panelClip = el("div");
-      const panelInner = el("div", "pb-4");
-      const companyControllers = group.companies.map((company) => {
-        const { item: companyItem, controller } = renderCompanyCard(company);
-        panelInner.appendChild(companyItem);
-        return controller;
-      });
-      panelClip.appendChild(panelInner);
-      panel.appendChild(panelClip);
-
-      const controller = makeAccordionController(item, trigger);
-      // Наведение на всю строку (заголовок индустрии) раскрывает её
-      // и все компании внутри разом — клик по-прежнему может закрыть.
-      bindHoverCascade(controller, companyControllers, item);
-
-      item.appendChild(trigger);
-      item.appendChild(panel);
-      wrap.appendChild(item);
-    });
+const projectTrack = document.getElementById('projects');
+let projectSliderPosition = 0;
+function setupProjectSlider(copy) {
+  document.getElementById('project-slider').setAttribute('aria-label', copy.projectSlider);
+  document.getElementById('project-slider').setAttribute('aria-roledescription', language === 'ru' ? 'карусель' : 'carousel');
+  document.querySelector('[data-project-prev]').setAttribute('aria-label', copy.previousProjects);
+  document.querySelector('[data-project-next]').setAttribute('aria-label', copy.nextProjects);
+  const moreButton = document.getElementById('show-more-projects');
+  moreButton.textContent = moreProjectsExpanded ? copy.less : copy.more;
+  moreButton.setAttribute('aria-expanded', String(moreProjectsExpanded));
+  requestAnimationFrame(() => {
+    projectTrack.scrollLeft = Math.min(projectSliderPosition, projectTrack.scrollWidth - projectTrack.clientWidth);
+    updateProjectSlider();
+  });
+}
+function updateProjectSlider() {
+  const atStart = projectTrack.scrollLeft <= 2;
+  const atEnd = projectTrack.scrollLeft >= projectTrack.scrollWidth - projectTrack.clientWidth - 2;
+  document.querySelector('[data-project-prev]').disabled = atStart;
+  document.querySelector('[data-project-next]').disabled = atEnd;
+  projectSliderPosition = projectTrack.scrollLeft;
+}
+function scrollProjects(direction) {
+  const cards = [...projectTrack.querySelectorAll('.project')];
+  if (!cards.length) return;
+  const gap = parseFloat(getComputedStyle(projectTrack).columnGap) || 0;
+  const step = cards[0].getBoundingClientRect().width + gap;
+  const visible = Math.max(1, Math.floor((projectTrack.clientWidth + gap) / step));
+  const maximum = Math.max(0, projectTrack.scrollWidth - projectTrack.clientWidth);
+  const left = Math.min(maximum, Math.max(0, projectTrack.scrollLeft + direction * visible * step));
+  projectTrack.scrollTo({ left, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+}
+document.getElementById('show-more-projects').addEventListener('click', () => {
+  moreProjectsExpanded = !moreProjectsExpanded;
+  projectTrack.querySelectorAll('[data-extra-project]').forEach(card => { card.hidden = !moreProjectsExpanded; });
+  const button = document.getElementById('show-more-projects');
+  button.textContent = moreProjectsExpanded ? COPY[language].less : COPY[language].more;
+  button.setAttribute('aria-expanded', String(moreProjectsExpanded));
+  requestAnimationFrame(() => {
+    const firstExtra = projectTrack.querySelector('[data-extra-project]');
+    const firstCard = projectTrack.querySelector('.project');
+    const left = moreProjectsExpanded && firstExtra && firstCard ? firstExtra.offsetLeft - firstCard.offsetLeft : 0;
+    projectTrack.scrollTo({ left, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    updateProjectSlider();
+  });
+});
+document.querySelector('[data-project-prev]').addEventListener('click', () => scrollProjects(-1));
+document.querySelector('[data-project-next]').addEventListener('click', () => scrollProjects(1));
+projectTrack.addEventListener('scroll', updateProjectSlider, { passive: true });
+projectTrack.addEventListener('keydown', event => {
+  if (event.altKey || event.ctrlKey || event.metaKey) return;
+  if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+    event.preventDefault(); scrollProjects(event.key === 'ArrowRight' ? 1 : -1);
+  } else if (event.key === 'Home' || event.key === 'End') {
+    event.preventDefault();
+    projectTrack.scrollTo({ left: event.key === 'Home' ? 0 : projectTrack.scrollWidth, behavior: 'auto' });
   }
+});
+new ResizeObserver(updateProjectSlider).observe(projectTrack);
 
-  // ---------- Образование (вертикальный таймлайн) ----------
-  function renderEducation() {
-    const wrap = $("#education-timeline");
-    // Вертикальная линия — левая граница обёртки, кружки-маркеры
-    // абсолютно позиционированы поверх неё через -translate-x-1/2.
-    wrap.className = "max-w-2xl mx-auto border-l-2 border-gray-200 ml-1.5";
-
-    DATA.education.forEach((edu) => {
-      const row = el("div", "relative pl-8 pb-10 last:pb-0");
-      row.appendChild(
-        el("span", "absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-canvas border-2 border-ink")
-      );
-
-      const head = el("div", "flex flex-wrap items-baseline gap-x-3");
-      head.appendChild(el("h3", "font-bold underline text-[20px] md:text-[24px] text-ink leading-snug", edu.degree));
-      head.appendChild(el("span", "text-body font-normal text-muted", edu.years));
-      row.appendChild(head);
-
-      row.appendChild(el("p", "mt-1 text-body font-normal text-ink", edu.institution));
-      wrap.appendChild(row);
-    });
+const languageToggle = document.getElementById('language');
+const languageMenu = document.getElementById('language-menu');
+function closeLanguageMenu() {
+  languageMenu.hidden = true;
+  languageToggle.setAttribute('aria-expanded', 'false');
+}
+languageToggle.addEventListener('click', () => {
+  const opening = languageMenu.hidden;
+  languageMenu.hidden = !opening;
+  languageToggle.setAttribute('aria-expanded', String(opening));
+  if (opening) languageMenu.querySelector('[data-language]').focus();
+});
+languageMenu.addEventListener('click', event => {
+  const option = event.target.closest('[data-language]');
+  if (!option) return;
+  language = option.dataset.language;
+  try { localStorage.setItem('victoria-language', language); } catch {}
+  const url = new URL(location.href);
+  url.searchParams.set('lang', language);
+  history.replaceState(null, '', url);
+  closeLanguageMenu();
+  render();
+  languageToggle.focus();
+});
+document.addEventListener('click', event => {
+  if (!event.target.closest('.language-picker')) closeLanguageMenu();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !languageMenu.hidden) { closeLanguageMenu(); languageToggle.focus(); }
+  if (['ArrowDown', 'ArrowUp'].includes(event.key) && !languageMenu.hidden && languageMenu.contains(document.activeElement)) {
+    event.preventDefault();
+    const options = [...languageMenu.querySelectorAll('[data-language]')];
+    const current = options.indexOf(document.activeElement);
+    options[(current + (event.key === 'ArrowDown' ? 1 : -1) + options.length) % options.length].focus();
   }
-
-  // ---------- Projects ----------
-  function renderProjects() {
-    const grid = $("#projects-grid");
-    DATA.projects.forEach((project) => {
-      const card = el(
-        "div",
-        "rounded-2xl border border-gray-200 overflow-hidden hover:border-gray-300 transition-colors flex flex-col"
-      );
-
-      // Рамка обложки есть всегда — так все карточки в сетке одной высоты
-      // и кнопки «Behance →» стоят на одной линии.
-      const frame = el("div", "aspect-[808/632] bg-card overflow-hidden relative");
-      const placeholder = el(
-        "div",
-        "absolute inset-0 flex items-center justify-center text-center px-6 text-body font-semibold text-muted",
-        project.title
-      );
-      frame.appendChild(placeholder);
-
-      if (project.cover) {
-        const img = el("img");
-        img.src = project.cover;
-        img.alt = project.title;
-        img.loading = "lazy";
-        img.className = "relative w-full h-full object-cover";
-        // Файл не найден — остаётся плейсхолдер с названием.
-        img.addEventListener("error", () => img.remove());
-        frame.appendChild(img);
-      }
-      card.appendChild(frame);
-
-      const body = el("div", "p-6 flex flex-col flex-1");
-      body.appendChild(el("h3", "text-cardtitle font-semibold text-ink", project.title));
-      body.appendChild(el("p", "mt-2 text-body font-normal text-muted leading-relaxed", project.description));
-
-      const tags = el("div", "mt-4 flex flex-wrap gap-1.5");
-      project.tags.forEach((tag) =>
-        tags.appendChild(el("span", "text-tag font-normal text-tagink bg-gray-100 rounded-full px-2.5 py-1", tag))
-      );
-      body.appendChild(tags);
-
-      // mt-auto прижимает ссылки к низу карточки — во всех карточках на одной линии
-      const links = el("div", "mt-auto pt-4 flex flex-wrap gap-4");
-      project.links.forEach((link) => {
-        const a = el("a", "text-body font-semibold text-accent hover:text-blue-700 transition-colors", link.label + " →");
-        a.href = link.href;
-        a.target = "_blank";
-        a.rel = "noopener";
-        links.appendChild(a);
-      });
-      body.appendChild(links);
-
-      card.appendChild(body);
-      grid.appendChild(card);
-    });
-  }
-
-  // ---------- Contacts / footer ----------
-  function renderContacts() {
-    const c = DATA.contacts;
-    [
-      ["#behance-link", c.behance],
-      ["#tg-link", c.telegram],
-      ["#footer-behance", c.behance],
-      ["#contact-telegram", c.telegram],
-      ["#all-projects-button", c.behance],
-    ].forEach(([sel, href]) => {
-      const node = $(sel);
-      if (node) node.href = href;
-    });
-
-    const email = $("#contact-email");
-    if (email) email.href = c.email;
-
-    $("#year").textContent = new Date().getFullYear();
-  }
-
-  // ---------- Статичные подписи в разметке ----------
-  function renderUIStrings() {
-    const set = (sel, text) => {
-      const node = $(sel);
-      if (node) node.textContent = text;
-    };
-    set("#lang-label", T.langLabel);
-    set("#skills-heading", T.skillsHeading);
-    set("#experience-heading", T.experienceHeading);
-    set("#education-heading", T.educationHeading);
-    set("#projects-heading", T.projectsHeading);
-    set("#projects-subtitle", T.projectsSubtitle);
-    set("#contact-heading", T.contactHeading);
-    set("#contact-subtitle", T.contactSubtitle);
-    set("#contact-email", T.emailButton);
-    set("#contact-telegram", T.telegramButton);
-    set("#footer-note", T.footerNote);
-
-    // Кнопка «Посмотреть все проекты» — текст со стрелкой
-    const allBtn = $("#all-projects-button");
-    if (allBtn) allBtn.innerHTML = `${T.allProjects} <span aria-hidden="true">→</span>`;
-
-    // Имя и роль в hero
-    const h1 = $("#hero h1") || document.querySelector("h1");
-    if (h1) h1.textContent = DATA.profile.name;
-    const role = h1 && h1.nextElementSibling;
-    if (role) role.textContent = DATA.profile.role;
-
-    document.documentElement.lang = T.htmlLang;
-  }
-
-  // ---------- Рендер всей страницы ----------
-  function render() {
-    // Контейнеры очищаем — иначе при смене языка контент задвоится
-    ["#hero-lines", "#client-logos", "#skills-grid", "#experience-accordion", "#education-timeline", "#projects-grid"].forEach(
-      (sel) => {
-        const node = $(sel);
-        if (node) node.innerHTML = "";
-      }
-    );
-
-    renderHero();
-    renderClientLogos();
-    renderSkills();
-    renderBio();
-    renderExperience();
-    renderEducation();
-    renderProjects();
-    renderContacts();
-    renderUIStrings();
-    initScrollFocus();
-  }
-
-  // ---------- Проявление строк «Опыт» по скроллу ----------
-  let scrollFocusObserver = null;
-  function initScrollFocus() {
-    // При смене языка render() вызывается заново — старый наблюдатель
-    // нужно снять, иначе он будет следить за уже удалёнными узлами.
-    if (scrollFocusObserver) scrollFocusObserver.disconnect();
-
-    const targets = document.querySelectorAll(".scroll-focus");
-    if (!targets.length) return;
-
-    // Тонкая полоса в центре экрана: строка «загорается», когда попадает
-    // в неё, и гаснет, когда уходит выше или ниже.
-    scrollFocusObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          entry.target.classList.toggle("in-focus", entry.isIntersecting);
-        });
-      },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
-    );
-
-    targets.forEach((t) => scrollFocusObserver.observe(t));
-  }
-
-  function init() {
-    let lang = currentLang();
-    selectLang(lang);
-    render();
-
-    $("#lang-toggle").addEventListener("click", () => {
-      lang = lang === "ru" ? "en" : "ru";
-      localStorage.setItem(LANG_KEY, lang);
-      selectLang(lang);
-      render();
-      window.scrollTo({ top: 0 });
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", init);
-})();
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+render();

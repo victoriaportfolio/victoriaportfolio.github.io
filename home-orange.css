@@ -187,3 +187,6 @@
   .home-orange .project-slider-actions { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); width: 100%; gap: 10px; }
   .home-orange .project-slider-actions > .button { min-width: 0; min-height: 48px; padding-inline: 12px; font-size: 12px; line-height: 1.3; text-align: center; justify-self: stretch; justify-content: center; }
 }
+
+.home-orange .project-visual video { display: block; width: 100%; height: auto; aspect-ratio: 1.6; object-fit: cover; transition: transform .6s; }
+.home-orange .project:hover .project-visual video { transform: scale(1.035); }

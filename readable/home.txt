@@ -60,7 +60,7 @@ Usability Testing · Hypothesis Validation · Product Iteration · UX Optimizati
 
 Платформа международных переводов с использованием криптовалют в рамках экспериментального режима. Подключение банков, согласование сделок и прозрачные статусы транзакций.
 
-Смотреть кейс→ (https://victoriaportfolio.github.io/case/cross-border-payments/?lang=ru)Оригинал на Behance ↗ (https://www.behance.net/gallery/244423585/Fintech-B2B-Platform-for-Cross-Border-Payments)
+Смотреть кейс→ (https://victoriaportfolio.github.io/case/cross-border-payments/?lang=ru)
 
 (https://victoriaportfolio.github.io/case/create/?lang=ru)HR Tech / SaaS02
 
@@ -70,7 +70,7 @@ CREATE
 
 Мобильное приложение для сотрудников банка, объединяющее HR-сервисы, рабочие задачи, внутренние коммуникации и документы в едином цифровом пространстве. Помогает быстрее решать повседневные рабочие вопросы и взаимодействовать с корпоративными сервисами прямо со смартфона.
 
-Смотреть кейс→ (https://victoriaportfolio.github.io/case/create/?lang=ru)Оригинал на Behance ↗ (https://www.behance.net/gallery/209329083/CREATE-(Corporate-assistant)-Software-for-HR)
+Смотреть кейс→ (https://victoriaportfolio.github.io/case/create/?lang=ru)
 
 (https://victoriaportfolio.github.io/case/haqqex/?lang=ru)Crypto / Web303
 
@@ -80,7 +80,7 @@ HAQQEX
 
 Криптоэкосистема, объединяющая торговую веб-платформу, сайт и мобильное приложение. Дизайн охватывает регистрацию и верификацию, обзор рынка, торговлю и управление портфелем. Пользовательские сценарии и визуальная система связывают разные части продукта в последовательный опыт.
 
-Смотреть кейс→ (https://victoriaportfolio.github.io/case/haqqex/?lang=ru)Оригинал на Behance ↗ (https://www.behance.net/gallery/171243765/HAQQEX)
+Смотреть кейс→ (https://victoriaportfolio.github.io/case/haqqex/?lang=ru)
 
 (https://www.behance.net/gallery/232372549/Bellator-Bike-Lab)Brand / Web04
 

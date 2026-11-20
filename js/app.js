@@ -69,9 +69,23 @@ function projectCard(project, index, copy, position = index) {
   const isLocalCase = Boolean(localPath);
   const href = isLocalCase ? `/case/${localPath}/?lang=${language}` : project.links[0].href;
   const attributes = isLocalCase ? '' : external;
-  const originalLabel = language === 'ru' ? 'Оригинал на Behance' : 'Original on Behance';
-  return `<article class="project"${position >= 3 ? ` data-extra-project${moreProjectsExpanded ? '' : ' hidden'}` : ''}><a class="project-visual" href="${escapeHTML(href)}" ${attributes} aria-label="${escapeHTML(project.title)}"><img src="${escapeHTML(project.cover)}" alt="${escapeHTML(project.title)}" loading="lazy" width="800" height="500"></a><div class="project-copy"><div class="project-meta"><span>${copy.meta[index]}</span><span>${String(position + 1).padStart(2,'0')}</span></div><h3>${title}</h3><p>${escapeHTML(index === 0 ? copy.projectDescription : project.description)}</p><div class="project-actions"><a class="project-link" href="${escapeHTML(href)}" ${attributes}><span>${copy.case}${isLocalCase ? '' : ' · Behance'}</span><span aria-hidden="true">${isLocalCase ? '→' : '↗'}</span></a>${isLocalCase ? `<a class="project-original" href="${escapeHTML(project.links[0].href)}" ${external}>${originalLabel} <span aria-hidden="true">↗</span></a>` : ''}</div></div></article>`;
+  const visual = index === 0
+    ? `<video data-project-cover-video src="assets/cases/b2b-payments/demo/cross-border-intro-20261120.mp4" poster="${escapeHTML(project.cover)}" autoplay muted loop playsinline preload="auto" width="800" height="500" aria-hidden="true" tabindex="-1"></video>`
+    : `<img src="${escapeHTML(project.cover)}" alt="${escapeHTML(project.title)}" loading="lazy" width="800" height="500">`;
+  return `<article class="project"${position >= 3 ? ` data-extra-project${moreProjectsExpanded ? '' : ' hidden'}` : ''}><a class="project-visual" href="${escapeHTML(href)}" ${attributes} aria-label="${escapeHTML(project.title)}">${visual}</a><div class="project-copy"><div class="project-meta"><span>${copy.meta[index]}</span><span>${String(position + 1).padStart(2,'0')}</span></div><h3>${title}</h3><p>${escapeHTML(index === 0 ? copy.projectDescription : project.description)}</p><div class="project-actions"><a class="project-link" href="${escapeHTML(href)}" ${attributes}><span>${copy.case}${isLocalCase ? '' : ' · Behance'}</span><span aria-hidden="true">${isLocalCase ? '→' : '↗'}</span></a></div></div></article>`;
 }
+function playProjectCover() {
+  const video = document.querySelector('[data-project-cover-video]');
+  if (!video) return;
+  video.defaultMuted = true;
+  video.muted = true;
+  video.play().catch(() => {});
+}
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) playProjectCover();
+});
+document.addEventListener('pointerdown', playProjectCover, { once: true, passive: true });
+window.addEventListener('pageshow', playProjectCover);
 function achievement(item) {
   return `<div class="result"><small>${escapeHTML(item.tag)}</small><strong>${escapeHTML(item.value)}</strong><p>${escapeHTML(item.desc)}</p></div>`;
 }
@@ -95,6 +109,7 @@ function render() {
   document.getElementById('highlights').innerHTML = EXPERTISE[language].map((card, index) => `<details class="expertise-card glass" data-expertise="${index}" ${openExpertise.includes(String(index)) ? 'open' : ''}><summary><span class="expertise-inner"><span class="expertise-index">0${index + 1}<img class="expertise-chevron" src="assets/ui/expertise-chevron.svg" width="10" height="10.0799" alt="" aria-hidden="true"></span><h3>${escapeHTML(card[0])}</h3><span class="expertise-subtitle">${escapeHTML(card[1])}</span></span></summary><div class="expertise-more"><p>${escapeHTML(card[2])}</p><small>${escapeHTML(card[3])}</small></div></details>`).join('');
   document.getElementById('projects').innerHTML = [0,1,2,4,3,5,6,7].map((index, position) => projectCard(data.projects[index], index, copy, position)).join('');
   setupProjectSlider(copy);
+  playProjectCover();
   bindExpertiseInteraction();
   document.getElementById('skills').innerHTML = data.skills.columns.map((skill,index) => `<article class="skill"><span class="skill-index">0${index + 1}</span><h3>${escapeHTML(skill.title)}</h3><ul>${skill.items.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul></article>`).join('');
   document.getElementById('experience-list').innerHTML = data.experience.map((industry,index) => `<details class="industry" data-industry="${index}" ${openIndustries.includes(String(index)) ? 'open' : ''}><summary><span class="industry-title">${escapeHTML(industry.industry)}</span><span class="industry-label">${escapeHTML(industry.badge)}</span><span class="plus" aria-hidden="true">+</span></summary>${industry.companies.map(company => `<article class="company"><h3>${escapeHTML(company.name)}</h3><div class="company-activities">${company.whatIDid.map(activity => `<div class="activity"><h4>${escapeHTML(activity.title)}</h4><p>${escapeHTML(activity.text)}</p></div>`).join('')}</div>${company.achievements ? `<div class="results">${company.achievements.map(achievement).join('')}</div>` : ''}${(company.achievementGroups || []).map(group => `<div class="results">${group.items.map(achievement).join('')}</div>`).join('')}</article>`).join('')}</details>`).join('');

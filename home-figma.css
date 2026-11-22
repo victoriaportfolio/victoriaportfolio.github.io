@@ -38,8 +38,8 @@
 .home-figma .belief-marquee-track { display: flex; width: max-content; animation: belief-marquee-drift 38s linear infinite; will-change: transform; }
 .home-figma .belief-marquee-group { display: block; flex-shrink: 0; padding-right: 64px; white-space: nowrap; font-family: var(--font-display); font-size: 100px; font-weight: 600; line-height: 1.22; letter-spacing: 0; color: #fff; }
 .home-figma .belief-marquee--growth { margin-top: 114px; }
-.home-figma .belief-marquee--growth .belief-marquee-track { animation-direction: reverse; animation-duration: 48s; }
-@keyframes belief-marquee-drift { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+.home-figma .belief-marquee--growth .belief-marquee-track { animation-duration: 48s; }
+@keyframes belief-marquee-drift { from { transform: translate3d(-50%,0,0); } to { transform: translate3d(0,0,0); } }
 .home-figma .work { position: relative; overflow: hidden; }
 .home-figma .section-heading { align-items: flex-end; }
 .home-figma .section-heading .eyebrow { font-family: var(--font-display); font-size: 15px; line-height: 18px; font-weight: 500; margin-bottom: 21px; }

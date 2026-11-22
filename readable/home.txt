@@ -62,6 +62,8 @@ I believe in products. In their power. In their value.I believe in products. In 
 
 Платформа международных переводов с использованием криптовалют в рамках экспериментального режима. Подключение банков, согласование сделок и прозрачные статусы транзакций.
 
+Смотреть кейс→ (https://victoriaportfolio.github.io/case/cross-border-payments/?lang=ru)
+
 (https://victoriaportfolio.github.io/case/create/?lang=ru)HR Tech / SaaS02
 
 CREATE
@@ -70,7 +72,7 @@ CREATE
 
 Коробочное решение для сотрудников банка, объединяющее HR-сервисы, рабочие задачи, внутренние коммуникации и документы в едином цифровом пространстве. Помогает быстрее решать повседневные рабочие вопросы и взаимодействовать с корпоративными сервисами прямо со смартфона.
 
-Перейти на Behance↗ (https://www.behance.net/gallery/209329083/CREATE-(Corporate-assistant)-Software-for-HR)
+Смотреть кейс→ (https://victoriaportfolio.github.io/case/create/?lang=ru)Перейти на Behance↗ (https://www.behance.net/gallery/209329083/CREATE-(Corporate-assistant)-Software-for-HR)
 
 (https://victoriaportfolio.github.io/case/haqqex/?lang=ru)Crypto / Web303
 
@@ -80,7 +82,7 @@ HAQQEX
 
 Криптоэкосистема, объединяющая торговую веб-платформу, сайт и мобильное приложение. Дизайн охватывает регистрацию и верификацию, обзор рынка, торговлю и управление портфелем. Пользовательские сценарии и визуальная система связывают разные части продукта в последовательный опыт.
 
-Перейти на Behance↗ (https://www.behance.net/gallery/171243765/HAQQEX)
+Смотреть кейс→ (https://victoriaportfolio.github.io/case/haqqex/?lang=ru)Перейти на Behance↗ (https://www.behance.net/gallery/171243765/HAQQEX)
 
 (https://www.behance.net/gallery/232372549/Bellator-Bike-Lab)Brand / Web04
 
@@ -164,7 +166,7 @@ Art Direction · Visual Identity · UI Design · Design Systems
 
 Создаю презентации и визуальные материалы, которые понятно раскрывают сложные идеи, убеждают аудиторию и помогают продавать решения.
 
-Pitch Decks · Presentations · Storytelling · Visual Communication
+Pitch Decks · Presentations · Storytelling
 
 I believe in business growth. In the power of design. In the value of every decisionI believe in business growth. In the power of design. In the value of every decision
 

@@ -63,19 +63,19 @@ const SERVICES = {
     ['Systems', 'Упрощаю сложные процессы', 'Проектирую CRM, торговые платформы и B2B-системы, превращая сложные бизнес-процессы в понятные и эффективные рабочие инструменты.', 'CRM · B2B Platforms · Trading Systems · UX Architecture'],
     ['Web', 'Превращаю трафик в клиентов', 'Создаю сайты, которые раскрывают ценность продукта, формируют доверие и помогают бизнесу увеличивать конверсию и продажи.', 'Web Design · Landing Pages · Conversion · CRO'],
     ['Mobile', 'Опыт, который удерживает', 'Проектирую мобильные приложения с интуитивными сценариями и удобными интерфейсами, повышая возвращаемость пользователей.', 'Art Direction · Visual Identity · UI Design · Design Systems'],
-    ['Stories', 'Превращаю идеи в аргументы', 'Создаю презентации и визуальные материалы, которые понятно раскрывают сложные идеи, убеждают аудиторию и помогают продавать решения.', 'Pitch Decks · Presentations · Storytelling · Visual Communication']
+    ['Stories', 'Превращаю идеи в аргументы', 'Создаю презентации и визуальные материалы, которые понятно раскрывают сложные идеи, убеждают аудиторию и помогают продавать решения.', 'Pitch Decks · Presentations · Storytelling']
   ],
   en: [
     ['Systems', 'Simplifying complex processes', 'I design CRMs, trading platforms and B2B systems, turning complex business processes into clear, effective working tools.', 'CRM · B2B Platforms · Trading Systems · UX Architecture'],
     ['Web', 'Turning traffic into customers', 'I create websites that communicate product value, build trust and help businesses improve conversion and sales.', 'Web Design · Landing Pages · Conversion · CRO'],
     ['Mobile', 'Experiences that bring people back', 'I design mobile apps with intuitive journeys and usable interfaces that help people return to the product.', 'Art Direction · Visual Identity · UI Design · Design Systems'],
-    ['Stories', 'Turning ideas into arguments', 'I create presentations and visual materials that explain complex ideas, persuade audiences and help sell solutions.', 'Pitch Decks · Presentations · Storytelling · Visual Communication']
+    ['Stories', 'Turning ideas into arguments', 'I create presentations and visual materials that explain complex ideas, persuade audiences and help sell solutions.', 'Pitch Decks · Presentations · Storytelling']
   ]
 };
 Object.assign(COPY.ru, {growthLabel: 'Что я тут делаю?', growthTitle: 'Проектирую рост бизнеса', growthText: 'Создаю продукты, приносящие<br>бизнесу рост и прибыль'});
 Object.assign(COPY.en, {growthLabel: 'What I do', growthTitle: 'Designing business growth', growthText: 'Creating products that drive<br>business growth and profit'});
 function expertiseCard(card, index, attribute, open = false) {
-  return `<details class="expertise-card glass" ${attribute}="${index}" ${open ? 'open' : ''}><summary><span class="expertise-inner"><span class="expertise-index">0${index + 1}<img class="expertise-chevron" src="assets/ui/expertise-chevron.svg" width="10" height="10.0799" alt="" aria-hidden="true"></span><h3>${escapeHTML(card[0])}</h3><span class="expertise-subtitle">${escapeHTML(card[1])}</span></span></summary><div class="expertise-more"><p>${escapeHTML(card[2])}</p><small>${escapeHTML(card[3])}</small></div></details>`;
+  return `<div class="expertise-slot"><details class="expertise-card glass" ${attribute}="${index}" ${open ? 'open' : ''}><summary><span class="expertise-inner"><span class="expertise-index">0${index + 1}<img class="expertise-chevron" src="assets/ui/expertise-chevron.svg" width="10" height="10.0799" alt="" aria-hidden="true"></span><h3>${escapeHTML(card[0])}</h3><span class="expertise-subtitle">${escapeHTML(card[1])}</span></span></summary><div class="expertise-more"><p>${escapeHTML(card[2])}</p><small>${escapeHTML(card[3])}</small></div></details></div>`;
 }
 let language = new URLSearchParams(location.search).get('lang');
 if (!['ru', 'en'].includes(language)) {
@@ -93,7 +93,7 @@ function projectCard(project, index, copy, position = index) {
   const visual = index === 0
     ? `<video data-project-cover-video src="assets/cases/b2b-payments/demo/cross-border-intro-20261120.mp4" poster="${escapeHTML(project.cover)}" autoplay muted loop playsinline preload="auto" width="800" height="500" aria-hidden="true" tabindex="-1"></video>`
     : `<img src="${escapeHTML(project.cover)}" alt="${escapeHTML(project.title)}" loading="lazy" width="800" height="500">`;
-  return `<article class="project"${position >= 3 ? ` data-extra-project${moreProjectsExpanded ? '' : ' hidden'}` : ''}><a class="project-visual" href="${escapeHTML(href)}" ${attributes} aria-label="${escapeHTML(project.title)}">${visual}</a><div class="project-copy"><div class="project-meta"><span>${copy.meta[index]}</span><span>${String(position + 1).padStart(2,'0')}</span></div><h3><a href="${escapeHTML(href)}" ${attributes}>${title}</a></h3><p>${escapeHTML(index === 0 ? copy.projectDescription : project.description)}</p>${index === 0 ? '' : `<div class="project-actions"><a class="project-link" href="${escapeHTML(project.links[0].href)}" ${external}><span>${copy.behanceProject}</span><span aria-hidden="true">↗</span></a></div>`}</div></article>`;
+  return `<article class="project"${position >= 3 ? ` data-extra-project${moreProjectsExpanded ? '' : ' hidden'}` : ''}><a class="project-visual" href="${escapeHTML(href)}" ${attributes} aria-label="${escapeHTML(project.title)}">${visual}</a><div class="project-copy"><div class="project-meta"><span>${copy.meta[index]}</span><span>${String(position + 1).padStart(2,'0')}</span></div><h3><a href="${escapeHTML(href)}" ${attributes}>${title}</a></h3><p>${escapeHTML(index === 0 ? copy.projectDescription : project.description)}</p><div class="project-actions">${isLocalCase ? `<a class="project-link project-case-link" href="${escapeHTML(href)}"><span>${copy.case}</span><span aria-hidden="true">→</span></a>` : ''}${index === 0 ? '' : `<a class="project-link project-behance-link" href="${escapeHTML(project.links[0].href)}" ${external}><span>${copy.behanceProject}</span><span aria-hidden="true">↗</span></a>`}</div></div></article>`;
 }
 function playProjectCover() {
   const video = document.querySelector('[data-project-cover-video]');
@@ -165,6 +165,15 @@ function cancelExpertiseHover(card) {
 }
 function bindExpertiseInteraction() {
   document.querySelectorAll('.expertise-card').forEach(card => {
+    let openingAnimation;
+    card.addEventListener('toggle', () => {
+      if (openingAnimation) openingAnimation.cancel();
+      openingAnimation = null;
+      if (!card.open || !expertiseHoverMode.matches || typeof card.animate !== 'function' || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const closedHeight = card.parentElement.getBoundingClientRect().height;
+      const expandedHeight = card.getBoundingClientRect().height;
+      openingAnimation = card.animate([{ height: `${closedHeight}px` }, { height: `${expandedHeight}px` }], { duration: 180, easing: 'cubic-bezier(.2,.8,.2,1)' });
+    });
     card.addEventListener('pointerenter', event => {
       if (!expertiseHoverMode.matches || event.pointerType === 'touch') return;
       cancelExpertiseHover(card);
@@ -175,7 +184,12 @@ function bindExpertiseInteraction() {
     });
     card.addEventListener('pointerleave', event => {
       cancelExpertiseHover(card);
-      if (expertiseHoverMode.matches && event.pointerType !== 'touch') card.open = false;
+      if (expertiseHoverMode.matches && event.pointerType !== 'touch') {
+        expertiseHoverTimers.set(card, setTimeout(() => {
+          expertiseHoverTimers.delete(card);
+          if (!card.matches(':hover')) card.open = false;
+        }, 120));
+      }
     });
     card.querySelector('summary').addEventListener('click', event => {
       // Fine-pointer users reveal on hover; touch and keyboard keep native disclosure.

@@ -32,8 +32,8 @@ const COPY = {
     caseTitles: {0:'Cross-border payments.<br>One connected platform.',1:'CREATE.<br>Workplace processes, simplified.',2:'HAQQEX.<br>A connected crypto ecosystem.',5:'CURIO.<br>A digital Medtech experience.'}
   }
 };
-COPY.ru.projectDescription = 'Платформа международных переводов с использованием криптовалют в рамках экспериментального режима. Подключение банков, согласование сделок и прозрачные статусы транзакций.';
-COPY.en.projectDescription = 'A cross-border payments platform using cryptocurrencies within an experimental regime. Bank onboarding, deal coordination and transparent transaction statuses.';
+COPY.ru.projectDescription = 'Платформа международных переводов с использованием криптовалют в рамках экспериментального режима. Объединяет подключение банков, проверку и подписание документов, согласование сделок и проведение транзакций в едином рабочем пространстве. Прозрачные статусы помогают отслеживать каждый этап и пройти весь путь от регистрации до первой сделки.';
+COPY.en.projectDescription = 'A cross-border payments platform using cryptocurrencies within an experimental regime. It brings bank onboarding, document checks and signing, deal coordination and transactions into one workspace. Clear statuses help banks track every step and follow a consistent journey from registration to their first transaction.';
 COPY.ru.meta[0] = 'Fintech / B2B / Crypto';
 COPY.en.meta[0] = 'Fintech / B2B / Crypto';
 COPY.ru.more = 'Ещё проекты';

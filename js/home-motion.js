@@ -2,7 +2,6 @@
   const root = document.querySelector('.home-figma');
   if (!root) return;
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
-  const backdrop = root.querySelector('.home-backdrop');
   const sections = [...root.querySelectorAll('[data-scroll-reveal]')];
   const active = new Set();
   let observer;
@@ -12,11 +11,6 @@
     frame = 0;
     if (preference.matches || document.hidden) return;
     const viewport = innerHeight;
-    const offset = Math.min(scrollY * .12, viewport * .12);
-    if (backdrop) {
-      backdrop.style.setProperty('--backdrop-shift', `${offset.toFixed(2)}px`);
-      backdrop.style.setProperty('--backdrop-opacity', String(1 - clamp(scrollY / (viewport * 1.4)) * .75));
-    }
     for (const section of active) {
       const rect = section.getBoundingClientRect();
       const travel = Math.max(150, Math.min(rect.height * .35, viewport * .4));
@@ -41,10 +35,6 @@
     root.classList.toggle('motion-ready', enabled);
     if (!enabled) {
       sections.forEach(section => section.classList.add('is-revealed'));
-      if (backdrop) {
-        backdrop.style.removeProperty('--backdrop-shift');
-        backdrop.style.removeProperty('--backdrop-opacity');
-      }
       return;
     }
     observer = new IntersectionObserver(entries => {

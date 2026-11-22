@@ -7,7 +7,7 @@
 }
 .home-figma { --font-display: 'Montserrat', -apple-system, sans-serif; background: #000; isolation: isolate; overflow-x: clip; }
 .home-figma .wrap { width: min(1138px, calc(100% - 80px)); max-width: 1138px; }
-.home-figma .home-backdrop { position: fixed; z-index: -1; inset: -8vh 0 auto; height: 120vh; min-height: 900px; overflow: hidden; pointer-events: none; opacity: var(--backdrop-opacity, 1); transform: translate3d(0, var(--backdrop-shift, 0px), 0); will-change: transform; }
+.home-figma .home-backdrop { position: fixed; z-index: -1; inset: -8vh 0 auto; height: 120vh; min-height: 900px; overflow: hidden; pointer-events: none; opacity: 1; transform: none; }
 .home-figma .home-backdrop img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .home-figma .home-backdrop::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 64%, rgba(0,0,0,.35) 84%, #000 100%); }
 .home-figma .site-header { background: rgba(0,0,0,.2); border-bottom-color: transparent; }

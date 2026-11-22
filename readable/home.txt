@@ -10,7 +10,7 @@ Product design lead · Product builder
 
 Смотреть проекты ↓ (https://victoriaportfolio.github.io/#work)Познакомиться ↗ (https://victoriaportfolio.github.io/#about)
 
-Fintech · B2B SaaS · AI · Web3
+Software · Fintech · B2B SaaS · AI · Web3 · Mobile App
 
 01Strategy
 
@@ -44,7 +44,9 @@ Art Direction · Visual Identity · UI Design · Design Systems
 
 Usability Testing · Hypothesis Validation · Product Iteration · UX Optimization
 
-Избранное
+I believe in products. In their power. In their value.I believe in products. In their power. In their value.
+
+Портфолио
 
 Продуктовые кейсы
 
@@ -56,79 +58,119 @@ Usability Testing · Hypothesis Validation · Product Iteration · UX Optimizati
 
 Международные переводы
 
-Весь путь в одной платформе
+Весь путь в одной платформе (https://victoriaportfolio.github.io/case/cross-border-payments/?lang=ru)
 
 Платформа международных переводов с использованием криптовалют в рамках экспериментального режима. Подключение банков, согласование сделок и прозрачные статусы транзакций.
-
-Смотреть кейс→ (https://victoriaportfolio.github.io/case/cross-border-payments/?lang=ru)
 
 (https://victoriaportfolio.github.io/case/create/?lang=ru)HR Tech / SaaS02
 
 CREATE
 
-Корпоративные процессы проще
+Корпоративные процессы проще (https://victoriaportfolio.github.io/case/create/?lang=ru)
 
-Мобильное приложение для сотрудников банка, объединяющее HR-сервисы, рабочие задачи, внутренние коммуникации и документы в едином цифровом пространстве. Помогает быстрее решать повседневные рабочие вопросы и взаимодействовать с корпоративными сервисами прямо со смартфона.
+Коробочное решение для сотрудников банка, объединяющее HR-сервисы, рабочие задачи, внутренние коммуникации и документы в едином цифровом пространстве. Помогает быстрее решать повседневные рабочие вопросы и взаимодействовать с корпоративными сервисами прямо со смартфона.
 
-Смотреть кейс→ (https://victoriaportfolio.github.io/case/create/?lang=ru)
+Перейти на Behance↗ (https://www.behance.net/gallery/209329083/CREATE-(Corporate-assistant)-Software-for-HR)
 
 (https://victoriaportfolio.github.io/case/haqqex/?lang=ru)Crypto / Web303
 
 HAQQEX
 
-Единая криптоэкосистема
+Единая криптоэкосистема (https://victoriaportfolio.github.io/case/haqqex/?lang=ru)
 
 Криптоэкосистема, объединяющая торговую веб-платформу, сайт и мобильное приложение. Дизайн охватывает регистрацию и верификацию, обзор рынка, торговлю и управление портфелем. Пользовательские сценарии и визуальная система связывают разные части продукта в последовательный опыт.
 
-Смотреть кейс→ (https://victoriaportfolio.github.io/case/haqqex/?lang=ru)
+Перейти на Behance↗ (https://www.behance.net/gallery/171243765/HAQQEX)
 
 (https://www.behance.net/gallery/232372549/Bellator-Bike-Lab)Brand / Web04
 
-Bellator Bike Lab
+Bellator Bike Lab (https://www.behance.net/gallery/232372549/Bellator-Bike-Lab)
 
 Брендинг и веб-дизайн для велосипедной лаборатории Bellator Bike Lab. Проект включает фирменную айдентику, визуальную систему и оформление сайта. Задача дизайна — передать характер бренда и последовательно представить его в цифровой среде.
 
-Смотреть кейс · Behance↗ (https://www.behance.net/gallery/232372549/Bellator-Bike-Lab)
+Перейти на Behance↗ (https://www.behance.net/gallery/232372549/Bellator-Bike-Lab)
 
 (https://www.behance.net/gallery/172260851/Ispolin-capital)Fintech / Investment05
 
-Ispolin Capital
+Ispolin Capital (https://www.behance.net/gallery/172260851/Ispolin-capital)
 
 Фирменный стиль и веб-платформа инвестиционной компании Ispolin Capital. В проекте объединены айдентика, дизайн страниц и организация информации о компании. Структура и визуальная иерархия помогают последовательно раскрыть её подход и инвестиционное направление.
 
-Смотреть кейс · Behance↗ (https://www.behance.net/gallery/172260851/Ispolin-capital)
+Перейти на Behance↗ (https://www.behance.net/gallery/172260851/Ispolin-capital)
 
 (https://www.behance.net/gallery/145473747/CURIO)Medtech / Mobile06
 
 CURIO
 
-Цифровой опыт в Medtech
+Цифровой опыт в Medtech (https://www.behance.net/gallery/145473747/CURIO)
 
 Medtech-продукт для телемедицины, в котором объединены дизайн платформы, мобильного интерфейса и брендинг. Работа охватывает пользовательские сценарии, навигацию и визуальную систему. Основной фокус — понятное взаимодействие с медицинским сервисом и последовательный опыт внутри продукта.
 
-Смотреть кейс · Behance↗ (https://www.behance.net/gallery/145473747/CURIO)
+Перейти на Behance↗ (https://www.behance.net/gallery/145473747/CURIO)
 
 (https://www.behance.net/gallery/159016397/Dream-Car-Investment)Investment / Web07
 
-Dream Car Investment
+Dream Car Investment (https://www.behance.net/gallery/159016397/Dream-Car-Investment)
 
 Веб-платформа инвестиционного проекта на автомобильном рынке. В кейсе представлены продуктовый дизайн, структура страниц и визуальная подача информации о проекте. Задача — помочь пользователю разобраться в предложении и пройти путь от первого знакомства к более подробному изучению.
 
-Смотреть кейс · Behance↗ (https://www.behance.net/gallery/159016397/Dream-Car-Investment)
+Перейти на Behance↗ (https://www.behance.net/gallery/159016397/Dream-Car-Investment)
 
 (https://www.behance.net/gallery/143016217/Anywear)Fashion / Mobile08
 
-Anywear
+Anywear (https://www.behance.net/gallery/143016217/Anywear)
 
 Мобильная fashion-платформа с пользовательским контентом и механиками монетизации. В кейсе показаны продуктовый дизайн, сценарии взаимодействия и визуальная система приложения. Контентная и коммерческая части связаны в единый опыт, который помогает пользователю ориентироваться в продукте.
 
-Смотреть кейс · Behance↗ (https://www.behance.net/gallery/143016217/Anywear)
+Перейти на Behance↗ (https://www.behance.net/gallery/143016217/Anywear)
 
 Ещё проектыВсё портфолио на Behance ↗ (https://www.behance.net/victoriabraf2f)
 
+Что я тут делаю?
+
+Проектирую рост бизнеса
+
+Создаю продукты, приносящие
+
+бизнесу рост и прибыль
+
+01Systems
+
+Упрощаю сложные процессы
+
+Проектирую CRM, торговые платформы и B2B-системы, превращая сложные бизнес-процессы в понятные и эффективные рабочие инструменты.
+
+CRM · B2B Platforms · Trading Systems · UX Architecture
+
+02Web
+
+Превращаю трафик в клиентов
+
+Создаю сайты, которые раскрывают ценность продукта, формируют доверие и помогают бизнесу увеличивать конверсию и продажи.
+
+Web Design · Landing Pages · Conversion · CRO
+
+03Mobile
+
+Опыт, который удерживает
+
+Проектирую мобильные приложения с интуитивными сценариями и удобными интерфейсами, повышая возвращаемость пользователей.
+
+Art Direction · Visual Identity · UI Design · Design Systems
+
+04Stories
+
+Превращаю идеи в аргументы
+
+Создаю презентации и визуальные материалы, которые понятно раскрывают сложные идеи, убеждают аудиторию и помогают продавать решения.
+
+Pitch Decks · Presentations · Storytelling · Visual Communication
+
+I believe in business growth. In the power of design. In the value of every decisionI believe in business growth. In the power of design. In the value of every decision
+
 Подход к работе
 
-От первого «почему»
+От первого “зачем”
 
 до последнего пикселя
 

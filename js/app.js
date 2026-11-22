@@ -6,9 +6,9 @@ const COPY = {
     viewWork: 'Смотреть проекты <span aria-hidden="true">↓</span>', meet: 'Познакомиться <span aria-hidden="true">↗</span>',
     behind: 'За каждым интерфейсом — человек.', aboutTitle: 'Дизайн с вниманием<br>к людям<br><span>И результату</span>',
     aboutText: 'От исследования проблемы до запуска и развития продукта. Помогаю командам превращать сложную логику в понятный опыт, проверяю решения через исследования и тестирование, связывая каждое улучшение с целями бизнеса.',
-    exploreExperience: 'Мой опыт <span aria-hidden="true">↓</span>', selected: 'Избранное', workTitle: 'Продуктовые кейсы',
+    exploreExperience: 'Мой опыт <span aria-hidden="true">↓</span>', selected: 'Портфолио', workTitle: 'Продуктовые кейсы',
     workSubtitle: 'Разные задачи. Один фокус —<br>опыт, который работает.', more: 'Ещё 4 проекта', behance: 'Всё портфолио на Behance <span aria-hidden="true">↗</span>',
-    approach: 'Подход к работе', strengthsTitle: 'От первого «почему»<br>до последнего пикселя.', experienceLabel: 'Команды и продукты',
+    approach: 'Подход к работе', strengthsTitle: 'От первого “зачем”<br>до последнего пикселя', experienceLabel: 'Команды и продукты',
     experienceTitle: 'Опыт, который<br>помогает видеть шире.', experienceSubtitle: 'Финансы, образование, технологии.<br>Продукты для международных рынков.',
     next: 'Следующий шаг', contactTitle: 'Хороший продукт<br>начинается с разговора.', contactText: 'Расскажите, над чем работаете.<br>Вместе найдём точку, где дизайн принесёт больше пользы.',
     telegram: 'Написать в Telegram <span aria-hidden="true">↗</span>', email: 'На почту <span aria-hidden="true">↗</span>', copy: 'Копировать', top: 'Наверх ↑', education: 'Образование', case: 'Смотреть кейс', copied: 'Адрес скопирован', copyFailed: 'Не удалось скопировать. Можно написать по ссылке «На почту».',
@@ -37,6 +37,8 @@ COPY.en.projectDescription = 'A cross-border payments platform using cryptocurre
 COPY.ru.meta[0] = 'Fintech / B2B / Crypto';
 COPY.en.meta[0] = 'Fintech / B2B / Crypto';
 COPY.ru.more = 'Ещё проекты';
+COPY.ru.behanceProject = 'Перейти на Behance';
+COPY.en.behanceProject = 'View on Behance';
 COPY.en.more = 'More projects';
 COPY.ru.less = 'Скрыть проекты';
 COPY.en.less = 'Show fewer projects';
@@ -56,6 +58,25 @@ const EXPERTISE = {
     ['Evolution', 'How the product evolves', 'I test hypotheses and design decisions, using the findings to improve the experience and guide product development.', 'Usability Testing · Hypothesis Validation · Product Iteration · UX Optimization']
   ]
 };
+const SERVICES = {
+  ru: [
+    ['Systems', 'Упрощаю сложные процессы', 'Проектирую CRM, торговые платформы и B2B-системы, превращая сложные бизнес-процессы в понятные и эффективные рабочие инструменты.', 'CRM · B2B Platforms · Trading Systems · UX Architecture'],
+    ['Web', 'Превращаю трафик в клиентов', 'Создаю сайты, которые раскрывают ценность продукта, формируют доверие и помогают бизнесу увеличивать конверсию и продажи.', 'Web Design · Landing Pages · Conversion · CRO'],
+    ['Mobile', 'Опыт, который удерживает', 'Проектирую мобильные приложения с интуитивными сценариями и удобными интерфейсами, повышая возвращаемость пользователей.', 'Art Direction · Visual Identity · UI Design · Design Systems'],
+    ['Stories', 'Превращаю идеи в аргументы', 'Создаю презентации и визуальные материалы, которые понятно раскрывают сложные идеи, убеждают аудиторию и помогают продавать решения.', 'Pitch Decks · Presentations · Storytelling · Visual Communication']
+  ],
+  en: [
+    ['Systems', 'Simplifying complex processes', 'I design CRMs, trading platforms and B2B systems, turning complex business processes into clear, effective working tools.', 'CRM · B2B Platforms · Trading Systems · UX Architecture'],
+    ['Web', 'Turning traffic into customers', 'I create websites that communicate product value, build trust and help businesses improve conversion and sales.', 'Web Design · Landing Pages · Conversion · CRO'],
+    ['Mobile', 'Experiences that bring people back', 'I design mobile apps with intuitive journeys and usable interfaces that help people return to the product.', 'Art Direction · Visual Identity · UI Design · Design Systems'],
+    ['Stories', 'Turning ideas into arguments', 'I create presentations and visual materials that explain complex ideas, persuade audiences and help sell solutions.', 'Pitch Decks · Presentations · Storytelling · Visual Communication']
+  ]
+};
+Object.assign(COPY.ru, {growthLabel: 'Что я тут делаю?', growthTitle: 'Проектирую рост бизнеса', growthText: 'Создаю продукты, приносящие<br>бизнесу рост и прибыль'});
+Object.assign(COPY.en, {growthLabel: 'What I do', growthTitle: 'Designing business growth', growthText: 'Creating products that drive<br>business growth and profit'});
+function expertiseCard(card, index, attribute, open = false) {
+  return `<details class="expertise-card glass" ${attribute}="${index}" ${open ? 'open' : ''}><summary><span class="expertise-inner"><span class="expertise-index">0${index + 1}<img class="expertise-chevron" src="assets/ui/expertise-chevron.svg" width="10" height="10.0799" alt="" aria-hidden="true"></span><h3>${escapeHTML(card[0])}</h3><span class="expertise-subtitle">${escapeHTML(card[1])}</span></span></summary><div class="expertise-more"><p>${escapeHTML(card[2])}</p><small>${escapeHTML(card[3])}</small></div></details>`;
+}
 let language = new URLSearchParams(location.search).get('lang');
 if (!['ru', 'en'].includes(language)) {
   try { language = localStorage.getItem('victoria-language') === 'en' ? 'en' : 'ru'; } catch { language = 'ru'; }
@@ -72,7 +93,7 @@ function projectCard(project, index, copy, position = index) {
   const visual = index === 0
     ? `<video data-project-cover-video src="assets/cases/b2b-payments/demo/cross-border-intro-20261120.mp4" poster="${escapeHTML(project.cover)}" autoplay muted loop playsinline preload="auto" width="800" height="500" aria-hidden="true" tabindex="-1"></video>`
     : `<img src="${escapeHTML(project.cover)}" alt="${escapeHTML(project.title)}" loading="lazy" width="800" height="500">`;
-  return `<article class="project"${position >= 3 ? ` data-extra-project${moreProjectsExpanded ? '' : ' hidden'}` : ''}><a class="project-visual" href="${escapeHTML(href)}" ${attributes} aria-label="${escapeHTML(project.title)}">${visual}</a><div class="project-copy"><div class="project-meta"><span>${copy.meta[index]}</span><span>${String(position + 1).padStart(2,'0')}</span></div><h3>${title}</h3><p>${escapeHTML(index === 0 ? copy.projectDescription : project.description)}</p><div class="project-actions"><a class="project-link" href="${escapeHTML(href)}" ${attributes}><span>${copy.case}${isLocalCase ? '' : ' · Behance'}</span><span aria-hidden="true">${isLocalCase ? '→' : '↗'}</span></a></div></div></article>`;
+  return `<article class="project"${position >= 3 ? ` data-extra-project${moreProjectsExpanded ? '' : ' hidden'}` : ''}><a class="project-visual" href="${escapeHTML(href)}" ${attributes} aria-label="${escapeHTML(project.title)}">${visual}</a><div class="project-copy"><div class="project-meta"><span>${copy.meta[index]}</span><span>${String(position + 1).padStart(2,'0')}</span></div><h3><a href="${escapeHTML(href)}" ${attributes}>${title}</a></h3><p>${escapeHTML(index === 0 ? copy.projectDescription : project.description)}</p>${index === 0 ? '' : `<div class="project-actions"><a class="project-link" href="${escapeHTML(project.links[0].href)}" ${external}><span>${copy.behanceProject}</span><span aria-hidden="true">↗</span></a></div>`}</div></article>`;
 }
 function playProjectCover() {
   const video = document.querySelector('[data-project-cover-video]');
@@ -106,7 +127,8 @@ function render() {
   document.querySelector('.wordmark').setAttribute('aria-label', `${copy.name} — ${language === 'ru' ? 'главная' : 'home'}`);
   document.querySelector('.nav').setAttribute('aria-label', language === 'ru' ? 'Основная навигация' : 'Main navigation');
   document.querySelector('.avatar img').alt = copy.name;
-  document.getElementById('highlights').innerHTML = EXPERTISE[language].map((card, index) => `<details class="expertise-card glass" data-expertise="${index}" ${openExpertise.includes(String(index)) ? 'open' : ''}><summary><span class="expertise-inner"><span class="expertise-index">0${index + 1}<img class="expertise-chevron" src="assets/ui/expertise-chevron.svg" width="10" height="10.0799" alt="" aria-hidden="true"></span><h3>${escapeHTML(card[0])}</h3><span class="expertise-subtitle">${escapeHTML(card[1])}</span></span></summary><div class="expertise-more"><p>${escapeHTML(card[2])}</p><small>${escapeHTML(card[3])}</small></div></details>`).join('');
+  document.getElementById('highlights').innerHTML = EXPERTISE[language].map((card, index) => expertiseCard(card, index, 'data-expertise', openExpertise.includes(String(index)))).join('');
+  document.getElementById('services').innerHTML = SERVICES[language].map((card, index) => expertiseCard(card, index, 'data-service')).join('');
   document.getElementById('projects').innerHTML = [0,1,2,4,3,5,6,7].map((index, position) => projectCard(data.projects[index], index, copy, position)).join('');
   setupProjectSlider(copy);
   playProjectCover();
@@ -125,36 +147,8 @@ function scheduleExpertiseSizing() {
   cancelAnimationFrame(expertiseSizingFrame);
   expertiseSizingFrame = requestAnimationFrame(() => {
     const grid = document.getElementById('highlights');
-    const cards = [...grid.querySelectorAll('.expertise-card')];
-    if (!cards.length) return;
-    if (matchMedia('(max-width: 700px)').matches) {
-      grid.style.removeProperty('--expertise-summary-height');
-      grid.style.removeProperty('--expertise-open-height');
-      return;
-    }
-    const base = 141;
-    // Measure each state independently: an open card must not reserve closed-header space.
-    const sizes = cards.map(card => {
-      const measure = card.cloneNode(true);
-      measure.dataset.expertiseMeasure = 'true';
-      Object.assign(measure.style, {
-        position: 'fixed', left: '-100000px', top: '0',
-        width: `${card.getBoundingClientRect().width}px`,
-        minHeight: '0', height: 'auto', visibility: 'hidden', pointerEvents: 'none'
-      });
-      measure.setAttribute('aria-hidden', 'true');
-      measure.inert = true;
-      measure.open = false;
-      measure.querySelector('summary').style.minHeight = '0';
-      grid.append(measure);
-      const closed = measure.querySelector('summary').getBoundingClientRect().height;
-      measure.open = true;
-      const open = measure.getBoundingClientRect().height;
-      measure.remove();
-      return { closed, open };
-    });
-    grid.style.setProperty('--expertise-summary-height', `${Math.ceil(Math.max(base, ...sizes.map(size => size.closed)))}px`);
-    grid.style.setProperty('--expertise-open-height', `${Math.ceil(Math.max(...sizes.map(size => size.open)))}px`);
+    grid.style.removeProperty('--expertise-summary-height');
+    grid.style.removeProperty('--expertise-open-height');
   });
 }
 const expertiseGrid = document.getElementById('highlights');
@@ -170,7 +164,7 @@ function cancelExpertiseHover(card) {
   expertiseHoverTimers.delete(card);
 }
 function bindExpertiseInteraction() {
-  expertiseGrid.querySelectorAll('.expertise-card').forEach(card => {
+  document.querySelectorAll('.expertise-card').forEach(card => {
     card.addEventListener('pointerenter', event => {
       if (!expertiseHoverMode.matches || event.pointerType === 'touch') return;
       cancelExpertiseHover(card);
@@ -191,7 +185,7 @@ function bindExpertiseInteraction() {
 }
 expertiseHoverMode.addEventListener('change', () => {
   clearExpertiseHoverTimers();
-  expertiseGrid.querySelectorAll('.expertise-card').forEach(card => { card.open = false; });
+  document.querySelectorAll('.expertise-card').forEach(card => { card.open = false; });
   scheduleExpertiseSizing();
 });
 expertiseGrid.addEventListener('toggle', event => {

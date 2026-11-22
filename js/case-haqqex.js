@@ -590,6 +590,8 @@ function showProductScreen(index,open=true) {
   if(open)dialog.showModal();
 }
 
+CASE_COPY.ru.fullCase = 'Перейти на Behance';
+CASE_COPY.en.fullCase = 'View on Behance';
 const sourceURL = 'https://www.behance.net/gallery/171243765/HAQQEX';
 
 
@@ -672,7 +674,7 @@ function renderCase() {
       </div>
     </div>
     <div class="case-disclosure-end wrap">${disclosureNoticeMarkup(caseLanguage)}</div>
-    <section class="case-bottom"><div class="case-bottom-inner wrap"><div><p class="eyebrow">${c.ctaLabel}</p><h2>${c.ctaTitle}</h2><a class="button primary" href="https://t.me/victoriachupakhina28" target="_blank" rel="noopener">${c.ctaButton}</a></div><a class="case-next" href="../cross-border-payments/?lang=${caseLanguage}"><img src="../../assets/images/proj-b2b-crypto-cover-20261119.png" alt="Международные переводы" width="93" height="95" loading="lazy"><div><small>${c.nextLabel}</small><h3>${c.nextTitle}</h3><span>${c.nextDescription}</span></div></a></div></section>`;
+    <section class="case-bottom" id="full-case"><div class="case-bottom-inner wrap"><a class="button primary" href="${sourceURL}" target="_blank" rel="noopener">${c.fullCase}<span aria-hidden="true">↗</span></a><div><p class="eyebrow">${c.ctaLabel}</p><h2>${c.ctaTitle}</h2><a class="button primary" href="https://t.me/victoriachupakhina28" target="_blank" rel="noopener">${c.ctaButton}</a></div><a class="case-next" href="../cross-border-payments/?lang=${caseLanguage}"><img src="../../assets/images/proj-b2b-crypto-cover-20261119.png" alt="Международные переводы" width="93" height="95" loading="lazy"><div><small>${c.nextLabel}</small><h3>${c.nextTitle}</h3><span>${c.nextDescription}</span></div></a></div></section>`;
   document.querySelectorAll('.case-metric, .summary-panel, .role-pair article, .ttv, .insight-panel, .hypothesis-tab, .hypothesis-panel, .solution, .design-principles, .principles span, .product-screen-tab, .trust-outcome, .result-hero, .takeaway, .case-next, .image-expand, .product-dialog-controls button, .dialog-close').forEach(node => node.classList.add('glass'));
   document.querySelectorAll('h1, h2, h3, h4').forEach(heading => {
     const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT);

@@ -33,6 +33,7 @@
 .home-figma .expertise-card[open] > summary { min-height: 0; padding-bottom: 0; }
 .home-figma .expertise-more p { font-family: var(--font-text); font-size: 15px; line-height: 18px; margin-bottom: 18px; }
 .home-figma .expertise-more small { font-size: 12px; line-height: 15px; }
+.home-figma .expertise-card .expertise-more small, .home-figma .expertise-card[open] .expertise-more small { color: #fff; }
 .home-figma .belief-marquee { flex: none; width: 100%; max-width: 100vw; overflow: hidden; margin-block: -12px; }
 .home-figma .belief-marquee-track { display: flex; width: max-content; animation: belief-marquee-drift 38s linear infinite; will-change: transform; }
 .home-figma .belief-marquee-group { display: block; flex-shrink: 0; padding-right: 64px; white-space: nowrap; font-family: var(--font-display); font-size: 100px; font-weight: 600; line-height: 1.22; letter-spacing: 0; color: #fff; }

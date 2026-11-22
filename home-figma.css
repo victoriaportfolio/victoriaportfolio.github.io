@@ -139,3 +139,6 @@
   .home-figma .home-backdrop { transform: none; will-change: auto; }
   .home-figma.motion-ready [data-scroll-reveal] { opacity: 1; transform: none; will-change: auto; }
 }
+
+.home-figma .company h3 { font-family: var(--font-text); }
+.home-figma .hero > .eyebrow { letter-spacing: 0; }

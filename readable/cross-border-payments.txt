@@ -28,11 +28,11 @@ Research → Delivery
 
 B2B · Cross-border payments
 
-Bank Time to Valueвремя от регистрации до первой успешной транзакции
+Bank Time to ValueВремя от регистрации до первой успешной транзакции
 
-Активация банковзавершение подключения и готовность к работе
+Активация банковЗавершение подключения и готовность к работе
 
-Нагрузка на поддержкуобращения по подключению и операциям
+Нагрузка на поддержкуОбращения по подключению и операциям
 
 Открыть видео (https://victoriaportfolio.github.io/assets/cases/b2b-payments/demo/cross-border-intro-20261120.mp4)
 
@@ -42,7 +42,7 @@ Low-level прототипы MVP · NDAДетали продукта и метр
 
 В этом кейсе
 
-Коротко о проекте (https://victoriaportfolio.github.io/case/cross-border-payments/#overview)Проблема (https://victoriaportfolio.github.io/case/cross-border-payments/#problem)Ключевой вывод (https://victoriaportfolio.github.io/case/cross-border-payments/#insight)Решение (https://victoriaportfolio.github.io/case/cross-border-payments/#solution)Экраны продукта (https://victoriaportfolio.github.io/case/cross-border-payments/#screens)Сложности (https://victoriaportfolio.github.io/case/cross-border-payments/#challenges)Результаты (https://victoriaportfolio.github.io/case/cross-border-payments/#results)Главное (https://victoriaportfolio.github.io/case/cross-border-payments/#takeaway)
+О проекте (https://victoriaportfolio.github.io/case/cross-border-payments/#overview)Проблема (https://victoriaportfolio.github.io/case/cross-border-payments/#problem)Вывод (https://victoriaportfolio.github.io/case/cross-border-payments/#insight)Решение (https://victoriaportfolio.github.io/case/cross-border-payments/#solution)Экраны (https://victoriaportfolio.github.io/case/cross-border-payments/#screens)Сложности (https://victoriaportfolio.github.io/case/cross-border-payments/#challenges)Результаты (https://victoriaportfolio.github.io/case/cross-border-payments/#results)Главное (https://victoriaportfolio.github.io/case/cross-border-payments/#takeaway)
 
 01 / Кейс за 30 секунд
 
@@ -152,7 +152,7 @@ Time to MarketЗначение скрыто под NDA
 
 Баланс, отправленные средства, история операций, клиенты и заявки на верификацию собраны на одном экране.
 
-Увеличить экран ↗Low-level прототипы MVP · NDAДетали продукта и метрики скрыты под NDA.
+Увеличить экран ↗
 
 06 / Сложности
 

@@ -5,7 +5,7 @@
 .home-figma .home-backdrop::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 64%, rgba(0,0,0,.35) 84%, #000 100%); }
 .home-figma .site-header { background: rgba(0,0,0,.2); border-bottom-color: transparent; }
 .home-figma .wordmark { width: auto; display: inline-flex; align-items: center; gap: 9px; }
-.home-figma .brand-name { white-space: nowrap; font-size: 13px; line-height: 16px; font-weight: 400; letter-spacing: 0; }
+.home-figma .brand-name { white-space: nowrap; font-size: 14px; line-height: 20px; font-weight: 400; letter-spacing: 0; }
 .home-figma #main { display: flex; flex-direction: column; gap: 100px; padding-bottom: 100px; }
 .home-figma #main > .section { padding-block: 0; }
 .home-figma :is(.work,.experience) { background: transparent; }
@@ -19,20 +19,20 @@
 .home-figma .hero-actions { gap: 28px; }
 .home-figma .hero-actions .button { font-family: var(--font-display); font-size: 15px; font-weight: 500; }
 .home-figma .hero-actions .text-link { font-family: var(--font-display); font-size: 16px; font-weight: 500; }
-.home-figma .hero-domains { margin: 27px auto 34px; font-size: 12px; line-height: 14px; letter-spacing: .45px; }
+.home-figma .hero-domains { margin: 27px auto 34px; font-size: 14px; line-height: 20px; letter-spacing: .45px; }
 .home-figma .highlights { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); grid-auto-rows: auto; gap: 12px; align-items: start; }
 .home-figma .expertise-slot { position: relative; min-width: 0; min-height: 152px; }
 .home-figma .expertise-card { position: relative; width: 100%; min-height: 0; overflow: hidden; }
 .home-figma .expertise-card > summary, .home-figma .expertise-card[open] > summary { min-height: 151px; padding: 24px; align-items: flex-start; }
 .home-figma .expertise-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 28px; line-height: 34px; letter-spacing: 0; }
 .home-figma .expertise-inner { gap: 18px; }
-.home-figma .expertise-index { font-family: var(--font-display); font-size: 13px; line-height: 16px; }
+.home-figma .expertise-index { font-family: var(--font-display); font-size: 14px; line-height: 20px; }
 .home-figma .expertise-subtitle { font-family: var(--font-display); font-size: 14px; line-height: 17px; letter-spacing: -.15px; }
 .home-figma .expertise-more { position: static; padding: 18px 24px 24px; background: transparent; border: 0; border-radius: 0; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; }
 .home-figma .expertise-card[open] { position: absolute; z-index: 8; top: 0; left: 0; right: 0; min-height: 0; background: rgba(255,255,255,.1); border-radius: 20px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: var(--glass-shadow); }
 .home-figma .expertise-card[open] > summary { min-height: 0; padding-bottom: 0; }
 .home-figma .expertise-more p { font-family: var(--font-text); font-size: 15px; line-height: 18px; margin-bottom: 18px; }
-.home-figma .expertise-more small { font-size: 12px; line-height: 15px; }
+.home-figma .expertise-more small { font-size: 14px; line-height: 20px; }
 .home-figma .expertise-card .expertise-more small, .home-figma .expertise-card[open] .expertise-more small { color: #fff; }
 .home-figma .belief-marquee { flex: none; width: 100%; max-width: 100vw; overflow: hidden; margin-block: -12px; }
 .home-figma .belief-marquee-track { --marquee-duration: 38s; display: flex; width: max-content; -webkit-animation: belief-marquee-drift var(--marquee-duration) linear infinite; animation: belief-marquee-drift var(--marquee-duration) linear infinite; backface-visibility: hidden; -webkit-backface-visibility: hidden; will-change: transform; }
@@ -74,7 +74,7 @@
   .home-figma h2, .home-figma .about-copy h2 { font-size: clamp(36px,4.4vw,56px); }
   .home-figma .growth .section-heading h2 { white-space: normal; }
   .home-figma .expertise-card h3 { font-size: clamp(21px,2.3vw,28px); }
-  .home-figma .expertise-subtitle { font-size: 12px; line-height: 17px; }
+  .home-figma .expertise-subtitle { font-size: 14px; line-height: 20px; }
 }
 @media (max-width: 1000px) {
   .home-figma .wrap { width: calc(100% - 48px); }
@@ -92,21 +92,21 @@
   .home-figma #main { gap: 56px; padding-bottom: 64px; }
   .home-figma .home-backdrop { min-height: 720px; height: 115vh; }
   .home-figma .hero.wrap { padding-top: 64px; }
-  .home-figma .hero > .eyebrow { font-size: 10px; line-height: 16px; margin-bottom: 20px; }
+  .home-figma .hero > .eyebrow { font-size: 14px; line-height: 20px; margin-bottom: 20px; }
   .home-figma .hero h1 { font-size: clamp(19px,calc(7vw - 3px),44px); line-height: 1.18; margin-bottom: 24px; }
   .home-figma .hero h1 span { margin-top: 4px; white-space: nowrap; }
   .home-figma .hero-description { font-size: 14px; line-height: 22px; letter-spacing: -.4px; margin-bottom: 24px; }
   .home-figma .hero-description-line { white-space: normal; }
   .home-figma .hero-actions { gap: 12px; flex-wrap: wrap; }
-  .home-figma .hero-actions :is(.button,.text-link) { font-size: 12px; padding-inline: 16px; }
-  .home-figma .hero-domains { max-width: 340px; font-size: 10px; line-height: 17px; margin: 25px auto 28px; }
-  .home-figma .brand-name { font-size: 9px; }
+  .home-figma .hero-actions :is(.button,.text-link) { font-size: 14px; padding-inline: 16px; }
+  .home-figma .hero-domains { max-width: 340px; font-size: 14px; line-height: 20px; margin: 25px auto 28px; }
+  .home-figma .brand-name { display: none; font-size: 14px; }
   .home-figma .nav-links { gap: 12px; }
   .home-figma .nav-actions { gap: 10px; }
   .home-figma .highlights { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
   .home-figma .expertise-card h3 { font-size: clamp(18px,4.5vw,25px); line-height: 1.2; }
-  .home-figma .expertise-index { font-size: 11px; }
-  .home-figma .expertise-subtitle { font-size: 11px; line-height: 16px; }
+  .home-figma .expertise-index { font-size: 14px; }
+  .home-figma .expertise-subtitle { font-size: 14px; line-height: 20px; }
   .home-figma .expertise-card > summary, .home-figma .expertise-card[open] > summary { min-height: var(--expertise-summary-height, 151px); padding: 20px 16px; }
   .home-figma .expertise-inner { gap: 16px; }
   .home-figma .expertise-slot { min-height: 0; }
@@ -115,14 +115,17 @@
   .home-figma .expertise-card h3 { min-height: var(--expertise-title-height, 0px); }
   .home-figma .expertise-subtitle { min-height: var(--expertise-subtitle-height, 0px); }
   .home-figma .expertise-more { position: static; padding: 18px 16px 20px; border: 0; border-radius: 0; background: transparent; backdrop-filter: none; box-shadow: none; }
-  .home-figma .expertise-more p { min-height: var(--expertise-description-height, 0px); font-size: 13px; line-height: 18px; }
-  .home-figma .expertise-more small { min-height: var(--expertise-tags-height, 0px); font-size: 10px; line-height: 15px; }
+  .home-figma .expertise-more p { min-height: var(--expertise-description-height, 0px); font-size: 14px; line-height: 20px; }
+  .home-figma .expertise-more small { min-height: var(--expertise-tags-height, 0px); font-size: 14px; line-height: 20px; }
+  .home-figma .expertise-card[open] .expertise-index { font-size: 14px; line-height: 20px; }
+  .home-figma .expertise-card :is(h3, .expertise-subtitle, .expertise-more p, .expertise-more small) { overflow-wrap: anywhere; }
+  .home-figma .project-slider-actions > .button { white-space: normal; overflow-wrap: anywhere; }
   .home-figma .belief-marquee, .home-figma .belief-marquee--growth { margin: 0; }
   .home-figma .belief-marquee-group { font-size: 40px; padding-right: 32px; }
   .home-figma .belief-marquee-track { --marquee-duration: 26s; }
   .home-figma .belief-marquee--growth .belief-marquee-track { --marquee-duration: 32s; }
   .home-figma .section-heading { display: block; }
-  .home-figma .section-heading .eyebrow { font-size: 13px; line-height: 18px; margin-bottom: 16px; }
+  .home-figma .section-heading .eyebrow { font-size: 14px; line-height: 20px; margin-bottom: 16px; }
   .home-figma .section-heading > p { font-size: 14px; line-height: 22px; margin-top: 18px; }
   .home-figma .work .section-heading, .home-figma .growth .section-heading { min-height: 0; margin-bottom: 32px; }
   .home-figma h2, .home-figma .about-copy h2 { font-size: 32px; line-height: 1.13; }
@@ -132,7 +135,7 @@
   .home-figma .skills { margin-top: 39px; gap: 35px; }
   .home-figma .skill h3 { font-size: 22px; }
   .home-figma .skill ul { font-size: 14px; line-height: 28px; }
-  .home-figma .process { font-size: 13px; }
+  .home-figma .process { font-size: 14px; }
   .home-figma .about { grid-template-columns: 1fr; gap: 34px; }
   .home-figma .about-copy p:not(.eyebrow) { font-size: 17px; max-width: none; }
   .home-figma .contact h2 { font-size: 36px; letter-spacing: -1px; }
@@ -154,5 +157,5 @@
 
 .home-figma .project-track .project-actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .home-figma .project-actions > .project-link:only-child { width: 100%; }
-.home-figma .project-actions .project-behance-link { font-size: 13px; color: var(--muted); }
+.home-figma .project-actions .project-behance-link { font-size: 14px; color: var(--muted); }
 .home-figma .project-actions .project-behance-link:hover { color: var(--blue); }

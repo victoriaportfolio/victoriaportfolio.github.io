@@ -32,7 +32,7 @@ SSOединый вход в сервисы
 
 В этом кейсе
 
-Кейс за 30 секунд (https://victoriaportfolio.github.io/case/create/#overview)Проблема (https://victoriaportfolio.github.io/case/create/#problem)Ключевой вывод (https://victoriaportfolio.github.io/case/create/#insight)Исследование и логика (https://victoriaportfolio.github.io/case/create/#research)Решение в экранах (https://victoriaportfolio.github.io/case/create/#design)Дизайн-система (https://victoriaportfolio.github.io/case/create/#system)Сложности (https://victoriaportfolio.github.io/case/create/#challenges)Результаты (https://victoriaportfolio.github.io/case/create/#results)Рефлексия (https://victoriaportfolio.github.io/case/create/#reflection)
+О проекте (https://victoriaportfolio.github.io/case/create/#overview)Проблема (https://victoriaportfolio.github.io/case/create/#problem)Вывод (https://victoriaportfolio.github.io/case/create/#insight)Исследования (https://victoriaportfolio.github.io/case/create/#research)Экраны (https://victoriaportfolio.github.io/case/create/#design)Дизайн-система (https://victoriaportfolio.github.io/case/create/#system)Сложности (https://victoriaportfolio.github.io/case/create/#challenges)Результаты (https://victoriaportfolio.github.io/case/create/#results)Рефлексия (https://victoriaportfolio.github.io/case/create/#reflection)
 
 01 / Кейс за 30 секунд
 
@@ -210,8 +210,6 @@ HR-директор и менеджер проекта решают разные
 
 Подготовлены визуальная система, карта функций и детальные макеты, которые задают общую основу для развития продукта.
 
-Результаты относятся к проектированию и прототипированию. Данные об использовании продукта после запуска, росте вовлечённости и экономии времени в исходном кейсе не опубликованы. Исходный кейс на Behance ↗ (https://www.behance.net/gallery/209329083/CREATE-(Corporate-assistant)-Software-for-HR)
-
 09 / Рефлексия
 
 Что стало опорой
@@ -232,7 +230,9 @@ HR-директор и менеджер проекта решают разные
 
 Типографика, палитра и иконки поддерживают узнаваемость продукта и его человечный характер.
 
-Перейти на Behance↗ (https://www.behance.net/gallery/209329083/CREATE-(Corporate-assistant)-Software-for-HR)Обсудим ваш продукт
+Перейти на Behance↗ (https://www.behance.net/gallery/209329083/CREATE-(Corporate-assistant)-Software-for-HR)
+
+Обсудим ваш продукт
 
 Сложные процессы
 

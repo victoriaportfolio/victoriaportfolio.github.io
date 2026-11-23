@@ -46,8 +46,8 @@
 .home-orange :is(.small-cta, .button.primary) { font-weight: 510; }
 .home-orange .hero-actions > .text-link { font-weight: 500; }
 .home-orange .expertise-card h3 { font-family: var(--font-display); letter-spacing: 0; }
-.home-orange .expertise-index { font-size: 13px; line-height: 16px; }
-.home-orange .expertise-card[open] .expertise-index { font-size: 13px; }
+.home-orange .expertise-index { font-size: 14px; line-height: 20px; }
+.home-orange .expertise-card[open] .expertise-index { font-size: 14px; }
 .home-orange .expertise-more p { line-height: 1.25; letter-spacing: 0; }
 .home-orange .expertise-more small { line-height: 1.25; letter-spacing: 0; }
 .home-orange .section-heading h2 { font-weight: 590; letter-spacing: -2px; }
@@ -85,7 +85,7 @@
 .home-orange .project-track .project-copy { display: flex; flex: 1; flex-direction: column; }
 .home-orange .project-track .project-actions { display: grid; gap: 12px; margin-top: auto; padding-top: 8px; }
 .home-orange .project-track .project-link { margin-top: 0; padding-top: 0; }
-.home-orange .project-original { justify-self: start; color: var(--muted); font-size: 13px; line-height: 20px; }
+.home-orange .project-original { justify-self: start; color: var(--muted); font-size: 14px; line-height: 20px; }
 .home-orange .project-original:hover { color: var(--blue); }
 .home-orange .project-track:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; }
 .home-orange .project-slider-controls { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; margin-top: 14px; }
@@ -152,7 +152,7 @@
 .home-orange .skill ul { letter-spacing: -.2344px; }
 .home-orange .process { border-color: rgba(255,255,255,.48); letter-spacing: -.9453px; }
 .home-orange .process span:nth-child(even) { color: var(--blue); }
-.home-orange .about-copy .eyebrow { font-size: 13px; line-height: 16px; letter-spacing: -.2762px; margin-bottom: 21px; }
+.home-orange .about-copy .eyebrow { font-size: 14px; line-height: 20px; letter-spacing: -.2762px; margin-bottom: 21px; }
 .home-orange .about-copy p:not(.eyebrow) { font-family: var(--font-display); max-width: none; font-size: 18px; line-height: 1.55; letter-spacing: -.4395px; margin: 26px 0 24px; }
 @media (max-width: 1000px) { .home-orange .skills { gap: 25px; } }
 @media (max-width: 700px) {
@@ -185,7 +185,7 @@
 
 @media (max-width: 700px) {
   .home-orange .project-slider-actions { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); width: 100%; gap: 10px; }
-  .home-orange .project-slider-actions > .button { min-width: 0; min-height: 48px; padding-inline: 12px; font-size: 12px; line-height: 1.3; text-align: center; justify-self: stretch; justify-content: center; }
+  .home-orange .project-slider-actions > .button { min-width: 0; min-height: 48px; padding-inline: 12px; font-size: 14px; line-height: 1.3; text-align: center; justify-self: stretch; justify-content: center; }
 }
 
 .home-orange .project-visual video { display: block; width: 100%; height: auto; aspect-ratio: 1.6; object-fit: cover; transition: transform .6s; }

@@ -32,15 +32,15 @@ const CASE_COPY = {
     "metrics": [
       [
         "Bank Time to Value",
-        "время от регистрации до первой успешной транзакции"
+        "Время от регистрации до первой успешной транзакции"
       ],
       [
         "Активация банков",
-        "завершение подключения и готовность к работе"
+        "Завершение подключения и готовность к работе"
       ],
       [
         "Нагрузка на поддержку",
-        "обращения по подключению и операциям"
+        "Обращения по подключению и операциям"
       ]
     ],
     "imageAlt": "Спецпроект — главная страница: баланс, история операций, клиенты и верификация",
@@ -50,7 +50,7 @@ const CASE_COPY = {
     "nav": [
       [
         "overview",
-        "Коротко о проекте"
+        "О проекте"
       ],
       [
         "problem",
@@ -58,7 +58,7 @@ const CASE_COPY = {
       ],
       [
         "insight",
-        "Ключевой вывод"
+        "Вывод"
       ],
       [
         "solution",
@@ -66,7 +66,7 @@ const CASE_COPY = {
       ],
       [
         "screens",
-        "Экраны продукта"
+        "Экраны"
       ],
       [
         "challenges",
@@ -235,7 +235,7 @@ const CASE_COPY = {
     "galleryLabel": "05 / Интерфейс продукта",
     "galleryTitle": "Шесть экранов<br><span class=\"heading-accent\">Единая рабочая среда</span>",
     "galleryText": "Основные страницы платформы — от обзора операций до сделки, отчёта и переписки. Выберите экран, чтобы рассмотреть его подробнее.",
-    "galleryNav": "Экраны продукта",
+    "galleryNav": "Экраны",
     "previousScreen": "Предыдущий экран",
     "nextScreen": "Следующий экран",
     "openOriginal": "Открыть оригинал ↗",
@@ -332,23 +332,23 @@ const CASE_COPY = {
     "nav": [
       [
         "overview",
-        "At a glance"
+        "Overview"
       ],
       [
         "problem",
-        "The problem"
+        "Problem"
       ],
       [
         "insight",
-        "The insight"
+        "Insight"
       ],
       [
         "solution",
-        "The solution"
+        "Solution"
       ],
       [
         "screens",
-        "Product screens"
+        "Screens"
       ],
       [
         "challenges",
@@ -517,7 +517,7 @@ const CASE_COPY = {
     "galleryLabel": "05 / Product interface",
     "galleryTitle": "Six screens<br><span class=\"heading-accent\">One workspace</span>",
     "galleryText": "The core pages of the platform, from the transaction overview to deal details, reporting and conversations. Choose a screen to explore it.",
-    "galleryNav": "Product screens",
+    "galleryNav": "Screens",
     "previousScreen": "Previous screen",
     "nextScreen": "Next screen",
     "openOriginal": "Open original ↗",
@@ -664,7 +664,7 @@ function renderProductScreen(index,focusTab=false) {
   document.querySelectorAll('[data-product-screen]').forEach((tab,i)=>{tab.setAttribute('aria-selected',String(i===index));tab.tabIndex=i===index?0:-1;if(focusTab&&i===index)tab.focus();});
   const panel=document.getElementById('product-screen-panel');
   panel.setAttribute('aria-labelledby','product-screen-'+index);
-  panel.innerHTML=`<div class="product-screen-copy glass"><span>0${index+1} / 06</span><h3>${screen[1]}</h3><p>${screen[2]}</p></div><figure class="product-screen-figure"><button class="screen-button" type="button" data-screen-index="${index}" aria-label="${c.expand}: ${screen[0]}" aria-haspopup="dialog"><img src="${screenURL(index)}" alt="${c.productName} — ${screen[0]}" width="7620" height="4764" loading="lazy"><span class="image-expand" aria-hidden="true">${c.expand}</span></button><figcaption>${disclosureNoticeMarkup(caseLanguage, 'prototype')}</figcaption></figure>`;
+  panel.innerHTML=`<div class="product-screen-copy glass"><span>0${index+1} / 06</span><h3>${screen[1]}</h3><p>${screen[2]}</p></div><figure class="product-screen-figure"><button class="screen-button" type="button" data-screen-index="${index}" aria-label="${c.expand}: ${screen[0]}" aria-haspopup="dialog"><img src="${screenURL(index)}" alt="${c.productName} — ${screen[0]}" width="7620" height="4764" loading="lazy"><span class="image-expand" aria-hidden="true">${c.expand}</span></button></figure>`;
 }
 function showProductScreen(index,open=true) {
   activeLightboxScreen=(index+PRODUCT_SCREENS.length)%PRODUCT_SCREENS.length;

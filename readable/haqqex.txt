@@ -38,7 +38,7 @@ HAQQEX · торговая платформа, сайт и мобильное п
 
 В этом кейсе
 
-Коротко о проекте (https://victoriaportfolio.github.io/case/haqqex/#overview)Проблема (https://victoriaportfolio.github.io/case/haqqex/#problem)Ключевой вывод (https://victoriaportfolio.github.io/case/haqqex/#insight)Решение (https://victoriaportfolio.github.io/case/haqqex/#solution)Экраны продукта (https://victoriaportfolio.github.io/case/haqqex/#screens)Сложности (https://victoriaportfolio.github.io/case/haqqex/#challenges)Результаты (https://victoriaportfolio.github.io/case/haqqex/#results)Главное (https://victoriaportfolio.github.io/case/haqqex/#takeaway)
+О проекте (https://victoriaportfolio.github.io/case/haqqex/#overview)Проблема (https://victoriaportfolio.github.io/case/haqqex/#problem)Вывод (https://victoriaportfolio.github.io/case/haqqex/#insight)Решение (https://victoriaportfolio.github.io/case/haqqex/#solution)Экраны (https://victoriaportfolio.github.io/case/haqqex/#screens)Сложности (https://victoriaportfolio.github.io/case/haqqex/#challenges)Результаты (https://victoriaportfolio.github.io/case/haqqex/#results)Главное (https://victoriaportfolio.github.io/case/haqqex/#takeaway)
 
 01 / Кейс за 30 секунд
 
@@ -204,7 +204,9 @@ MobileПриложение для работы с криптоактивами
 
 Сайт знакомит с продуктом, платформа даёт доступ к торговым инструментам, приложение раскрывает мобильные сценарии. Задача дизайна — связать эти части через пользовательские потоки и последовательный визуальный язык.
 
-Перейти на Behance↗ (https://www.behance.net/gallery/171243765/HAQQEX)Будем на связи
+Перейти на Behance↗ (https://www.behance.net/gallery/171243765/HAQQEX)
+
+Будем на связи
 
 Сложные процессы
 

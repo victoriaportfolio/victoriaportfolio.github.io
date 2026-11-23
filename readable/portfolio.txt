@@ -465,11 +465,11 @@ Research → Delivery
 
 B2B · Cross-border payments
 
-Bank Time to Valueвремя от регистрации до первой успешной транзакции
+Bank Time to ValueВремя от регистрации до первой успешной транзакции
 
-Активация банковзавершение подключения и готовность к работе
+Активация банковЗавершение подключения и готовность к работе
 
-Нагрузка на поддержкуобращения по подключению и операциям
+Нагрузка на поддержкуОбращения по подключению и операциям
 
 Открыть видео (https://victoriaportfolio.github.io/assets/cases/b2b-payments/demo/cross-border-intro-20261120.mp4)
 
@@ -479,7 +479,7 @@ Low-level прототипы MVP · NDAДетали продукта и метр
 
 В этом кейсе
 
-Коротко о проекте (https://victoriaportfolio.github.io/case/cross-border-payments/#overview)Проблема (https://victoriaportfolio.github.io/case/cross-border-payments/#problem)Ключевой вывод (https://victoriaportfolio.github.io/case/cross-border-payments/#insight)Решение (https://victoriaportfolio.github.io/case/cross-border-payments/#solution)Экраны продукта (https://victoriaportfolio.github.io/case/cross-border-payments/#screens)Сложности (https://victoriaportfolio.github.io/case/cross-border-payments/#challenges)Результаты (https://victoriaportfolio.github.io/case/cross-border-payments/#results)Главное (https://victoriaportfolio.github.io/case/cross-border-payments/#takeaway)
+О проекте (https://victoriaportfolio.github.io/case/cross-border-payments/#overview)Проблема (https://victoriaportfolio.github.io/case/cross-border-payments/#problem)Вывод (https://victoriaportfolio.github.io/case/cross-border-payments/#insight)Решение (https://victoriaportfolio.github.io/case/cross-border-payments/#solution)Экраны (https://victoriaportfolio.github.io/case/cross-border-payments/#screens)Сложности (https://victoriaportfolio.github.io/case/cross-border-payments/#challenges)Результаты (https://victoriaportfolio.github.io/case/cross-border-payments/#results)Главное (https://victoriaportfolio.github.io/case/cross-border-payments/#takeaway)
 
 01 / Кейс за 30 секунд
 
@@ -589,7 +589,7 @@ Time to MarketЗначение скрыто под NDA
 
 Баланс, отправленные средства, история операций, клиенты и заявки на верификацию собраны на одном экране.
 
-Увеличить экран ↗Low-level прототипы MVP · NDAДетали продукта и метрики скрыты под NDA.
+Увеличить экран ↗
 
 06 / Сложности
 
@@ -700,7 +700,7 @@ SSOединый вход в сервисы
 
 В этом кейсе
 
-Кейс за 30 секунд (https://victoriaportfolio.github.io/case/create/#overview)Проблема (https://victoriaportfolio.github.io/case/create/#problem)Ключевой вывод (https://victoriaportfolio.github.io/case/create/#insight)Исследование и логика (https://victoriaportfolio.github.io/case/create/#research)Решение в экранах (https://victoriaportfolio.github.io/case/create/#design)Дизайн-система (https://victoriaportfolio.github.io/case/create/#system)Сложности (https://victoriaportfolio.github.io/case/create/#challenges)Результаты (https://victoriaportfolio.github.io/case/create/#results)Рефлексия (https://victoriaportfolio.github.io/case/create/#reflection)
+О проекте (https://victoriaportfolio.github.io/case/create/#overview)Проблема (https://victoriaportfolio.github.io/case/create/#problem)Вывод (https://victoriaportfolio.github.io/case/create/#insight)Исследования (https://victoriaportfolio.github.io/case/create/#research)Экраны (https://victoriaportfolio.github.io/case/create/#design)Дизайн-система (https://victoriaportfolio.github.io/case/create/#system)Сложности (https://victoriaportfolio.github.io/case/create/#challenges)Результаты (https://victoriaportfolio.github.io/case/create/#results)Рефлексия (https://victoriaportfolio.github.io/case/create/#reflection)
 
 01 / Кейс за 30 секунд
 
@@ -878,8 +878,6 @@ HR-директор и менеджер проекта решают разные
 
 Подготовлены визуальная система, карта функций и детальные макеты, которые задают общую основу для развития продукта.
 
-Результаты относятся к проектированию и прототипированию. Данные об использовании продукта после запуска, росте вовлечённости и экономии времени в исходном кейсе не опубликованы. Исходный кейс на Behance ↗ (https://www.behance.net/gallery/209329083/CREATE-(Corporate-assistant)-Software-for-HR)
-
 09 / Рефлексия
 
 Что стало опорой
@@ -900,7 +898,9 @@ HR-директор и менеджер проекта решают разные
 
 Типографика, палитра и иконки поддерживают узнаваемость продукта и его человечный характер.
 
-Перейти на Behance↗ (https://www.behance.net/gallery/209329083/CREATE-(Corporate-assistant)-Software-for-HR)Обсудим ваш продукт
+Перейти на Behance↗ (https://www.behance.net/gallery/209329083/CREATE-(Corporate-assistant)-Software-for-HR)
+
+Обсудим ваш продукт
 
 Сложные процессы
 
@@ -957,7 +957,7 @@ HAQQEX · торговая платформа, сайт и мобильное п
 
 В этом кейсе
 
-Коротко о проекте (https://victoriaportfolio.github.io/case/haqqex/#overview)Проблема (https://victoriaportfolio.github.io/case/haqqex/#problem)Ключевой вывод (https://victoriaportfolio.github.io/case/haqqex/#insight)Решение (https://victoriaportfolio.github.io/case/haqqex/#solution)Экраны продукта (https://victoriaportfolio.github.io/case/haqqex/#screens)Сложности (https://victoriaportfolio.github.io/case/haqqex/#challenges)Результаты (https://victoriaportfolio.github.io/case/haqqex/#results)Главное (https://victoriaportfolio.github.io/case/haqqex/#takeaway)
+О проекте (https://victoriaportfolio.github.io/case/haqqex/#overview)Проблема (https://victoriaportfolio.github.io/case/haqqex/#problem)Вывод (https://victoriaportfolio.github.io/case/haqqex/#insight)Решение (https://victoriaportfolio.github.io/case/haqqex/#solution)Экраны (https://victoriaportfolio.github.io/case/haqqex/#screens)Сложности (https://victoriaportfolio.github.io/case/haqqex/#challenges)Результаты (https://victoriaportfolio.github.io/case/haqqex/#results)Главное (https://victoriaportfolio.github.io/case/haqqex/#takeaway)
 
 01 / Кейс за 30 секунд
 
@@ -1123,7 +1123,9 @@ MobileПриложение для работы с криптоактивами
 
 Сайт знакомит с продуктом, платформа даёт доступ к торговым инструментам, приложение раскрывает мобильные сценарии. Задача дизайна — связать эти части через пользовательские потоки и последовательный визуальный язык.
 
-Перейти на Behance↗ (https://www.behance.net/gallery/171243765/HAQQEX)Будем на связи
+Перейти на Behance↗ (https://www.behance.net/gallery/171243765/HAQQEX)
+
+Будем на связи
 
 Сложные процессы
 

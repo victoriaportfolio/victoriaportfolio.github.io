@@ -13,7 +13,7 @@
 .case-figma.case-page .case-hero h1 span { display: block; margin-top: 10px; background: none; color: #fff; -webkit-text-fill-color: currentColor; letter-spacing: 0; }
 .case-figma.case-page .case-intro { width: min(972px, 100%); min-height: 126px; font-size: 18px; line-height: 31.5px; letter-spacing: 0; }
 .case-figma.case-page .case-facts { margin-top: 32px; padding-top: 24px; }
-.case-figma.case-page .case-facts dt { font-size: 13px; line-height: 20px; }
+.case-figma.case-page .case-facts dt { font-size: 14px; line-height: 20px; }
 .case-figma.case-page .case-facts dd { font-size: 15px; line-height: 24px; font-weight: 400; }
 .case-figma.case-page .case-metrics { margin-top: 24px; gap: 16px; }
 .case-figma.case-page .case-metric { min-height: 149px; padding: 24px; }
@@ -60,13 +60,13 @@
   .case-figma.case-page .wrap { width: calc(100% - 40px); }
   .case-figma.case-page #case-content, .case-figma.case-page .case-body { gap: 56px; }
   .case-figma.case-page .case-hero { padding-top: 32px; }
-  .case-figma.case-page .case-label { margin: 0 0 20px; font-size: 11px; }
+  .case-figma.case-page .case-label { margin: 0 0 20px; font-size: 14px; }
   .case-figma.case-page .case-hero h1 { font-size: clamp(30px,7.8vw,54px); line-height: 1.12; }
   .case-figma.case-page .case-hero h1 span { margin-top: 8px; }
   .case-figma.case-page .case-intro { font-size: 16px; line-height: 1.65; }
   .case-figma.case-page .case-facts { gap: 24px 16px; }
-  .case-figma.case-page .case-facts dt { font-size: 12px; }
-  .case-figma.case-page .case-facts dd { font-size: 13px; }
+  .case-figma.case-page .case-facts dt { font-size: 14px; }
+  .case-figma.case-page .case-facts dd { font-size: 14px; }
   .case-figma.case-page .case-metrics { gap: 12px; }
   .case-figma.case-page .case-metric { min-height: 132px; }
   .case-figma.case-page .case-metric-qualitative strong { font-size: 24px; }

@@ -52,6 +52,8 @@
 .home-figma .project h3 { font-family: 'Montserrat', sans-serif; font-size: 25px; font-weight: 600; }
 .home-figma .project h3 a { color: inherit; text-decoration: none; }
 .home-figma .project h3 a:hover { color: var(--blue); }
+/* Preserve the original left margin around the title when the wide video is cropped. */
+.home-figma .project-visual video[data-project-cover-video] { object-position: left center; }
 .home-figma .project-slider-controls { margin-top: 32px; }
 .home-figma .growth { position: relative; z-index: 2; }
 .home-figma .growth .section-heading { min-height: 100px; margin-bottom: 104px; }
@@ -67,8 +69,6 @@
 .home-figma .about-copy h2 span { color: #fff; background: none; -webkit-text-fill-color: currentColor; }
 .home-figma .about-copy p:not(.eyebrow) { max-width: 474px; }
 .home-figma .contact h2 { font-size: 64px; line-height: 1.09; letter-spacing: -2.8px; }
-.home-figma.motion-ready [data-scroll-reveal] { opacity: var(--reveal-progress,0); transform: translate3d(0,calc((1 - var(--reveal-progress,0)) * 64px),0); will-change: opacity, transform; }
-.home-figma.motion-ready [data-scroll-reveal].is-revealed { opacity: 1; transform: none; will-change: auto; }
 @media (max-width: 1200px) {
   .home-figma h2, .home-figma .about-copy h2 { font-size: clamp(36px,4.4vw,56px); }
   .home-figma .growth .section-heading h2 { white-space: normal; }
@@ -149,7 +149,6 @@
 @media (prefers-reduced-motion: reduce) {
   .home-figma .belief-marquee-track { -webkit-animation: none; animation: none; transform: none; }
   .home-figma .home-backdrop { transform: none; will-change: auto; }
-  .home-figma.motion-ready [data-scroll-reveal] { opacity: 1; transform: none; will-change: auto; }
 }
 
 .home-figma .company h3 { font-family: var(--font-text); }

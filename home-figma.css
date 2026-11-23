@@ -122,8 +122,9 @@
   .home-figma .project-slider-actions > .button { white-space: normal; overflow-wrap: anywhere; }
   .home-figma .belief-marquee, .home-figma .belief-marquee--growth { margin: 0; }
   .home-figma .belief-marquee-group { font-size: 40px; padding-right: 32px; }
-  .home-figma .belief-marquee-track { --marquee-duration: 26s; }
-  .home-figma .belief-marquee--growth .belief-marquee-track { --marquee-duration: 32s; }
+  /* Mobile lettering is 40% of desktop size; scale each cycle to preserve its travel speed. */
+  .home-figma .belief-marquee-track { --marquee-duration: 15.2s; }
+  .home-figma .belief-marquee--growth .belief-marquee-track { --marquee-duration: 19.2s; }
   .home-figma .section-heading { display: block; }
   .home-figma .section-heading .eyebrow { font-size: 14px; line-height: 20px; margin-bottom: 16px; }
   .home-figma .section-heading > p { font-size: 14px; line-height: 22px; margin-top: 18px; }

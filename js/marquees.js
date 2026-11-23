@@ -34,7 +34,7 @@
     for (const state of states) {
       if (!state.width) continue;
       // Keep the requested marquee moving more gently when reduced motion is selected.
-      const duration = preference.matches ? Math.max(state.duration, 80) : state.duration;
+      const duration = state.duration * (preference.matches ? 2 : 1);
       state.offset += state.width / duration * elapsed;
       if (state.offset >= 0) state.offset = state.offset % state.width - state.width;
       position(state);

@@ -92,7 +92,7 @@ function projectCard(project, index, copy, position = index) {
   const attributes = isLocalCase ? '' : external;
   const visual = index === 0
     ? `<video data-project-cover-video src="assets/cases/b2b-payments/demo/cross-border-intro-20261120.mp4" poster="${escapeHTML(project.cover)}" autoplay muted loop playsinline preload="auto" width="800" height="500" aria-hidden="true" tabindex="-1"></video>`
-    : `<img src="${escapeHTML(project.cover)}" alt="${escapeHTML(project.title)}" loading="lazy" width="800" height="500">`;
+    : `<img src="${escapeHTML(project.cover)}" alt="${escapeHTML(project.title)}" loading="lazy" width="${index === 1 ? 1499 : 800}" height="${index === 1 ? 1049 : 500}">`;
   return `<article class="project"${position >= 3 ? ` data-extra-project${moreProjectsExpanded ? '' : ' hidden'}` : ''}><a class="project-visual" href="${escapeHTML(href)}" ${attributes} aria-label="${escapeHTML(project.title)}">${visual}</a><div class="project-copy"><div class="project-meta"><span>${copy.meta[index]}</span><span>${String(position + 1).padStart(2,'0')}</span></div><h3><a href="${escapeHTML(href)}" ${attributes}>${title}</a></h3><p>${escapeHTML(index === 0 ? copy.projectDescription : project.description)}</p><div class="project-actions">${isLocalCase ? `<a class="project-link project-case-link" href="${escapeHTML(href)}"><span>${copy.case}</span><span aria-hidden="true">→</span></a>` : ''}${index === 0 ? '' : `<a class="project-link project-behance-link" href="${escapeHTML(project.links[0].href)}" ${external}><span>${copy.behanceProject}</span><span aria-hidden="true">↗</span></a>`}</div></div></article>`;
 }
 function playProjectCover() {

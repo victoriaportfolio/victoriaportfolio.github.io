@@ -23,7 +23,7 @@
 .case-figma.case-page .case-metric-qualitative > span { min-height: 45px; }
 .case-figma.case-page :is(.case-showcase, .create-cover) { margin-block: 0; overflow: hidden; border-radius: 20px; }
 .case-figma.case-page .case-demo-video { aspect-ratio: 1120 / 634; object-fit: cover; border-radius: 20px; }
-.case-figma.case-page .create-cover img { display: block; width: calc(100% - 5px); margin-left: 5px; height: auto; aspect-ratio: 1115 / 632; object-fit: contain; border-radius: 20px; }
+.case-figma.case-page .create-cover img { display: block; width: 100%; height: auto; aspect-ratio: 1499 / 1049; object-fit: contain; border-radius: 20px; }
 .case-figma.case-page .case-toc { min-height: 67px; font-size: 14px; }
 .case-figma.case-page .case-toc a { font-size: 14px; }
 .case-figma.case-page .case-body { max-width: 972px; gap: 100px; }

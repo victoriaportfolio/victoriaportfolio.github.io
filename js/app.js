@@ -143,15 +143,58 @@ function render() {
 }
 
 let expertiseSizingFrame;
+const expertiseSizeProperties = ['summary', 'open', 'title', 'subtitle', 'description', 'tags'];
+function sizeExpertiseGrid(grid) {
+  if (!matchMedia('(max-width: 700px)').matches) {
+    expertiseSizeProperties.forEach(part => grid.style.removeProperty(`--expertise-${part}-height`));
+    return;
+  }
+  const cards = [...grid.querySelectorAll('.expertise-card')];
+  if (!cards.length) return;
+  const width = cards[0].getBoundingClientRect().width;
+  if (!width) return;
+  // Measure open copies outside the layout, including cards that are currently closed.
+  const probe = document.createElement('div');
+  probe.setAttribute('aria-hidden', 'true');
+  probe.inert = true;
+  Object.assign(probe.style, { position: 'fixed', left: '-10000px', top: '0', width: `${width}px`, visibility: 'hidden', pointerEvents: 'none', contain: 'layout style' });
+  const copies = cards.map(card => {
+    const copy = card.cloneNode(true);
+    copy.dataset.expertiseMeasure = 'true';
+    copy.open = true;
+    copy.style.position = 'relative';
+    copy.style.minHeight = '0';
+    probe.appendChild(copy);
+    return copy;
+  });
+  document.body.appendChild(probe);
+  try {
+    const sizes = {};
+    const maximum = selector => Math.ceil(Math.max(...copies.map(card => card.querySelector(selector).getBoundingClientRect().height)));
+    for (const [part, selector] of Object.entries({ title: 'h3', subtitle: '.expertise-subtitle', description: '.expertise-more p', tags: '.expertise-more small' })) {
+      sizes[part] = maximum(selector);
+      probe.style.setProperty(`--expertise-${part}-height`, `${sizes[part]}px`);
+    }
+    copies.forEach(card => { card.open = false; });
+    sizes.summary = maximum('summary');
+    probe.style.setProperty('--expertise-summary-height', `${sizes.summary}px`);
+    copies.forEach(card => { card.open = true; });
+    sizes.open = Math.ceil(Math.max(...copies.map(card => card.getBoundingClientRect().height)));
+    for (const part of expertiseSizeProperties) grid.style.setProperty(`--expertise-${part}-height`, `${sizes[part]}px`);
+  } finally {
+    probe.remove();
+  }
+}
 function scheduleExpertiseSizing() {
   cancelAnimationFrame(expertiseSizingFrame);
   expertiseSizingFrame = requestAnimationFrame(() => {
-    const grid = document.getElementById('highlights');
-    grid.style.removeProperty('--expertise-summary-height');
-    grid.style.removeProperty('--expertise-open-height');
+    ['highlights', 'services'].forEach(id => {
+      const grid = document.getElementById(id);
+      if (grid) sizeExpertiseGrid(grid);
+    });
   });
 }
-const expertiseGrid = document.getElementById('highlights');
+const expertiseGrids = ['highlights', 'services'].map(id => document.getElementById(id)).filter(Boolean);
 const expertiseHoverMode = matchMedia('(min-width: 701px) and (hover: hover) and (pointer: fine)');
 const expertiseHoverTimers = new Map();
 const EXPERTISE_HOVER_DELAY = 280;
@@ -202,18 +245,24 @@ expertiseHoverMode.addEventListener('change', () => {
   document.querySelectorAll('.expertise-card').forEach(card => { card.open = false; });
   scheduleExpertiseSizing();
 });
-expertiseGrid.addEventListener('toggle', event => {
+expertiseGrids.forEach(grid => grid.addEventListener('toggle', event => {
   if (event.target.dataset.expertiseMeasure !== 'true') scheduleExpertiseSizing();
-}, true);
-let expertiseGridWidth = 0;
-new ResizeObserver(entries => {
-  const width = entries[0].contentRect.width;
-  if (Math.abs(width - expertiseGridWidth) > .1) {
-    expertiseGridWidth = width;
-    scheduleExpertiseSizing();
+}, true));
+const expertiseGridWidths = new WeakMap();
+const expertiseResizeObserver = new ResizeObserver(entries => {
+  let changed = false;
+  for (const entry of entries) {
+    const previous = expertiseGridWidths.get(entry.target) || 0;
+    const width = entry.contentRect.width;
+    expertiseGridWidths.set(entry.target, width);
+    if (Math.abs(width - previous) > .1) changed = true;
   }
-}).observe(expertiseGrid);
+  if (changed) scheduleExpertiseSizing();
+});
+expertiseGrids.forEach(grid => expertiseResizeObserver.observe(grid));
+addEventListener('resize', scheduleExpertiseSizing, { passive: true });
 document.fonts.ready.then(scheduleExpertiseSizing);
+document.fonts.addEventListener?.('loadingdone', scheduleExpertiseSizing);
 
 const projectTrack = document.getElementById('projects');
 let projectSliderPosition = 0;

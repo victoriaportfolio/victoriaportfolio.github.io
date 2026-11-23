@@ -38,7 +38,6 @@
 .home-figma .belief-marquee-track { --marquee-duration: 38s; display: flex; width: max-content; -webkit-animation: belief-marquee-drift var(--marquee-duration) linear infinite; animation: belief-marquee-drift var(--marquee-duration) linear infinite; backface-visibility: hidden; -webkit-backface-visibility: hidden; will-change: transform; }
 .home-figma .belief-marquee-track.is-animated { -webkit-animation: none; animation: none; }
 .home-figma .belief-marquee-group { display: block; flex-shrink: 0; padding-right: 64px; white-space: nowrap; font-family: var(--font-display); font-size: 100px; font-weight: 600; line-height: 1.22; letter-spacing: 0; color: #fff; }
-.home-figma .belief-marquee--growth { margin-top: 114px; }
 .home-figma .belief-marquee--growth .belief-marquee-track { --marquee-duration: 48s; }
 @-webkit-keyframes belief-marquee-drift { from { -webkit-transform: translate3d(-50%,0,0); } to { -webkit-transform: translate3d(0,0,0); } }
 @keyframes belief-marquee-drift { from { transform: translate3d(-50%,0,0); } to { transform: translate3d(0,0,0); } }
@@ -58,7 +57,7 @@
 .home-figma .growth .section-heading { min-height: 100px; margin-bottom: 104px; }
 .home-figma .growth .section-heading h2 { white-space: nowrap; }
 .home-figma .growth .section-heading > p { max-width: 272px; }
-.home-figma .service-grid { min-height: 212px; padding-block: 30px; }
+.home-figma .service-grid { min-height: 0; padding: 0; }
 .home-figma .skills { margin-top: 65px; gap: 48px; }
 .home-figma .skill h3 { font-family: var(--font-display); font-size: 23px; font-weight: 500; letter-spacing: 0; line-height: 27.6px; }
 .home-figma .skill ul { font-family: var(--font-display); font-size: 15px; line-height: 30px; letter-spacing: 0; }

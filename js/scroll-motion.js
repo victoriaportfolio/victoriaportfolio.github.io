@@ -12,7 +12,8 @@
   let frame = 0;
   let discover = false;
   const clamp = n => Math.max(0, Math.min(1, n));
-  const distance = () => innerWidth <= 700 ? 32 : 64;
+  const distance = () => innerWidth <= 700 ? 48 : 96;
+  const parallaxDistance = () => innerWidth <= 700 ? 28 : 56;
 
   function finish(element, initial = false) {
     const state = states.get(element);
@@ -23,8 +24,6 @@
     element.style.removeProperty('--scroll-reveal-opacity');
     element.classList.add('is-scroll-visible');
     if (initial) element.classList.add('is-scroll-initial');
-    active.delete(element);
-    observer.unobserve(element);
   }
   function register() {
     for (const [element] of states) {
@@ -34,11 +33,11 @@
     for (const element of document.querySelectorAll(selector)) {
       if (states.has(element)) continue;
       const top = element.getBoundingClientRect().top;
-      states.set(element, { offset: distance(), done: false });
+      states.set(element, { offset: distance(), parallax: 0, done: false });
       element.style.setProperty('--scroll-reveal-y', `${distance()}px`);
       element.classList.add('scroll-reveal');
       if (top < innerHeight * .85) finish(element, top >= 0);
-      else observer.observe(element);
+      observer.observe(element);
     }
   }
   function update() {
@@ -49,8 +48,13 @@
     const measurements = [...active].map(element => [element, element.getBoundingClientRect()]);
     for (const [element, rect] of measurements) {
       const state = states.get(element);
-      if (!state || state.done || !element.isConnected) continue;
-      const top = rect.top - state.offset;
+      if (!state || !element.isConnected) continue;
+      const top = rect.top - state.offset - state.parallax;
+      // Keep depth movement active throughout the viewport, in either scroll direction.
+      const viewportProgress = clamp((innerHeight - top) / (innerHeight + rect.height));
+      state.parallax = (1 - 2 * viewportProgress) * parallaxDistance();
+      element.style.setProperty('--scroll-parallax-y', `${state.parallax.toFixed(2)}px`);
+      if (state.done) continue;
       const travel = Math.max(1, Math.min(innerHeight * .32, Math.max(120, rect.height * .3), rect.height - innerHeight * .02));
       const progress = clamp((innerHeight * .98 - top) / travel);
       if (progress >= 1) { finish(element); continue; }
@@ -89,6 +93,7 @@
       element.classList.remove('scroll-reveal', 'is-scroll-visible', 'is-scroll-initial');
       element.style.removeProperty('--scroll-reveal-y');
       element.style.removeProperty('--scroll-reveal-opacity');
+      element.style.removeProperty('--scroll-parallax-y');
     }
     states.clear(); register(); revealHash(); schedule();
   }

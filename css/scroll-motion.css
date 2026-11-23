@@ -1,25 +1,26 @@
-/* Scroll-linked entrance motion preserves the document's layout and fixed backdrop. */
+/* Scroll-linked entrances and continuous depth movement preserve document layout. */
 .scroll-reveal {
   opacity: var(--scroll-reveal-opacity, 0);
-  transform: translate3d(0, var(--scroll-reveal-y, 64px), 0);
+  transform: translate3d(0, calc(var(--scroll-reveal-y, 96px) + var(--scroll-parallax-y, 0px)), 0);
   will-change: opacity, transform;
 }
 .scroll-reveal.is-scroll-visible {
   opacity: 1;
-  transform: none;
+  transform: translate3d(0, var(--scroll-parallax-y, 0px), 0);
   will-change: auto;
 }
-.scroll-reveal.is-scroll-initial { animation: scroll-block-arrive .8s cubic-bezier(.2,.65,.25,1) both; }
+.scroll-reveal.is-scroll-initial { animation: scroll-block-arrive .8s ease-out backwards; }
 @keyframes scroll-block-arrive {
-  from { opacity: 0; transform: translate3d(0, 32px, 0); }
-  to { opacity: 1; transform: none; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 @media (max-width: 700px) {
-  .scroll-reveal { transform: translate3d(0, var(--scroll-reveal-y, 32px), 0); }
+  .scroll-reveal { transform: translate3d(0, calc(var(--scroll-reveal-y, 48px) + var(--scroll-parallax-y, 0px)), 0); }
+  .scroll-reveal.is-scroll-visible { transform: translate3d(0, var(--scroll-parallax-y, 0px), 0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .scroll-reveal, .scroll-reveal.is-scroll-initial { opacity: 1; transform: none; animation: none; will-change: auto; }
+  .scroll-reveal, .scroll-reveal.is-scroll-visible, .scroll-reveal.is-scroll-initial { opacity: 1; transform: none; animation: none; will-change: auto; }
 }
 @media print {
-  .scroll-reveal, .scroll-reveal.is-scroll-initial { opacity: 1; transform: none; animation: none; }
+  .scroll-reveal, .scroll-reveal.is-scroll-visible, .scroll-reveal.is-scroll-initial { opacity: 1; transform: none; animation: none; }
 }

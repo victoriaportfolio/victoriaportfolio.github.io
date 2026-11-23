@@ -18,7 +18,7 @@
 .case-figma.case-page .case-metrics { margin-top: 24px; gap: 16px; }
 .case-figma.case-page .case-metric { min-height: 149px; padding: 24px; }
 .case-figma.case-page .case-metric strong { margin: 0 0 9px; font-size: 45px; font-weight: 400; line-height: 1.1; letter-spacing: 0; }
-.case-figma.case-page .case-metric-qualitative strong { font-size: 26px; line-height: 32.5px; }
+.case-figma.case-page .case-metric-qualitative strong { font-size: 26px; font-weight: 600; line-height: 32.5px; }
 .case-figma.case-page .case-metric > span { font-size: 15px; line-height: 22.5px; }
 .case-figma.case-page .case-metric-qualitative > span { min-height: 45px; }
 .case-figma.case-page :is(.case-showcase, .create-cover) { margin-block: 0; overflow: hidden; border-radius: 20px; }

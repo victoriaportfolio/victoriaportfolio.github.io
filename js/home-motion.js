@@ -3,7 +3,6 @@
   if (!root) return;
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
   const sections = [...root.querySelectorAll('[data-scroll-reveal]')];
-  const marquees = [...root.querySelectorAll('.belief-marquee-track')];
   const active = new Set();
   let observer;
   let frame = 0;
@@ -26,14 +25,6 @@
   }
   function schedule() {
     if (!frame && !preference.matches) frame = requestAnimationFrame(update);
-  }
-  function resumeMotion() {
-    const playState = document.hidden ? 'paused' : 'running';
-    for (const track of marquees) {
-      track.style.animationPlayState = playState;
-      track.style.webkitAnimationPlayState = playState;
-    }
-    schedule();
   }
   function configure() {
     if (observer) observer.disconnect();
@@ -58,9 +49,8 @@
   }
   addEventListener('scroll', schedule, { passive: true });
   addEventListener('resize', schedule, { passive: true });
-  document.addEventListener('visibilitychange', resumeMotion);
-  addEventListener('pageshow', resumeMotion);
+  document.addEventListener('visibilitychange', schedule);
+  addEventListener('pageshow', schedule);
   preference.addEventListener('change', configure);
   configure();
-  resumeMotion();
 })();

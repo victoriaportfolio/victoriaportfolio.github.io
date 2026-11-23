@@ -65,6 +65,7 @@
 .home-figma .process { font-family: var(--font-display); font-weight: 500; letter-spacing: 0; }
 .home-figma .about { grid-template-columns: minmax(0,473.708fr) minmax(0,646.292fr); gap: 18px; }
 .home-figma .about-copy h2 { font-size: 56px; font-weight: 600; letter-spacing: 0; }
+.home-figma .about-copy h2 span { color: #fff; background: none; -webkit-text-fill-color: currentColor; }
 .home-figma .about-copy p:not(.eyebrow) { max-width: 474px; }
 .home-figma .contact h2 { font-size: 64px; line-height: 1.09; letter-spacing: -2.8px; }
 .home-figma.motion-ready [data-scroll-reveal] { opacity: var(--reveal-progress,0); transform: translate3d(0,calc((1 - var(--reveal-progress,0)) * 64px),0); will-change: opacity, transform; }

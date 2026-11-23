@@ -4,7 +4,13 @@
   --orange-gradient: linear-gradient(180deg, #ff9e68 0%, #ff7d2b 25%, #ff650e 76%, #f74d0a 100%);
   --case-gradient: linear-gradient(90deg, #f75b2d 0%, #f98346 23.04%, #f99966 35.45%, #fb944f 47.08%, #ff8b28 57.76%, #f52005 100%);
   font-family: var(--font-text);
+  isolation: isolate;
+  overflow-x: clip;
 }
+.case-unified.case-page .case-backdrop { position: fixed; z-index: -1; inset: -8vh 0 auto; height: 120vh; min-height: 900px; overflow: hidden; pointer-events: none; opacity: 1; transform: none; }
+.case-unified.case-page .case-backdrop img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.case-unified.case-page .case-backdrop::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 64%, rgba(0,0,0,.35) 84%, #000 100%); }
+.case-unified.case-page .site-header { background: rgba(0,0,0,.2); border-bottom-color: transparent; }
 .case-unified.case-page :is(h1, h2, h3, .case-intro) { font-family: var(--font-display); }
 .case-unified.case-page :is(.small-cta, .button.primary) { background: var(--orange-gradient); color: #080808; font-weight: 500; }
 .case-unified.case-page :is(.small-cta, .button.primary):hover { background: linear-gradient(180deg, #ffb17f, #ff862f 30%, #ff6a15 80%, #ff5810); color: #080808; }
@@ -55,7 +61,9 @@
 .case-unified.case-page .create-visual-copy .visual-tags { justify-content: flex-start; }
 .case-unified.case-page .disclosure-notice { background: rgba(251,94,26,.045); border-color: rgba(251,94,26,.25); }
 .case-unified.case-page :is(.disclosure-icon, .disclosure-notice strong) { color: #ff995f; }
-.case-unified.case-page .case-bottom { margin-top: 0; padding: 0 0 100px; border-top: 0; background: #000; text-align: center; }
+.case-unified.case-page .case-bottom { margin-top: 0; padding: 0 0 100px; border-top: 0; background: transparent; text-align: center; }
+.case-unified.case-page .case-full-link { text-align: center; }
+.case-unified.case-page .case-full-link .button { display: inline-flex; align-items: center; justify-content: center; gap: 19px; min-height: 48px; padding: 15px 24px; font-size: 15px; line-height: 18px; }
 .case-unified.case-page .case-bottom-inner { flex-direction: column; align-items: center; gap: 48px; }
 .case-unified.case-page .case-bottom .eyebrow { font-size: 15px; margin-bottom: 21px; }
 .case-unified.case-page .case-bottom .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 15px 24px; font-size: 15px; line-height: 18px; }
@@ -65,6 +73,7 @@
   .case-unified.case-page .case-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
+  .case-unified.case-page .case-backdrop { min-height: 720px; height: 115vh; }
   .case-unified.case-page .nav-actions > .small-cta { display: none; }
   .case-unified.case-page .case-hero { padding-top: 24px; }
   .case-unified.case-page .case-label { margin-top: 32px; font-size: 12px; }

@@ -275,7 +275,7 @@ const CASE_COPY = {
     "trustLabel": "Логика решения",
     "trustTitle": "Прозрачные статусы операций",
     "trustText": "Пользователи видят текущий этап обработки и следующий шаг.",
-    "fullCase": "Полный Кейс на Behance",
+    "fullCase": "Посмотреть полный кейс",
     "systemTitle": "Индивидуальная дизайн-система",
     "systemText": "Разработала индивидуальную дизайн-систему продукта. Единые компоненты и правила интерфейса поддерживают последовательность сценариев и повторное использование решений.",
     "systemTime": "Time to Market",
@@ -557,7 +557,7 @@ const CASE_COPY = {
     "trustLabel": "Design rationale",
     "trustTitle": "Transparent transaction statuses",
     "trustText": "Users can see the current processing stage and the next step.",
-    "fullCase": "Full case study on Behance",
+    "fullCase": "View full case study",
     "systemTitle": "A dedicated product design system",
     "systemText": "I developed a dedicated product design system. Shared components and interface rules support consistent journeys and reusable solutions.",
     "systemTime": "Time to Market",
@@ -765,6 +765,7 @@ function renderCase() {
       </div>
     </div>
     <div class="case-disclosure-end wrap">${disclosureNoticeMarkup(caseLanguage)}</div>
+    <section class="case-full-link wrap" id="full-case"><a class="button primary" href="${sourceURL}" target="_blank" rel="noopener">${c.fullCase}<span aria-hidden="true">↗</span></a></section>
     <section class="case-bottom"><div class="case-bottom-inner wrap"><div><p class="eyebrow">${c.ctaLabel}</p><h2>${c.ctaTitle}</h2><a class="button primary" href="https://t.me/victoriachupakhina28" target="_blank" rel="noopener">${c.ctaButton}</a></div><a class="case-next" href="../create/?lang=${caseLanguage}"><img src="../../assets/images/create-cover-20261123.png" alt="CREATE" width="93" height="95" loading="lazy"><div><small>${c.nextLabel}</small><h3>${c.nextTitle}</h3><span>${c.nextDescription}</span></div></a></div></section>`;
   document.querySelectorAll('.case-metric, .summary-panel, .role-pair article, .ttv, .insight-panel, .hypothesis-tab, .hypothesis-panel, .solution, .design-principles, .principles span, .product-screen-tab, .trust-outcome, .result-hero, .takeaway, .case-next, .image-expand, .product-dialog-controls button, .dialog-close').forEach(node => node.classList.add('glass'));
   document.querySelectorAll('h1, h2, h3, h4').forEach(heading => {

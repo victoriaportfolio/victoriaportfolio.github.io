@@ -680,7 +680,7 @@ function showProductScreen(index,open=true) {
 
 const sourceURL = 'https://www.behance.net/gallery/244423585/Fintech-B2B-Platform-for-Cross-Border-Payments';
 const mockupVideoURL = '../../assets/cases/b2b-payments/demo/cross-border-intro-20261120.mp4';
-const mockupPosterURL = '../../assets/cases/b2b-payments/demo/cross-border-intro-20261120.webp';
+const mockupPosterURL = '../../assets/cases/b2b-payments/demo/figma-cover-20261123.png';
 Object.assign(CASE_COPY.ru, {demoLabel:'Спецпроект — B2B-платформа международных переводов', demoCaption:'Спецпроект · B2B-платформа международных переводов', demoFallback:'Открыть видео'});
 Object.assign(CASE_COPY.en, {demoLabel:'Special project — B2B platform for cross-border payments', demoCaption:'Special project · B2B platform for cross-border payments', demoFallback:'Open video'});
 const escapeText = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));

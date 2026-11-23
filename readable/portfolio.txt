@@ -74,15 +74,15 @@ CREATE
 
 Смотреть кейс→ (https://victoriaportfolio.github.io/case/create/?lang=ru)Перейти на Behance↗ (https://www.behance.net/gallery/209329083/CREATE-(Corporate-assistant)-Software-for-HR)
 
-(https://victoriaportfolio.github.io/case/haqqex/?lang=ru)Crypto / Web303
+(https://www.behance.net/gallery/171243765/HAQQEX)Crypto / Web303
 
 HAQQEX
 
-Единая криптоэкосистема (https://victoriaportfolio.github.io/case/haqqex/?lang=ru)
+Единая криптоэкосистема (https://www.behance.net/gallery/171243765/HAQQEX)
 
 Криптоэкосистема, объединяющая торговую веб-платформу, сайт и мобильное приложение. Дизайн охватывает регистрацию и верификацию, обзор рынка, торговлю и управление портфелем. Пользовательские сценарии и визуальная система связывают разные части продукта в последовательный опыт.
 
-Смотреть кейс→ (https://victoriaportfolio.github.io/case/haqqex/?lang=ru)Перейти на Behance↗ (https://www.behance.net/gallery/171243765/HAQQEX)
+Перейти на Behance↗ (https://www.behance.net/gallery/171243765/HAQQEX)
 
 (https://www.behance.net/gallery/232372549/Bellator-Bike-Lab)Brand / Web04
 
@@ -672,7 +672,7 @@ Bank Time to Value, активация банков и нагрузка на п�
 
 В одном приложении
 
-Спроектировала CREATE — корпоративный ассистент, который объединяет HR-сервисы, задачи, общение и документы в единый мобильный опыт.
+Спроектировала CREATE — коробочное решение для сотрудников банка, объединяющее HR-сервисы, рабочие задачи, внутренние коммуникации и документы в едином цифровом пространстве. Помогает быстрее решать повседневные рабочие вопросы и взаимодействовать с корпоративными сервисами прямо со смартфона.
 
 Продукт
 
@@ -695,14 +695,6 @@ iOS · B2B SaaS · 2024
 2пользовательских профиля
 
 SSOединый вход в сервисы
-
-CORPORATE ASSISTANT / 2024
-
-CREATEРабочие процессы
-
-Ближе к человекуHR и документыЗадачи и проектыКоммуникации
-
-Оригинальные экраны CREATE: учёт рабочего времени, проекты и коммуникации.
 
 В этом кейсе
 
@@ -918,7 +910,7 @@ HR-директор и менеджер проекта решают разные
 
 Единая криптоэкосистема
 
-(https://victoriaportfolio.github.io/case/haqqex/?lang=ru)
+(https://www.behance.net/gallery/171243765/HAQQEX)
 
 
 ════════════════════════════════

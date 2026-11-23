@@ -86,7 +86,7 @@ const external = 'target="_blank" rel="noopener"';
 let moreProjectsExpanded = false;
 function projectCard(project, index, copy, position = index) {
   const title = copy.caseTitles[index] || escapeHTML(project.title);
-  const localPath = {0: 'cross-border-payments', 1: 'create', 2: 'haqqex'}[index];
+  const localPath = {0: 'cross-border-payments', 1: 'create'}[index];
   const isLocalCase = Boolean(localPath);
   const href = isLocalCase ? `/case/${localPath}/?lang=${language}` : project.links[0].href;
   const attributes = isLocalCase ? '' : external;

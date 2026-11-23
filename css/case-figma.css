@@ -1,0 +1,81 @@
+/* Figma 255:916 and 255:1426: shared geometry for the two published case studies. */
+.case-figma.case-page { --case-gradient: var(--orange-gradient); background: #000; }
+.case-figma.case-page .wrap { width: min(1120px, calc(100% - 80px)); max-width: 1120px; }
+.case-figma.case-page #case-content { gap: 100px; }
+.case-figma.case-page .case-hero { padding: 50px 0 0; }
+.case-figma.case-page .case-hero .back-link,
+.case-figma.case-page .case-hero > .disclosure-notice,
+.case-figma.case-page .case-showcase > .disclosure-notice,
+.case-figma.case-page .case-showcase > figcaption,
+.case-figma.case-page .case-disclosure-end { display: none; }
+.case-figma.case-page .case-label { margin: 0 0 18px; }
+.case-figma.case-page .case-hero h1 { font-size: clamp(40px, 6.4vw, 80px); font-weight: 600; line-height: 1.04832; letter-spacing: 0; margin: 0 auto 28px; }
+.case-figma.case-page .case-hero h1 span { display: block; margin-top: 10px; background: none; color: #fff; -webkit-text-fill-color: currentColor; letter-spacing: 0; }
+.case-figma.case-page .case-intro { width: min(972px, 100%); min-height: 126px; font-size: 18px; line-height: 31.5px; letter-spacing: 0; }
+.case-figma.case-page .case-facts { margin-top: 32px; padding-top: 24px; }
+.case-figma.case-page .case-facts dt { font-size: 13px; line-height: 20px; }
+.case-figma.case-page .case-facts dd { font-size: 15px; line-height: 24px; font-weight: 400; }
+.case-figma.case-page .case-metrics { margin-top: 24px; gap: 16px; }
+.case-figma.case-page .case-metric { min-height: 149px; padding: 24px; }
+.case-figma.case-page .case-metric strong { margin: 0 0 9px; font-size: 45px; font-weight: 400; line-height: 1.1; letter-spacing: 0; }
+.case-figma.case-page .case-metric-qualitative strong { font-size: 26px; line-height: 32.5px; }
+.case-figma.case-page .case-metric > span { font-size: 15px; line-height: 22.5px; }
+.case-figma.case-page .case-metric-qualitative > span { min-height: 45px; }
+.case-figma.case-page :is(.case-showcase, .create-cover) { margin-block: 0; overflow: hidden; border-radius: 20px; }
+.case-figma.case-page .case-demo-video { aspect-ratio: 1120 / 634; object-fit: cover; border-radius: 20px; }
+.case-figma.case-page .create-cover img { display: block; width: calc(100% - 5px); margin-left: 5px; height: auto; aspect-ratio: 1115 / 632; object-fit: contain; border-radius: 20px; }
+.case-figma.case-page .case-toc { min-height: 67px; font-size: 14px; }
+.case-figma.case-page .case-toc a { font-size: 14px; }
+.case-figma.case-page .case-body { max-width: 972px; gap: 100px; }
+.case-figma.case-page :is(.case-section h2, .case-bottom h2) { margin: 0 auto 28px; max-width: 100%; font-size: clamp(32px, 4.4vw, 56px); font-weight: 600; line-height: 1.09; letter-spacing: 0; }
+.case-figma.case-page :is(.heading-accent, .insight-panel h2 span, .case-bottom h2 span) { color: #fff; background: none; -webkit-text-fill-color: currentColor; }
+.case-figma.case-page .case-section > .eyebrow { font-size: 15px; line-height: 18px; margin-bottom: 21px; }
+.case-figma.case-page .case-section .body-copy { font-size: 18px; line-height: 1.55; margin-bottom: 32px; }
+.case-figma.case-page :is(.case-metric, .summary-panel, .ttv, .insight-panel, .hypothesis-panel, .solution, .design-principles, .product-screen-copy, .module-panel, .trust-outcome, .result-hero, .takeaway, .case-next) { background: rgba(255,255,255,.05); border: .5px solid rgba(255,255,255,.15); box-shadow: var(--glass-shadow); backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); }
+.case-figma.case-page .summary-panel { padding: 24px; }
+.case-figma.case-page .summary-row { grid-template-columns: 115px minmax(0,1fr); gap: 20px; }
+.case-figma.case-page .summary-row h3 { font-size: 14px; font-weight: 600; line-height: 1.3; letter-spacing: 0; }
+.case-figma.case-page .summary-row p { font-size: 16px; line-height: 1.6; }
+.case-figma.case-page .role-pair { margin-top: 32px; }
+.case-figma.case-page .role-pair h3 { font-size: 21px; line-height: 1.3; font-weight: 600; letter-spacing: -.5px; }
+.case-figma.case-page .role-pair p { font-size: 16px; line-height: 1.6; }
+.case-figma.case-page .insight-panel { padding: 32px; }
+.case-figma.case-page .insight-panel h2 { max-width: none; }
+.case-figma.case-page.create-page .insight-panel { padding: 44px 42px; }
+.case-figma.case-page :is(.insight-panel p:last-child, .takeaway p, .solution p) { font-size: 16px; line-height: 1.6; }
+.case-figma.case-page .solution h3 { font-size: 20px; line-height: 1.3; font-weight: 600; }
+.case-figma.case-page :is(.research-list h3, .challenges h3, .reflection-list h3) { font-weight: 600; letter-spacing: 0; }
+.case-figma.case-page .product-screen-copy h3 { font-weight: 600; }
+.case-figma.case-page .module-copy h3 { font-size: 26px; line-height: 1.3; font-weight: 600; }
+.case-figma.case-page .module-art img { width: auto; height: auto; max-width: 100%; max-height: 390px; object-fit: contain; }
+.case-figma.case-page .case-disclosure img { width: 100%; height: auto; }
+.case-figma.case-page .case-bottom h2 { font-size: clamp(32px, 4.4vw, 56px); }
+.case-figma.case-page .case-next { width: min(460px,100%); }
+@media (max-width: 1000px) {
+  .case-figma.case-page .wrap { width: calc(100% - 48px); }
+  .case-figma.case-page .case-intro { min-height: 0; }
+  .case-figma.case-page .case-metric-qualitative strong { white-space: normal; font-size: 22px; line-height: 1.25; }
+}
+@media (max-width: 700px) {
+  .case-figma.case-page .wrap { width: calc(100% - 40px); }
+  .case-figma.case-page #case-content, .case-figma.case-page .case-body { gap: 56px; }
+  .case-figma.case-page .case-hero { padding-top: 32px; }
+  .case-figma.case-page .case-label { margin: 0 0 20px; font-size: 11px; }
+  .case-figma.case-page .case-hero h1 { font-size: clamp(30px,7.8vw,54px); line-height: 1.12; }
+  .case-figma.case-page .case-hero h1 span { margin-top: 8px; }
+  .case-figma.case-page .case-intro { font-size: 16px; line-height: 1.65; }
+  .case-figma.case-page .case-facts { gap: 24px 16px; }
+  .case-figma.case-page .case-facts dt { font-size: 12px; }
+  .case-figma.case-page .case-facts dd { font-size: 13px; }
+  .case-figma.case-page .case-metrics { gap: 12px; }
+  .case-figma.case-page .case-metric { min-height: 132px; }
+  .case-figma.case-page .case-metric-qualitative strong { font-size: 24px; }
+  .case-figma.case-page .case-toc { margin-bottom: 56px; }
+  .case-figma.case-page :is(.case-section h2, .case-bottom h2) { font-size: clamp(28px,7vw,36px); line-height: 1.15; }
+  .case-figma.case-page .case-section .body-copy { font-size: 16px; line-height: 1.65; }
+  .case-figma.case-page .summary-panel { padding: 20px; }
+  .case-figma.case-page .summary-row { grid-template-columns: 1fr; gap: 10px; }
+  .case-figma.case-page :is(.insight-panel, .takeaway), .case-figma.case-page.create-page .insight-panel { padding: 28px 20px; }
+  .case-figma.case-page .case-next { padding: 20px; }
+  .case-figma.case-page .case-bottom { padding-bottom: 64px; }
+}

@@ -3,7 +3,7 @@ const COPY = {
     name: 'Виктория', work: 'Проекты', about: 'Обо мне', experience: 'Опыт', sayHello: '<span>Написать</span><span aria-hidden="true">↗</span>',
     hero: 'От продуктового видения<br><span>До бизнес-результата</span>',
     intro: '<span class="hero-description-line">Участвую в формировании продуктовой стратегии, создаю UX-архитектуру и Key Visual.</span><span class="hero-description-line">Веду полный цикл дизайна — от концепции до запуска, тестирования и развития</span>',
-    viewWork: 'Смотреть проекты <span aria-hidden="true">↓</span>', meet: 'Познакомиться <span aria-hidden="true">↗</span>',
+    viewWork: '<span class="action-label-desktop">Смотреть проекты</span><span class="action-label-mobile">Проекты</span><span aria-hidden="true">↓</span>', meet: '<span class="action-label-desktop">Познакомиться</span><span class="action-label-mobile">Обо мне</span><span aria-hidden="true">↗</span>',
     behind: 'За каждым интерфейсом — человек.', aboutTitle: 'Дизайн с вниманием <br>к людям<br><span>и результату</span>',
     aboutText: 'От исследования проблемы до запуска и развития продукта. Помогаю командам превращать сложную логику в понятный опыт, проверяю решения через исследования и тестирование, связывая каждое улучшение с целями бизнеса.',
     exploreExperience: 'Мой опыт <span aria-hidden="true">↓</span>', selected: 'Портфолио', workTitle: 'Продуктовые кейсы',
@@ -11,7 +11,7 @@ const COPY = {
     approach: 'Подход к работе', strengthsTitle: 'От первого “зачем”<br>до последнего пикселя', experienceLabel: 'Команды и продукты',
     experienceTitle: 'Опыт, который<br>помогает видеть шире.', experienceSubtitle: 'Финансы, образование, технологии.<br>Продукты для международных рынков.',
     next: 'Следующий шаг', contactTitle: 'Хороший продукт<br>начинается с разговора.', contactText: 'Расскажите, над чем работаете.<br>Вместе найдём точку, где дизайн принесёт больше пользы.',
-    telegram: 'Написать в Telegram <span aria-hidden="true">↗</span>', email: 'На почту <span aria-hidden="true">↗</span>', copy: 'Копировать', top: 'Наверх ↑', education: 'Образование', case: 'Смотреть кейс', copied: 'Адрес скопирован', copyFailed: 'Не удалось скопировать. Можно написать по ссылке «На почту».',
+    telegram: '<span class="action-label-desktop">Написать в Telegram</span><span class="action-label-mobile">Telegram</span><span aria-hidden="true">↗</span>', email: '<span class="action-label-desktop">На почту</span><span class="action-label-mobile">Почта</span><span aria-hidden="true">↗</span>', copy: 'Копировать', top: 'Наверх ↑', education: 'Образование', case: 'Смотреть кейс', copied: 'Адрес скопирован', copyFailed: 'Не удалось скопировать. Можно написать по ссылке «На почту».',
     highlights: [['Опыт','10 лет','в продуктовом дизайне'],['Специализация','3 года','в Fintech'],['Полный цикл','End to end','от Discovery до Delivery'],['Лидерство','Design Lead','команды, системы, процессы']],
     meta: ['Fintech / B2B','HR Tech / SaaS','Crypto / Web3','Fintech / Investment','Brand / Web','Medtech / Mobile','Investment / Web','Fashion / Mobile'],
     caseTitles: {0:'Международные переводы.<br>Весь путь в одной платформе.',1:'CREATE.<br>Корпоративные процессы проще.',2:'HAQQEX.<br>Единая криптоэкосистема.',5:'CURIO.<br>Цифровой опыт в Medtech.'}
@@ -19,14 +19,14 @@ const COPY = {
   en: {
     name: 'Victoria', work: 'Work', about: 'About', experience: 'Experience', sayHello: '<span>Say hello</span><span aria-hidden="true">↗</span>',
     hero: 'From product vision<br><span>To business impact</span>', intro: '<span class="hero-description-line">I help shape product strategy, UX architecture and Key Visual.</span><span class="hero-description-line">I lead the full design cycle — from concept to launch, testing and growth.</span>',
-    viewWork: 'Explore my work <span aria-hidden="true">↓</span>', meet: 'Get to know me <span aria-hidden="true">↗</span>',
+    viewWork: '<span class="action-label-desktop">Explore my work</span><span class="action-label-mobile">Projects</span><span aria-hidden="true">↓</span>', meet: '<span class="action-label-desktop">Get to know me</span><span class="action-label-mobile">About me</span><span aria-hidden="true">↗</span>',
     behind: 'A person behind every interface.', aboutTitle: 'Designed for people.<br><span>built for impact.</span>',
     aboutText: 'From understanding the problem to launching and growing the product. I help teams turn complex logic into clear experiences, validate solutions through research and testing, and connect every improvement to business goals.',
     exploreExperience: 'My experience <span aria-hidden="true">↓</span>', selected: 'Selected work', workTitle: 'Product case studies', workSubtitle: 'Different challenges. One focus.<br>An experience that works.',
     more: '4 more projects', behance: '<span class="portfolio-label">All work<span class="portfolio-label-desktop"> on Behance</span></span><span aria-hidden="true">↗</span>', approach: 'How I work', strengthsTitle: 'From the first “why”<br>to the final pixel.',
     experienceLabel: 'Teams and products', experienceTitle: 'Experience that brings<br>a wider perspective.', experienceSubtitle: 'Finance, education, technology.<br>Products for international markets.',
     next: 'The next step', contactTitle: 'Great products<br>start with a conversation.', contactText: 'Tell me what you’re working on.<br>Let’s find where design can make a difference.',
-    telegram: 'Message on Telegram <span aria-hidden="true">↗</span>', email: 'Send an email <span aria-hidden="true">↗</span>', copy: 'Copy', top: 'Back to top ↑', education: 'Education', case: 'View case study', copied: 'Email address copied', copyFailed: 'Couldn’t copy the address. Use the email link above.',
+    telegram: '<span class="action-label-desktop">Message on Telegram</span><span class="action-label-mobile">Telegram</span><span aria-hidden="true">↗</span>', email: '<span class="action-label-desktop">Send an email</span><span class="action-label-mobile">Email</span><span aria-hidden="true">↗</span>', copy: 'Copy', top: 'Back to top ↑', education: 'Education', case: 'View case study', copied: 'Email address copied', copyFailed: 'Couldn’t copy the address. Use the email link above.',
     highlights: [['Experience','10 years','in product design'],['Specialization','3 years','in Fintech'],['Full cycle','End to end','from Discovery to Delivery'],['Leadership','Design Lead','teams, systems, processes']],
     meta: ['Fintech / B2B','HR Tech / SaaS','Crypto / Web3','Fintech / Investment','Brand / Web','Medtech / Mobile','Investment / Web','Fashion / Mobile'],
     caseTitles: {0:'Cross-border payments.<br>One connected platform.',1:'CREATE.<br>Workplace processes, simplified.',2:'HAQQEX.<br>A connected crypto ecosystem.',5:'CURIO.<br>A digital Medtech experience.'}
@@ -266,13 +266,18 @@ document.fonts.addEventListener?.('loadingdone', scheduleExpertiseSizing);
 
 const projectTrack = document.getElementById('projects');
 let projectSliderPosition = 0;
+function moreProjectsLabel(copy) {
+  const full = moreProjectsExpanded ? copy.less : copy.more;
+  const short = language === 'ru' ? (moreProjectsExpanded ? 'Скрыть' : 'Ещё') : (moreProjectsExpanded ? 'Less' : 'More');
+  return `<span class="action-label-desktop">${escapeHTML(full)}</span><span class="action-label-mobile">${short}</span><span aria-hidden="true">↗</span>`;
+}
 function setupProjectSlider(copy) {
   document.getElementById('project-slider').setAttribute('aria-label', copy.projectSlider);
   document.getElementById('project-slider').setAttribute('aria-roledescription', language === 'ru' ? 'карусель' : 'carousel');
   document.querySelector('[data-project-prev]').setAttribute('aria-label', copy.previousProjects);
   document.querySelector('[data-project-next]').setAttribute('aria-label', copy.nextProjects);
   const moreButton = document.getElementById('show-more-projects');
-  moreButton.textContent = moreProjectsExpanded ? copy.less : copy.more;
+  moreButton.innerHTML = moreProjectsLabel(copy);
   moreButton.setAttribute('aria-expanded', String(moreProjectsExpanded));
   requestAnimationFrame(() => {
     projectTrack.scrollLeft = Math.min(projectSliderPosition, projectTrack.scrollWidth - projectTrack.clientWidth);
@@ -300,7 +305,7 @@ document.getElementById('show-more-projects').addEventListener('click', () => {
   moreProjectsExpanded = !moreProjectsExpanded;
   projectTrack.querySelectorAll('[data-extra-project]').forEach(card => { card.hidden = !moreProjectsExpanded; });
   const button = document.getElementById('show-more-projects');
-  button.textContent = moreProjectsExpanded ? COPY[language].less : COPY[language].more;
+  button.innerHTML = moreProjectsLabel(COPY[language]);
   button.setAttribute('aria-expanded', String(moreProjectsExpanded));
   requestAnimationFrame(() => {
     const firstExtra = projectTrack.querySelector('[data-extra-project]');

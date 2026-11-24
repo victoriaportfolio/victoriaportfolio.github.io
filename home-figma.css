@@ -159,32 +159,34 @@
 .home-figma .project-actions .project-behance-link { font-size: 14px; color: var(--muted); }
 .home-figma .project-actions .project-behance-link:hover { color: var(--blue); }
 
-/* Keep the primary action first, with compact labels on narrow screens. */
+/* Shared action components: 250 x 50 primary, 177 x 50 secondary. */
+.home-figma { --action-primary-width: 250px; --action-secondary-width: 177px; --action-height: 50px; --action-gap: 29px; }
+.home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) {
+  display: flex; justify-content: center; align-items: stretch; flex-wrap: nowrap; gap: var(--action-gap);
+}
+.home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) > :is(.button, .text-link) {
+  display: inline-flex; align-items: center; justify-content: center; flex: 0 0 var(--action-secondary-width);
+  width: var(--action-secondary-width); height: var(--action-height); min-height: var(--action-height);
+  border: .5px solid rgba(255,255,255,.15); border-radius: 32px; padding: 0 12px;
+  gap: 8px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500; line-height: 20px;
+  text-align: center; white-space: nowrap; text-decoration: none;
+}
+.home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) > .primary {
+  flex-basis: var(--action-primary-width); width: var(--action-primary-width);
+}
+.home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) > :is(.button, .text-link) > span { margin: 0; line-height: inherit; }
 .home-figma .project-slider-portfolio .portfolio-label-desktop { display: inline; }
+.home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) .action-label-mobile { display: none; }
 @media (max-width: 700px) {
-  .home-figma :is(.hero-actions, .contact-actions) { flex-wrap: nowrap; align-items: stretch; gap: 10px; }
-  .home-figma :is(.hero-actions, .contact-actions) > :is(.button, .text-link) { min-width: 0; min-height: 48px; padding: 12px 10px; font-size: 14px; line-height: 20px; }
-  .home-figma .hero-actions > a > span[aria-hidden] { display: none; }
-  .home-figma .project-slider-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .home-figma .project-slider-portfolio .portfolio-label-desktop,
-  .home-figma .project-slider-portfolio > span[aria-hidden] { display: none; }
-  .home-figma .project-slider-actions > .button { padding-inline: 8px; }
+  .home-figma { --action-height: 48px; --action-gap: 12px; }
+  .home-figma :is(.hero-actions, .contact-actions) { display: grid; grid-template-columns: 250fr 177fr; width: 100%; }
+  .home-figma .project-slider-actions { display: grid; grid-template-columns: 177fr 250fr; width: 100%; }
+  .home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) > :is(.button, .text-link) { width: 100%; min-width: 0; padding-inline: 8px; }
+  .home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) .action-label-desktop,
+  .home-figma .project-slider-portfolio .portfolio-label-desktop { display: none; }
+  .home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) .action-label-mobile,
+  .home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) > a > span[aria-hidden] { display: block; }
+  .home-figma .hero h1 { text-align: left; text-wrap: wrap; }
+  .home-figma .hero h1 span { letter-spacing: inherit; }
 }
-@media (max-width: 360px) {
-  .home-figma :is(.hero-actions, .contact-actions) { gap: 8px; }
-  .home-figma :is(.hero-actions, .contact-actions) > :is(.button, .text-link) { padding-inline: 6px; }
-}
-
-/* Match all mobile action rows to the portfolio's full-width, equal columns. */
-@media (max-width: 700px) {
-  .home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) {
-    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%; gap: 10px; align-items: stretch;
-  }
-  .home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) > :is(.button, .text-link) {
-    width: 100%; min-width: 0; min-height: 48px; padding-inline: 8px;
-    justify-content: center; text-align: center; white-space: normal;
-  }
-}
-/* Both slogans always travel left to right, including the CSS fallback. */
 .home-figma .belief-marquee-track { direction: ltr; animation-direction: normal; -webkit-animation-direction: normal; }

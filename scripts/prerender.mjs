@@ -100,6 +100,7 @@ for (const id of ['highlights', 'services', 'projects', 'skills', 'experience-li
   if (!content) throw new Error(`Homepage renderer produced no #${id}`);
   html = fillId(html, id, content);
 }
+html = fillId(html, 'show-more-projects', home.nodes.get('show-more-projects').innerHTML);
 fs.writeFileSync(path.join(dist, 'index.html'), cleanHeadings(html));
 console.log('Prerendered homepage with three featured projects and five hidden projects.');
 
@@ -155,7 +156,8 @@ for (const [relative, slug, url] of exports) {
   }
   const main = page.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1];
   if (!main) throw new Error(`Missing main text: ${relative}`);
-  const text = main.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+  const text = main.replace(/<span\b[^>]*class="action-label-mobile"[^>]*>[\s\S]*?<\/span>/gi, '')
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
     .replace(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, (_, href, label) => `${label} (${new URL(href.replace(/&amp;/g, '&'), origin + url).href})`)
     .replace(/<br\s*\/?>|<\/(?:h[1-6]|p|div|section|article|li|dt|dd|summary|figure|aside)>/gi, '\n')
     .replace(/<[^>]+>/g, '')

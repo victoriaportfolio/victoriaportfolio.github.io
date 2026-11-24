@@ -186,7 +186,7 @@
   .home-figma .project-slider-portfolio .portfolio-label-desktop { display: none; }
   .home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) .action-label-mobile,
   .home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) > a > span[aria-hidden] { display: block; }
-  .home-figma .hero h1 { text-align: left; text-wrap: wrap; }
+  .home-figma .hero h1 { text-align: center; text-wrap: wrap; }
   .home-figma .hero h1 span { letter-spacing: inherit; }
 }
 .home-figma .belief-marquee-track { direction: ltr; animation-direction: normal; -webkit-animation-direction: normal; }

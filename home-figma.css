@@ -92,8 +92,8 @@
   .home-figma .home-backdrop { min-height: 720px; height: 115vh; }
   .home-figma .hero.wrap { padding-top: 64px; }
   .home-figma .hero > .eyebrow { font-size: 14px; line-height: 20px; margin-bottom: 20px; }
-  .home-figma .hero h1 { font-size: clamp(19px,calc(7vw - 3px),44px); line-height: 1.18; margin-bottom: 24px; }
-  .home-figma .hero h1 span { margin-top: 4px; white-space: nowrap; }
+  .home-figma .hero h1 { font-size: 36px; line-height: 1.09; letter-spacing: -1px; margin-bottom: 24px; text-wrap: balance; }
+  .home-figma .hero h1 span { display: block; margin-top: 4px; white-space: normal; }
   .home-figma .hero-description { font-size: 14px; line-height: 22px; letter-spacing: -.4px; margin-bottom: 24px; }
   .home-figma .hero-description-line { white-space: normal; }
   .home-figma .hero-actions { gap: 12px; flex-wrap: wrap; }
@@ -174,3 +174,17 @@
   .home-figma :is(.hero-actions, .contact-actions) { gap: 8px; }
   .home-figma :is(.hero-actions, .contact-actions) > :is(.button, .text-link) { padding-inline: 6px; }
 }
+
+/* Match all mobile action rows to the portfolio's full-width, equal columns. */
+@media (max-width: 700px) {
+  .home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%; gap: 10px; align-items: stretch;
+  }
+  .home-figma :is(.hero-actions, .contact-actions, .project-slider-actions) > :is(.button, .text-link) {
+    width: 100%; min-width: 0; min-height: 48px; padding-inline: 8px;
+    justify-content: center; text-align: center; white-space: normal;
+  }
+}
+/* Both slogans always travel left to right, including the CSS fallback. */
+.home-figma .belief-marquee-track { direction: ltr; animation-direction: normal; -webkit-animation-direction: normal; }

@@ -115,3 +115,5 @@
   .case-unified.case-page .case-section .body-copy { font-size: 17px; }
   .case-unified.case-page .case-next { padding: 20px; }
 }
+
+.case-unified.haqqex-page .case-showcase > video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 20px; }

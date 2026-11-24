@@ -190,3 +190,5 @@
   .home-figma .hero h1 span { letter-spacing: inherit; }
 }
 .home-figma .belief-marquee-track { direction: ltr; animation-direction: normal; -webkit-animation-direction: normal; }
+
+.home-figma .project-visual video[data-project-cover-video="haqqex"] { object-position: right center; }

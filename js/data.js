@@ -502,7 +502,7 @@ const SITE_DATA = {
     {
       title: "HAQQEX",
       description: "Криптоэкосистема, объединяющая торговую веб-платформу, сайт и мобильное приложение. Дизайн охватывает регистрацию и верификацию, обзор рынка, торговлю и управление портфелем. Пользовательские сценарии и визуальная система связывают разные части продукта в последовательный опыт.",
-      cover: "assets/images/proj-haqqex-cover-20261119.png",
+      cover: "assets/images/haqqex-cover-20261124.jpg",
       tags: ["Product Design", "Crypto", "Mobile App", "Landing Page"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/171243765/HAQQEX" }],
     },

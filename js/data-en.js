@@ -461,7 +461,7 @@ const SITE_DATA_EN = {
     {
       title: "HAQQEX",
       description: "A crypto ecosystem spanning a trading web platform, website and mobile app. The design covers registration and verification, market discovery, trading and portfolio management. User flows and a consistent visual language connect the different parts of the product.",
-      cover: "assets/images/proj-haqqex-cover-20261119.png",
+      cover: "assets/images/haqqex-cover-20261124.jpg",
       tags: ["Product Design", "Crypto", "Mobile App", "Landing Page"],
       links: [{ label: "Behance", href: "https://www.behance.net/gallery/171243765/HAQQEX" }],
     },

@@ -657,7 +657,7 @@ function renderCase() {
       <div class="case-metrics">${c.metrics.map(([value,label])=>`<div class="case-metric case-metric-qualitative"><strong>${value}</strong><span>${label}</span></div>`).join('')}</div>
     </section>
     <figure class="case-showcase wrap" id="demo">
-      <button class="screen-button" type="button" data-hero-screen aria-haspopup="dialog" aria-label="Увеличить обложку HAQQEX"><img src="../../assets/cases/haqqex/hero.webp" alt="HAQQEX — Crypto Ecosystem" width="1398" height="782" fetchpriority="high"><span class="image-expand">${c.expand}</span></button>
+      <video data-haqqex-cover-video src="../../assets/cases/haqqex/demo/haqqex-cover-20261124.mp4" poster="../../assets/images/haqqex-cover-20261124.jpg" autoplay muted loop playsinline preload="auto" width="1920" height="1080" aria-label="HAQQEX — Crypto Ecosystem"></video>
       ${disclosureNoticeMarkup(caseLanguage, 'prototype')}
       <figcaption><span>${c.demoCaption}</span><a href="${sourceURL}" target="_blank" rel="noopener">${c.original}</a></figcaption>
     </figure>
@@ -681,6 +681,7 @@ function renderCase() {
     while (walker.nextNode()) walker.currentNode.textContent = walker.currentNode.textContent.replace(/\./g, '');
   });
   setupCaseDemo();
+  playHaqqexCover();
   renderHypothesis(activeHypothesis);
   renderProductScreen(activeProductScreen);
   if (sectionObserver) sectionObserver.disconnect();
@@ -785,3 +786,13 @@ addEventListener('resize',updateReadingProgress);
 renderCase();
 if(location.hash) requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView());
 addEventListener('load',updateReadingProgress,{once:true});
+
+function playHaqqexCover() {
+  const video = document.querySelector('[data-haqqex-cover-video]');
+  if (!video) return;
+  video.defaultMuted = true; video.muted = true;
+  video.play().catch(() => {});
+}
+document.addEventListener('visibilitychange', () => { if (!document.hidden) playHaqqexCover(); });
+document.addEventListener('pointerdown', playHaqqexCover, { once: true, passive: true });
+window.addEventListener('pageshow', playHaqqexCover);

@@ -52,7 +52,7 @@ const SITE_DATA = {
   contacts: {
     behance: "https://www.behance.net/victoriabraf2f",
     telegram: "https://t.me/victoriachupakhina28",
-    email: "mailto:victoriabright2228@gmail.com",
+    email: "mailto:brightuniverse888@gmail.com",
   },
 
   // Строка логотипов под хиро-блоком.

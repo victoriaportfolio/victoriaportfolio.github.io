@@ -91,7 +91,7 @@ function render(){
  document.querySelector('.dialog-close').setAttribute('aria-label',c.close);dialog.setAttribute('aria-label',c.dialogLabel);
  document.getElementById('case-content').innerHTML=`
  <section class="case-hero wrap"><a class="back-link" href="../../?lang=${language}#work">${c.back}</a><p class="case-label"><i aria-hidden="true"></i>${c.label}</p><h1>${c.title}</h1><p class="case-intro">${c.intro}</p><dl class="case-facts">${c.facts.map(([label,value])=>`<div><dt>${label}</dt><dd>${value}</dd></div>`).join('')}</dl><div class="case-metrics">${c.metrics.map(([value,label])=>`<div class="case-metric"><strong>${value}</strong><span>${label}</span></div>`).join('')}</div></section>
- <figure class="wrap create-cover"><img src="../../assets/images/create-cover-20261123.png" alt="${c.visualLabel} — CREATE · Corporate Assistant" width="1499" height="1049" fetchpriority="high"></figure>
+ <figure class="wrap create-cover"><video data-case-cover-video src="../../assets/cases/create/demo/create-cover-20261124.mp4" poster="../../assets/images/create-cover-20261124.jpg" autoplay muted loop playsinline preload="auto" width="1920" height="1080" aria-label="${c.visualLabel} — CREATE · Corporate Assistant"></video></figure>
  <div class="case-layout wrap"><nav class="case-toc" aria-label="${c.navLabel}"><p>${c.navLabel}</p>${c.nav.map(([id,label])=>`<a href="#${id}">${label}</a>`).join('')}</nav><div class="case-body">
  <section class="case-section" id="overview"><p class="eyebrow">${c.overviewLabel}</p><h2>${accentHeading(c.overviewTitle)}</h2><div class="summary-panel">${c.summary.map(([label,text])=>`<div class="summary-row"><h3>${label}</h3><p>${text}</p></div>`).join('')}</div></section>
  <section class="case-section" id="problem"><p class="eyebrow">${c.problemLabel}</p><h2>${accentHeading(c.problemTitle)}</h2><p class="body-copy">${c.problemText}</p><div class="role-pair">${c.roles.map(([label,title,text])=>`<article><span>${label}</span><h3>${title}</h3><p>${text}</p></article>`).join('')}</div></section>
@@ -104,6 +104,7 @@ function render(){
  <section class="case-section" id="reflection"><p class="eyebrow">${c.reflectionLabel}</p><h2>${accentHeading(c.reflectionTitle)}</h2><p class="body-copy">${c.reflectionIntro}</p><ul class="reflection-list">${c.reflection.map(([title,text])=>`<li><h3>${title}</h3><p>${text}</p></li>`).join('')}</ul></section>
  </div></div><section class="case-full-link wrap" id="full-case"><a class="button primary" href="${SOURCE}" target="_blank" rel="noopener">${c.fullCase}<span aria-hidden="true">↗</span></a></section><section class="case-bottom"><div class="case-bottom-inner wrap"><div><p class="eyebrow">${c.ctaLabel}</p><h2>${accentHeading(c.ctaTitle)}</h2><a class="button primary" href="https://t.me/victoriachupakhina28" target="_blank" rel="noopener">${c.ctaButton}</a></div><a class="case-next" href="https://www.behance.net/gallery/171243765/HAQQEX" target="_blank" rel="noopener"><img src="../../assets/cases/haqqex/hero.webp" alt="HAQQEX" loading="lazy" width="93" height="95"><div><small>${c.nextLabel}</small><h3>${c.nextTitle}</h3><span>${c.nextDescription}</span></div></a></div></section>`;
  renderModule(activeModule);
+ playCreateCover();
  sectionObserver?.disconnect();sectionObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);if(!visible.length)return;document.querySelectorAll('.case-toc a').forEach(link=>{if(link.hash===`#${visible[0].target.id}`)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});},{rootMargin:'-15% 0px -50% 0px',threshold:0});document.querySelectorAll('.case-section').forEach(section=>sectionObserver.observe(section));
  document.querySelectorAll('.case-disclosure').forEach(el=>el.addEventListener('toggle',updateProgress));updateProgress();
 }
@@ -121,3 +122,13 @@ document.querySelector('.dialog-close').addEventListener('click',()=>dialog.clos
 let queued=false;function updateProgress(){const total=document.documentElement.scrollHeight-innerHeight;document.getElementById('reading-progress').style.width=`${total>0?Math.min(100,Math.max(0,scrollY/total*100)):0}%`;queued=false;}
 addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(updateProgress);}},{passive:true});addEventListener('resize',updateProgress);addEventListener('load',updateProgress,{once:true});
 render();if(location.hash)requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView());
+
+function playCreateCover() {
+  const video = document.querySelector('[data-case-cover-video]');
+  if (!video) return;
+  video.defaultMuted = true; video.muted = true;
+  video.play().catch(() => {});
+}
+document.addEventListener('visibilitychange', () => { if (!document.hidden) playCreateCover(); });
+document.addEventListener('pointerdown', playCreateCover, { once: true, passive: true });
+window.addEventListener('pageshow', playCreateCover);

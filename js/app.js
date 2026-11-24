@@ -1,7 +1,7 @@
 const COPY = {
   ru: {
     name: 'Виктория', work: 'Проекты', about: 'Обо мне', experience: 'Опыт', sayHello: '<span>Написать</span><span aria-hidden="true">↗</span>',
-    hero: 'От продуктового видения<br><span>До бизнес-результата</span>',
+    hero: 'От стратегии<br><span>К результату</span>',
     intro: '<span class="hero-description-line">Участвую в формировании продуктовой стратегии, создаю UX-архитектуру и Key Visual.</span><span class="hero-description-line">Веду полный цикл дизайна — от концепции до запуска, тестирования и развития</span>',
     viewWork: '<span class="action-label-desktop">Смотреть проекты</span><span class="action-label-mobile">Проекты</span><span aria-hidden="true">↓</span>', meet: '<span class="action-label-desktop">Познакомиться</span><span class="action-label-mobile">Обо мне</span><span aria-hidden="true">↗</span>',
     behind: 'За каждым интерфейсом — человек.', aboutTitle: 'Дизайн с вниманием <br>к людям<br><span>и результату</span>',
@@ -18,7 +18,7 @@ const COPY = {
   },
   en: {
     name: 'Victoria', work: 'Work', about: 'About', experience: 'Experience', sayHello: '<span>Say hello</span><span aria-hidden="true">↗</span>',
-    hero: 'From product vision<br><span>To business impact</span>', intro: '<span class="hero-description-line">I help shape product strategy, UX architecture and Key Visual.</span><span class="hero-description-line">I lead the full design cycle — from concept to launch, testing and growth.</span>',
+    hero: 'From strategy<br><span>To results</span>', intro: '<span class="hero-description-line">I help shape product strategy, UX architecture and Key Visual.</span><span class="hero-description-line">I lead the full design cycle — from concept to launch, testing and growth.</span>',
     viewWork: '<span class="action-label-desktop">Explore my work</span><span class="action-label-mobile">Projects</span><span aria-hidden="true">↓</span>', meet: '<span class="action-label-desktop">Get to know me</span><span class="action-label-mobile">About me</span><span aria-hidden="true">↗</span>',
     behind: 'A person behind every interface.', aboutTitle: 'Designed for people.<br><span>built for impact.</span>',
     aboutText: 'From understanding the problem to launching and growing the product. I help teams turn complex logic into clear experiences, validate solutions through research and testing, and connect every improvement to business goals.',
@@ -90,17 +90,16 @@ function projectCard(project, index, copy, position = index) {
   const isLocalCase = Boolean(localPath);
   const href = isLocalCase ? `/case/${localPath}/?lang=${language}` : project.links[0].href;
   const attributes = isLocalCase ? '' : external;
-  const visual = index === 0
-    ? `<video data-project-cover-video src="assets/cases/b2b-payments/demo/cross-border-intro-20261120.mp4" poster="${escapeHTML(project.cover)}" autoplay muted loop playsinline preload="auto" width="800" height="500" aria-hidden="true" tabindex="-1"></video>`
+  const visual = index < 2
+    ? `<video data-project-cover-video src="${index === 0 ? 'assets/cases/b2b-payments/demo/cross-border-intro-20261120.mp4' : 'assets/cases/create/demo/create-cover-20261124.mp4'}" poster="${escapeHTML(project.cover)}" autoplay muted loop playsinline preload="auto" width="800" height="500" aria-hidden="true" tabindex="-1"></video>`
     : `<img src="${escapeHTML(project.cover)}" alt="${escapeHTML(project.title)}" loading="lazy" width="${index === 1 ? 1499 : 800}" height="${index === 1 ? 1049 : 500}">`;
   return `<article class="project"${position >= 3 ? ` data-extra-project${moreProjectsExpanded ? '' : ' hidden'}` : ''}><a class="project-visual" href="${escapeHTML(href)}" ${attributes} aria-label="${escapeHTML(project.title)}">${visual}</a><div class="project-copy"><div class="project-meta"><span>${copy.meta[index]}</span><span>${String(position + 1).padStart(2,'0')}</span></div><h3><a href="${escapeHTML(href)}" ${attributes}>${title}</a></h3><p>${escapeHTML(index === 0 ? copy.projectDescription : project.description)}</p><div class="project-actions">${isLocalCase ? `<a class="project-link project-case-link" href="${escapeHTML(href)}"><span>${copy.case}</span><span aria-hidden="true">→</span></a>` : ''}${index === 0 ? '' : `<a class="project-link project-behance-link" href="${escapeHTML(project.links[0].href)}" ${external}><span>${copy.behanceProject}</span><span aria-hidden="true">↗</span></a>`}</div></div></article>`;
 }
 function playProjectCover() {
-  const video = document.querySelector('[data-project-cover-video]');
-  if (!video) return;
-  video.defaultMuted = true;
-  video.muted = true;
-  video.play().catch(() => {});
+  document.querySelectorAll('[data-project-cover-video]').forEach(video => {
+    video.defaultMuted = true; video.muted = true;
+    video.play().catch(() => {});
+  });
 }
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden) playProjectCover();

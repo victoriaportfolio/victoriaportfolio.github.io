@@ -449,7 +449,7 @@ const SITE_DATA_EN = {
     {
       title: "CREATE — Corporate Assistant for HR",
       description: "A mobile app for bank employees that brings HR services, work tasks, internal communications and documents together in one digital workspace. It helps employees handle day-to-day work requests faster and access corporate services directly from their smartphones.",
-      cover: "assets/images/create-cover-20261123.png",
+      cover: "assets/images/create-cover-20261124.jpg",
       tags: ["Brand Identity", "UX Design", "UI Design", "Mobile App"],
       links: [
         {

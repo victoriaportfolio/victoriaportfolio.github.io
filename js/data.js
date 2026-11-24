@@ -490,7 +490,7 @@ const SITE_DATA = {
     {
       title: "CREATE — Corporate Assistant для HR",
       description: "Коробочное решение для сотрудников банка, объединяющее HR-сервисы, рабочие задачи, внутренние коммуникации и документы в едином цифровом пространстве. Помогает быстрее решать повседневные рабочие вопросы и взаимодействовать с корпоративными сервисами прямо со смартфона.",
-      cover: "assets/images/create-cover-20261123.png",
+      cover: "assets/images/create-cover-20261124.jpg",
       tags: ["Brand Identity", "UX Design", "UI Design", "Mobile App"],
       links: [
         {

@@ -79,3 +79,5 @@
   .case-figma.case-page .case-next { padding: 20px; }
   .case-figma.case-page .case-bottom { padding-bottom: 64px; }
 }
+
+.case-figma.case-page .create-cover video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 20px; }
